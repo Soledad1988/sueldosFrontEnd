@@ -5,6 +5,8 @@ import { ColaboradoresComponent } from './componenets/colaboradores/colaboradore
 import { NuevoColaboradorComponent } from './componenets/formularios/nuevo-colaborador/nuevo-colaborador.component';
 import { EditarColaboradorComponent } from './componenets/formularios/editar-colaborador/editar-colaborador.component';
 import { ConveniosComponent } from './componenets/convenios/convenios.component';
+import { NuevoConvenioComponent } from './componenets/formularios/nuevo-convenio/nuevo-convenio.component';
+import { EditarConvenioComponent } from './componenets/formularios/editar-convenio/editar-convenio.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'menu', pathMatch:'full'},
@@ -12,7 +14,9 @@ const routes: Routes = [
   {path:'colaborador', component:ColaboradoresComponent},
   {path:'nuevo', component:NuevoColaboradorComponent},
   {path:'editar/:id', component:EditarColaboradorComponent},
-  {path:'convenio', component:ConveniosComponent}
+  {path:'convenio', component:ConveniosComponent},
+  {path:'nuevoC', component:NuevoConvenioComponent},
+  {path:'editarC/:id', component:EditarConvenioComponent},
 ];
 
 @NgModule({

@@ -17,6 +17,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { NuevoColaboradorComponent } from './componenets/formularios/nuevo-colaborador/nuevo-colaborador.component';
 import { EditarColaboradorComponent } from './componenets/formularios/editar-colaborador/editar-colaborador.component';
 import { ConveniosComponent } from './componenets/convenios/convenios.component';
+import { NuevoConvenioComponent } from './componenets/formularios/nuevo-convenio/nuevo-convenio.component';
+import { EditarConvenioComponent } from './componenets/formularios/editar-convenio/editar-convenio.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ConveniosComponent } from './componenets/convenios/convenios.component'
     ColaboradoresComponent,
     NuevoColaboradorComponent,
     EditarColaboradorComponent,
-    ConveniosComponent
+    ConveniosComponent,
+    NuevoConvenioComponent,
+    EditarConvenioComponent
   ],
   imports: [
     BrowserModule,
