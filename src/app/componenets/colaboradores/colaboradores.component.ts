@@ -28,4 +28,11 @@ export class ColaboradoresComponent implements OnInit{
 
   }
 
+  eliminar(id:number){
+    this.colaboradorService.eliminar(id).subscribe(
+      res=>{this.ngOnInit()
+        ;},
+      err=>console.log(err)
+    );
+  }
 }

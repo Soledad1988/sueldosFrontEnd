@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject, pipe, tap } from 'rxjs';
 import { Colaborador } from '../models/colaborador';
 
 @Injectable({
@@ -10,7 +10,13 @@ export class ColaboradorService {
 
   URL = 'http://localhost:8080/colaborador';
 
+  private _refersh$ = new Subject<void>();
+
   constructor(private httpClient: HttpClient) { }
+
+  get refresh$(){
+    return this._refersh$;
+  }
 
   colaborador():Observable<any>{
     return this.httpClient.get(this.URL);
@@ -18,21 +24,25 @@ export class ColaboradorService {
 
   guardar(colaborador: Colaborador):Observable<any>
   {
-    return this.httpClient.post(this.URL, colaborador);
-  
+    return this.httpClient.post(this.URL, colaborador)
+    .pipe(
+      tap(()=>{
+        this._refersh$.next(); 
+      })
+    )
   }
 
   //Obtener un huesped
-  getUnHuesped(id:number):Observable<Colaborador>{
+  UnColaborador(id:number):Observable<Colaborador>{
     return this.httpClient.get<Colaborador>(this.URL+"/"+id);
   }
 
-  editarHuesped(id:number, colaborador: Colaborador):Observable<Colaborador>
+  editar(id:number, colaborador: Colaborador):Observable<Colaborador>
   {
     return this.httpClient.put<Colaborador>(this.URL+'/'+id, colaborador);
   }
 
-  deleteHuesped(id:number):Observable<any>
+  eliminar(id:number):Observable<any>
   {
     return this.httpClient.delete(this.URL+'/'+id);
   }
