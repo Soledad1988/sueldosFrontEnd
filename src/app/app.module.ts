@@ -15,13 +15,17 @@ import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { NuevoColaboradorComponent } from './componenets/formularios/nuevo-colaborador/nuevo-colaborador.component';
+import { EditarColaboradorComponent } from './componenets/formularios/editar-colaborador/editar-colaborador.component';
+import { ConveniosComponent } from './componenets/convenios/convenios.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ColaboradoresComponent,
-    NuevoColaboradorComponent
+    NuevoColaboradorComponent,
+    EditarColaboradorComponent,
+    ConveniosComponent
   ],
   imports: [
     BrowserModule,
