@@ -4,7 +4,7 @@ export class Colaborador{
     apellido?:String;
     dni?:String;
     nacimiento?:String;
-    edad?:String;
+    edad?:number;
     direccion?:String;
     convenio?:String;
 }
