@@ -19,6 +19,7 @@ import { EditarColaboradorComponent } from './componenets/formularios/editar-col
 import { ConveniosComponent } from './componenets/convenios/convenios.component';
 import { NuevoConvenioComponent } from './componenets/formularios/nuevo-convenio/nuevo-convenio.component';
 import { EditarConvenioComponent } from './componenets/formularios/editar-convenio/editar-convenio.component';
+import { CategoriasComponent } from './componenets/categorias/categorias.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { EditarConvenioComponent } from './componenets/formularios/editar-conven
     EditarColaboradorComponent,
     ConveniosComponent,
     NuevoConvenioComponent,
-    EditarConvenioComponent
+    EditarConvenioComponent,
+    CategoriasComponent
   ],
   imports: [
     BrowserModule,
