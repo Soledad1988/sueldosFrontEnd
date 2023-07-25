@@ -3,21 +3,20 @@
   
     <div>
         <button mat-mini-fab color="stroked" [routerLink]="['/nuevoC']"><mat-icon>add_circle</mat-icon></button>
-    </div>
+        <button [routerLink]="['/categoria']">Categorias</button>
+      </div>
 
       <table class="table">
           <thead>
             <tr>
               <th scope="col">N°</th>
               <th scope="col">Nombre Convenio</th>
-              <th scope="col">Categorias</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let convenio of lista">
               <td>{{convenio.idConvenio}}</td>
               <td>{{convenio.nombreConvenio}}</td>
-              <td>{{convenio.categoria}}</td>
               <td>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                   <button mat-mini-fab color="stroked" routerLink="/editarC/{{convenio.idConvenio}}"><mat-icon>create</mat-icon></button>
