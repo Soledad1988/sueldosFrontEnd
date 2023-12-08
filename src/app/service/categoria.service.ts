@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Categoria } from '../models/categorias';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,12 @@ export class CategoriaService {
   
   categoria():Observable<any>{
     return this.httpClient.get(this.URL);
+  }
+
+  guardar(categoria: Categoria):Observable<any>
+  {
+    return this.httpClient.post(this.URL, categoria);
+    
   }
 
   eliminar(idCategoria:number):Observable<any>
