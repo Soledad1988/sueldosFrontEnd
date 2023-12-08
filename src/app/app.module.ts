@@ -14,12 +14,14 @@ import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
 import { NuevoColaboradorComponent } from './componenets/formularios/nuevo-colaborador/nuevo-colaborador.component';
 import { EditarColaboradorComponent } from './componenets/formularios/editar-colaborador/editar-colaborador.component';
 import { ConveniosComponent } from './componenets/convenios/convenios.component';
 import { NuevoConvenioComponent } from './componenets/formularios/nuevo-convenio/nuevo-convenio.component';
 import { EditarConvenioComponent } from './componenets/formularios/editar-convenio/editar-convenio.component';
 import { CategoriasComponent } from './componenets/categorias/categorias.component';
+import { NuevaCategoriaComponent } from './componenets/formularios/nueva-categoria/nueva-categoria.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { CategoriasComponent } from './componenets/categorias/categorias.compone
     ConveniosComponent,
     NuevoConvenioComponent,
     EditarConvenioComponent,
-    CategoriasComponent
+    CategoriasComponent,
+    NuevaCategoriaComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { CategoriasComponent } from './componenets/categorias/categorias.compone
     BrowserAnimationsModule,
     MatListModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

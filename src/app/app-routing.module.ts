@@ -8,6 +8,7 @@ import { ConveniosComponent } from './componenets/convenios/convenios.component'
 import { NuevoConvenioComponent } from './componenets/formularios/nuevo-convenio/nuevo-convenio.component';
 import { EditarConvenioComponent } from './componenets/formularios/editar-convenio/editar-convenio.component';
 import { CategoriasComponent } from './componenets/categorias/categorias.component';
+import { NuevaCategoriaComponent } from './componenets/formularios/nueva-categoria/nueva-categoria.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'menu', pathMatch:'full'},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:'categoria', component:CategoriasComponent},
   {path:'nuevoC', component:NuevoConvenioComponent},
   {path:'editarC/:id', component:EditarConvenioComponent},
+  {path:'nuevoCategoria', component:NuevaCategoriaComponent},
 ];
 
 @NgModule({
