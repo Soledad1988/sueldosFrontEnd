@@ -1,5 +1,5 @@
 export class Convenio{
     idConvenio?:number;
-    nombreConvenio?:String;
-    categoria?:String;
+    numero?:String;
+    nombre?:String;
 }
