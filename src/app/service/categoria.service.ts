@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Categoria } from '../models/categorias';
@@ -17,6 +17,11 @@ export class CategoriaService {
     return this.httpClient.get(this.URL);
   }
 
+  crearCategoria(categoria: any): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.httpClient.post(`${this.URL}`, categoria, { headers });
+  }
+
   guardar(categoria: Categoria):Observable<any>
   {
     return this.httpClient.post(this.URL, categoria);
@@ -27,4 +32,5 @@ export class CategoriaService {
   {
     return this.httpClient.delete(this.URL+'/'+idCategoria);
   }
+
 }
