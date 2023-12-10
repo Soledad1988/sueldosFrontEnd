@@ -16,11 +16,15 @@
 
                 <h4>Seleccione el convenio al que pertence</h4>
 
-                <label>Convenios</label>
-                {{ nuevaCategoria.Convenio }}
-                <select class="col-auto" name="miselect" matNativeControl required [(ngModel)]="nuevaCategoria.Convenio">
-                <option [value]="convenio.nombre" *ngFor="let convenio of con">{{ convenio.nombre }}</option>
-                </select>
+                <mat-form-field appearance="fill" class="mt20 w100">
+                  <mat-label>Convenios</mat-label>
+                  <mat-select name="categoria" [(ngModel)] = "nuevaCategoria.convenio.idConvenio">
+                    <mat-option *ngFor = "let c of convenios" [value] = "c.idConvenio">
+                      {{ c.nombre }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              
 
 
                 <div class="form-footer">
