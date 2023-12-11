@@ -14,7 +14,9 @@
             <th scope="col">DNI</th>
             <th scope="col">Edad</th>
             <th scope="col">Direccion</th>
+            <th scope="col">Activo</th>
             <th scope="col">Convenio</th>
+            <th scope="col">Categoria</th>
           </tr>
         </thead>
         <tbody>
@@ -25,11 +27,16 @@
             <td>{{colaborador.dni}}</td>
             <td>{{colaborador.edad}}</td>
             <td>{{colaborador.direccion}}</td>
-            <td>{{colaborador.convenio}}</td>
+            <td>{{colaborador.activo}}</td>
+            <td>{{colaborador.convenio.nombre}}</td>
+            <td>{{colaborador.categoria.nombre}}</td>
             <td>
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button mat-mini-fab color="stroked" routerLink="/editar/{{colaborador.id}}"><mat-icon>create</mat-icon></button>
-                <button mat-mini-fab color="stroked" (click)="eliminar(colaborador.id)"><mat-icon>delete</mat-icon></button>
+
+                <section class="example-section">
+                  <mat-checkbox class="example-margin">Desactivar!</mat-checkbox>
+                </section>
               </div>
             </td>
           </tr>
