@@ -10,19 +10,37 @@
               <form class="d-grid gap-2">
                 <h2>Datos Colaborador</h2>
                 
-                <input type="text" name="nombre" class="form-control" placeholder="Ingrese Nombre" [(ngModel)]="nuevo.nombre">
+                <input type="text" name="nombre" class="form-control" placeholder="Ingrese Nombre" [(ngModel)]="nuevoColaborador.nombre">
   
-                <input type="text" name="apellido" class="form-control" placeholder="Ingrese Apellido" [(ngModel)]="nuevo.apellido">
+                <input type="text" name="apellido" class="form-control" placeholder="Ingrese Apellido" [(ngModel)]="nuevoColaborador.apellido">
   
-                <input type="text" name="dni" class="form-control" placeholder="DNI" [(ngModel)]="nuevo.dni">
+                <input type="text" name="dni" class="form-control" placeholder="DNI" [(ngModel)]="nuevoColaborador.dni">
 
-                <input type="date" name="nacimiento" class="form-control" placeholder="Fehca Nacimiento" [ngModel]="nuevo.nacimiento">
+                <input type="date" name="nacimiento" class="form-control" placeholder="Fehca Nacimiento" [ngModel]="nuevoColaborador.nacimiento">
                   
-                <input type="text" name="edad" class="form-control" placeholder="Edad" [(ngModel)]="nuevo.edad">
+                <input type="text" name="edad" class="form-control" placeholder="Edad" [(ngModel)]="nuevoColaborador.edad">
         
-                <input type="text" name="domicilio" class="form-control" placeholder="Ingrese Dirección" [(ngModel)]="nuevo.direccion">
+                <input type="text" name="domicilio" class="form-control" placeholder="Ingrese Dirección" [(ngModel)]="nuevoColaborador.direccion">
+
+                <mat-slide-toggle [(ngModel)]="nuevoColaborador.activo">Activo!</mat-slide-toggle>
   
-                <input type="text" name="convenio" class="form-control" placeholder="Convenio" [(ngModel)]="nuevo.convenio">
+                <mat-form-field appearance="fill" class="mt20 w100">
+                  <mat-label>Convenio</mat-label>
+                  <mat-select name="categoria" [(ngModel)] = "nuevoColaborador.convenio.idConvenio">
+                    <mat-option *ngFor = "let c of convenios" [value] = "c.idConvenio">
+                      {{ c.nombre }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="mt20 w100">
+                  <mat-label>Categoria</mat-label>
+                  <mat-select name="categoria" [(ngModel)] = "nuevoColaborador.categoria.idCategoria">
+                    <mat-option *ngFor = "let cate of categorias" [value] = "cate.idCategoria">
+                      {{ cate.nombre }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
                 
                 <div class="form-footer">
   
