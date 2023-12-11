@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject, pipe, tap } from 'rxjs';
 import { Colaborador } from '../models/colaborador';
@@ -25,11 +25,11 @@ export class ColaboradorService {
   guardar(colaborador: Colaborador):Observable<any>
   {
     return this.httpClient.post(this.URL, colaborador)
-    .pipe(
-      tap(()=>{
-        this._refersh$.next(); 
-      })
-    )
+  }
+
+  crearColaborador(categoria: any): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.httpClient.post(`${this.URL}`, categoria, { headers });
   }
 
   //Obtener un huesped

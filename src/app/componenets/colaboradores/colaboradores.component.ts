@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ColaboradorService } from 'src/app/service/colaborador.service';
+import { ConvenioService } from 'src/app/service/convenio.service';
 
 @Component({
   selector: 'app-colaboradores',
@@ -9,7 +12,7 @@ import { ColaboradorService } from 'src/app/service/colaborador.service';
 export class ColaboradoresComponent implements OnInit{
 
   lista:any=[];
-
+ 
   constructor(private colaboradorService: ColaboradorService){}
 
   ngOnInit(): void {
