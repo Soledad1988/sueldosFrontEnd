@@ -1,3 +1,5 @@
+import { Convenio } from "./Convenio";
+
 export class Colaborador{
     id?:number;
     nombre?:String;
@@ -6,5 +8,6 @@ export class Colaborador{
     nacimiento?:String;
     edad?:number;
     direccion?:String;
-    convenio?:String;
+    activo?:Boolean;
+    convenio?:Convenio;
 }
