@@ -17,6 +17,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { NuevoColaboradorComponent } from './componenets/formularios/nuevo-colaborador/nuevo-colaborador.component';
 import { EditarColaboradorComponent } from './componenets/formularios/editar-colaborador/editar-colaborador.component';
 import { ConveniosComponent } from './componenets/convenios/convenios.component';
@@ -24,6 +26,7 @@ import { NuevoConvenioComponent } from './componenets/formularios/nuevo-convenio
 import { EditarConvenioComponent } from './componenets/formularios/editar-convenio/editar-convenio.component';
 import { CategoriasComponent } from './componenets/categorias/categorias.component';
 import { NuevaCategoriaComponent } from './componenets/formularios/nueva-categoria/nueva-categoria.component';
+import { LiquidacionComponent } from './componenets/liquidacion/liquidacion.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,8 @@ import { NuevaCategoriaComponent } from './componenets/formularios/nueva-categor
     NuevoConvenioComponent,
     EditarConvenioComponent,
     CategoriasComponent,
-    NuevaCategoriaComponent
+    NuevaCategoriaComponent,
+    LiquidacionComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,9 @@ import { NuevaCategoriaComponent } from './componenets/formularios/nueva-categor
     MatIconModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
