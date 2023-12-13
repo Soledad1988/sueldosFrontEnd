@@ -29,6 +29,7 @@ export class NuevaCategoriaComponent implements OnInit{
     nuevaCategoria = {
       id_categoria:'',
       nombre:'',
+      monto:'',
       descripcion:'',
       convenio:{
         idConvenio:''
@@ -59,6 +60,7 @@ export class NuevaCategoriaComponent implements OnInit{
         this.nuevaCategoria = {
             id_categoria:'',
             nombre:'',
+            monto:'',
             descripcion:'',
             convenio:{
               idConvenio:''
