@@ -8,6 +8,7 @@
             <tr>
               <th scope="col">Id</th>
               <th scope="col">Nombre Categoria</th>
+              <th scope="col">Monto</th>
               <th scope="col">Descripcion</th>
               <th scope="col">Convenio Asociado</th>
             </tr>
@@ -16,6 +17,7 @@
             <tr *ngFor="let categoria of lista">
               <td>{{categoria.idCategoria}}</td>
               <td>{{categoria.nombre}}</td>
+              <td>{{categoria.monto}}</td>
               <td>{{categoria.descripcion}}</td>
               <td>{{categoria.convenio.nombre}}</td>
               <td>
