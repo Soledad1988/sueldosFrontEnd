@@ -71,7 +71,8 @@ export class NuevoColaboradorComponent implements OnInit{
     this.colaboradorService.crearColaborador(this.nuevoColaborador).subscribe(
       (data) => {
         console.log(data);
-        Swal.fire('Colaborador guardado','El colaborador ha sido guardado con éxito','success');
+
+        Swal.fire('Colaborador guardado','El colaborador ha sido guardado con éxito.','success');
         this.nuevoColaborador = {
           id:'',
           nombre:'',
