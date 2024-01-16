@@ -10,6 +10,8 @@ import { EditarConvenioComponent } from './componenets/formularios/editar-conven
 import { CategoriasComponent } from './componenets/categorias/categorias.component';
 import { NuevaCategoriaComponent } from './componenets/formularios/nueva-categoria/nueva-categoria.component';
 import { LiquidacionComponent } from './componenets/liquidacion/liquidacion.component';
+import { NuevaLiquidacionComponent } from './componenets/formularios/nueva-liquidacion/nueva-liquidacion.component';
+import { CalcularLiquidacionComponent } from './componenets/calcular-liquidacion/calcular-liquidacion.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'menu', pathMatch:'full'},
@@ -23,6 +25,8 @@ const routes: Routes = [
   {path:'editarC/:id', component:EditarConvenioComponent},
   {path:'nuevoCategoria', component:NuevaCategoriaComponent},
   {path:'liquidacion', component:LiquidacionComponent},
+  {path:'nuevaLiquidacion', component:NuevaLiquidacionComponent}, 
+  {path:'calcularLiquidacion', component:CalcularLiquidacionComponent},
 ];
 
 @NgModule({
