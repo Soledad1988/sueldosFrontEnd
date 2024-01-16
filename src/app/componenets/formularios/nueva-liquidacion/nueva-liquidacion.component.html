@@ -1,0 +1,31 @@
+<p>nueva-liquidacion works!</p>
+
+<div class="container">
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Legajo</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">DNI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let colaborador of lista">
+              <td>{{colaborador.id}}</td>
+              <td>{{colaborador.nombre}}</td>
+              <td>{{colaborador.apellido}}</td>
+              <td>{{colaborador.dni}}</td>
+
+              <td>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                  <button mat-button [routerLink]="['/calcularLiquidacion']">Liquidar</button>
+                </div>
+              </td>
+            </tr>
+            
+          </tbody>
+      </table>
+  
+  </div>
+  
