@@ -1,10 +1,39 @@
 
 <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4 bg-white p-5 rounded-5 text-secondary shadow">
+            <div class="mb-3">
+                <button type="submit" class="btn btn-info btn-block">
+                  Ingresar Periodo de Liquidación
+                </button>
+            </div>
 
-     <label for="">Ingrese el periodo de liquidacion</label>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-info btn-block" [routerLink]="['/nuevaLiquidacion']">
+                  Liquidación
+                </button>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-info btn-block">
+                  Emisión de Recibos
+                </button>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-info btn-block">
+                  Consulta de Liquidaciones
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+    <label for="">Ingrese el periodo de liquidacion</label>
      <input type="text" name="nombre" class="form-control" placeholder="Ingrese periodo">
 
     <label for="">Ingrese Fecha de pago</label>
     <input type="text" name="nombre" class="form-control" placeholder="Fecha de pago">
 
-</div>
+-->
