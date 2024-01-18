@@ -60,7 +60,7 @@ import { CalcularLiquidacionComponent } from './componenets/calcular-liquidacion
     MatCheckboxModule,
     MatSlideToggleModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
