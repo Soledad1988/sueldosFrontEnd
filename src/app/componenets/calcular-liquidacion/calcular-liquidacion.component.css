@@ -1,0 +1,13 @@
+.receipt-container {
+    max-width: 600px; /* Ajusta este valor según tus necesidades */
+    margin: auto;
+    font-size: 0.9em; /* Reducir el tamaño de la fuente */
+}
+
+.table {
+    margin-bottom: 0; /* Reducir el margen inferior de la tabla */
+}
+
+.table th, .table td {
+    padding: 0.3rem; /* Reducir el espaciado en celdas */
+}
