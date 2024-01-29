@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoriaService } from 'src/app/service/categoria.service';
-import { Categoria } from 'src/app/models/categorias';
 import Swal from 'sweetalert2';
 import { HttpClient } from '@angular/common/http';
 import { ConvenioService } from 'src/app/service/convenio.service';
@@ -22,6 +21,7 @@ export class NuevaCategoriaComponent implements OnInit{
     private activatedRoute:ActivatedRoute,
     private http: HttpClient){}
 
+    
     convenios: any[] = [];
 
     //nuevaCategoria: Categoria = new Categoria();
@@ -56,7 +56,7 @@ export class NuevaCategoriaComponent implements OnInit{
     this.categoriaService.crearCategoria(this.nuevaCategoria).subscribe(
       (data) => {
         console.log(data);
-        Swal.fire('Examen guardado','El examen ha sido guardado con éxito','success');
+        Swal.fire('Categoria guardada','La categoria ha sido guardado con éxito','success');
         this.nuevaCategoria = {
             id_categoria:'',
             nombre:'',

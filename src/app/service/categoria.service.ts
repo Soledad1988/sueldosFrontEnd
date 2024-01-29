@@ -32,5 +32,6 @@ export class CategoriaService {
   {
     return this.httpClient.delete(this.URL+'/'+idCategoria);
   }
+  
 
 }

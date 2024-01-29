@@ -13,6 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class NuevoColaboradorComponent implements OnInit{
 
+  
   convenios: any[] = [];
 
   categorias: any[] = [];
