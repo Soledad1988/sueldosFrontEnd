@@ -1,21 +1,47 @@
-<div class="container">
+<div class="container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh;">
 
-    <div class="container" class="d-flex justify-content-start">
+    <section style="text-align: center; margin-bottom: 50px;">
+        <h1>Sistema de Liquidación de Sueldos</h1>
+        <p>Bienvenidos al sistema de liquidación de sueldos,
+            en el que podrás gestionar altas, bajas y modificación de convenios,
+            colaboradores, emisión de recibos, Libro Sueldo.
+        </p>
+    </section>
 
-        <section class="bg-white p-5 text-secondary shadow" style="width: 50rem">
-            <h1>Sistema de Liquidación de Sueldos</h1>
-            <p>Bienvinidos al sistema de liquidacíon de sueldos,
-                en el que podras gestionar altas, bajas y modificacion de tus colaboradores, 
-                multiconvenio......
-            </p>
-        </section>
-
-
-        <section class="container" class="d-flex justify-content-end">
-        <div>
-            <img src="../../../assets/imagenes/portada.jpg" style="height: 20rem">
+    <section style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+        <div style="text-align: center;">
+            <label for="btn1" style="display: block; margin-bottom: 10px;">Legajos</label>
+            <a href="/colaborador" style="text-decoration: none;">
+                <button id="btn1" mat-stroked-button class="mat-primary" style="width: 200px; height: 150px;">
+                    <mat-icon style="font-size: 16px;"><i class="fa fa-address-card" aria-hidden="true"></i></mat-icon>
+                </button>
+            </a>
         </div>
-        </section>
 
-    </div>
+        <div style="text-align: center;">
+            <label for="btn1" style="display: block; margin-bottom: 10px;">Convenios</label>
+            <a href="/convenio" style="text-decoration: none;">
+                <button id="btn1" mat-stroked-button class="mat-primary" style="width: 200px; height: 150px;">
+                    <mat-icon style="font-size: 16px;"><i class="fa fa-handshake" aria-hidden="true"></i></mat-icon>
+                </button>
+            </a>
+        </div>
+    
+        <div style="text-align: center;">
+            <label for="btn2" style="display: block; margin-bottom: 10px;">Periodo liquidación</label>
+            <button id="btn2" mat-stroked-button class="mat-primary" style="width: 200px; height: 150px;">
+                <mat-icon style="font-size: 16px;"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></mat-icon>
+            </button>
+        </div>
+    
+        <div style="text-align: center;">
+            <label for="btn3" style="display: block; margin-bottom: 10px;">Liquidación</label>
+            <a href="/liquidacion" style="text-decoration: none;">
+                <button id="btn3" mat-stroked-button class="mat-primary" style="width: 200px; height: 150px;">
+                    <mat-icon style="font-size: 16px;"><i class="fa fa-calculator" aria-hidden="true"></i></mat-icon>
+                </button>
+            </a>
+        </div>
+    </section>
+
 </div>
