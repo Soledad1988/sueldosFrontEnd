@@ -1,5 +1,4 @@
 
-
 export class Categoria{
     idCategoria?:number;
     nombre?:String;

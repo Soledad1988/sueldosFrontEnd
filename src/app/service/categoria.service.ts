@@ -33,5 +33,8 @@ export class CategoriaService {
     return this.httpClient.delete(this.URL+'/'+idCategoria);
   }
   
+  getCategoriasPorConvenio(idConvenio: number): Observable<any> {
+    return this.httpClient.get(`${this.URL}/porConvenio/${idConvenio}`);
+  }
 
 }

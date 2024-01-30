@@ -44,7 +44,7 @@
 
               <mat-form-field appearance="fill" class="mt20 w100">
                 <mat-label>Convenio</mat-label>
-                <mat-select name="categoria" [(ngModel)] = "nuevoColaborador.convenio.idConvenio">
+                <mat-select name="convenio" [(ngModel)]="nuevoColaborador.convenio.idConvenio" (ngModelChange)="onConvenioChange()">
                   <mat-option *ngFor = "let c of convenios" [value] = "c.idConvenio">
                     {{ c.nombre }}
                   </mat-option>
@@ -64,24 +64,17 @@
         
           </div>
 
-      </div>
-
-     
+      </div>     
   
     </div>
 
-    <div class="form-footer">
-  
-      <div class="col" class="d-inline p-3">
-      <button type="submit" class="button" class= "btn btn-info" [routerLink]="['/colaborador']" routerLinkActive="router-link-active" (click)="agregar()">
-        Confirmar</button>
-      </div>
-
-      <div class="col" class="d-inline p-3">
-        <button type="reset" class="button" class="btn btn-secondary" [routerLink]="['/menu']" routerLinkActive="router-link-active">
-        Cancelar</button>
-      </div>
-      
+    <div class="form-footer d-flex justify-content-center">
+        <button type="submit" class="btn btn-info m-2" [routerLink]="['/colaborador']" routerLinkActive="router-link-active" (click)="agregar()">
+            Confirmar
+        </button>
+        <button type="reset" class="btn btn-secondary m-2" [routerLink]="['/menu']" routerLinkActive="router-link-active">
+            Cancelar
+        </button>
     </div>
   
   </div>

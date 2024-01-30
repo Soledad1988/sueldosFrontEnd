@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { Convenio } from 'src/app/models/Convenio';
+import { Categoria } from 'src/app/models/categorias';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { ColaboradorService } from 'src/app/service/colaborador.service';
 import { ConvenioService } from 'src/app/service/convenio.service';
@@ -13,10 +14,9 @@ import Swal from 'sweetalert2';
 })
 export class NuevoColaboradorComponent implements OnInit{
 
-  
-  convenios: any[] = [];
+  convenios: Convenio[] = [];  
 
-  categorias: any[] = [];
+  categorias: Categoria[] = [];  
 
   nuevoColaborador = {
     id:'',
@@ -26,7 +26,7 @@ export class NuevoColaboradorComponent implements OnInit{
     nacimiento:'',
     edad:'',
     direccion:'',
-    activo:'false',
+    activo:'true',
     convenio:{
       idConvenio:''
     },
@@ -96,6 +96,21 @@ export class NuevoColaboradorComponent implements OnInit{
         Swal.fire('Error','Error al guardar el registro','error');
       }
     )
+  }
+
+  onConvenioChange(): void {
+    const idConvenio = +this.nuevoColaborador.convenio.idConvenio;
+    if (!isNaN(idConvenio)) {
+      this.categoriaService.getCategoriasPorConvenio(idConvenio)
+        .subscribe(
+          (categorias) => {
+            this.categorias = categorias;
+          },
+          (error) => {
+            console.error('Error al cargar categorías', error);
+          }
+        );
+    }
   }
 
 }

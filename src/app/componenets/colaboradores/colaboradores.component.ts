@@ -38,4 +38,6 @@ export class ColaboradoresComponent implements OnInit{
       err=>console.log(err)
     );
   }
+
+  
 }
