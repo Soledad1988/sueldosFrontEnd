@@ -52,4 +52,19 @@ export class EditarColaboradorComponent implements OnInit{
       this.router.navigate(['/colaborador'])
     });
   } 
+
+  _fechaNacimiento!: string;
+
+  get fechaNacimiento(): string {
+    if (this._fechaNacimiento === undefined) {
+      // Manejar el caso undefined, por ejemplo, devolver un valor predeterminado o lanzar un error
+      return ''; // o manejar de otra manera
+    }
+    return this._fechaNacimiento;
+  }
+
+  set nacimiento(value: string) {
+    // Realiza cualquier transformación necesaria antes de asignarla
+    this._fechaNacimiento = value;
+  }
 }

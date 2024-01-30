@@ -29,6 +29,7 @@ import { NuevaCategoriaComponent } from './componenets/formularios/nueva-categor
 import { LiquidacionComponent } from './componenets/liquidacion/liquidacion.component';
 import { NuevaLiquidacionComponent } from './componenets/formularios/nueva-liquidacion/nueva-liquidacion.component';
 import { CalcularLiquidacionComponent } from './componenets/calcular-liquidacion/calcular-liquidacion.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { CalcularLiquidacionComponent } from './componenets/calcular-liquidacion
     MatSlideToggleModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

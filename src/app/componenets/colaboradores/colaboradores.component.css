@@ -1,0 +1,48 @@
+.boton-agregar {
+    margin: 10px; /* Ajusta el margen según sea necesario */
+}
+
+
+.activo-indicador {
+    height: 15px;
+    width: 15px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+}
+  
+.inactivo-indicador {
+    height: 15px;
+    width: 15px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.table tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+.table tr:hover {
+  background-color: #ddd;
+}
+
+.table thead th {
+  background-color: #004085;
+  color: white;
+  text-align: center;
+}
+
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+button.mat-mini-fab {
+  margin-right: 5px;
+}
+
+mat-icon {
+  vertical-align: middle;
+}
+

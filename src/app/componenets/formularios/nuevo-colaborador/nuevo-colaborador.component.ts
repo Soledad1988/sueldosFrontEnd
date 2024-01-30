@@ -6,6 +6,7 @@ import { CategoriaService } from 'src/app/service/categoria.service';
 import { ColaboradorService } from 'src/app/service/colaborador.service';
 import { ConvenioService } from 'src/app/service/convenio.service';
 import Swal from 'sweetalert2';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-nuevo-colaborador',
@@ -26,6 +27,7 @@ export class NuevoColaboradorComponent implements OnInit{
     nacimiento:'',
     edad:'',
     direccion:'',
+    fecha_ingreso:'',
     activo:'true',
     convenio:{
       idConvenio:''
@@ -82,6 +84,7 @@ export class NuevoColaboradorComponent implements OnInit{
           nacimiento:'',
           edad:'',
           direccion:'',
+          fecha_ingreso:'',
           activo:'false',
           convenio:{
             idConvenio:''

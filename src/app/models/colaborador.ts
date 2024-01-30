@@ -5,9 +5,10 @@ export class Colaborador{
     nombre?:String;
     apellido?:String;
     dni?:String;
-    nacimiento?:String;
+    nacimiento?:Date;
     edad?:number;
     direccion?:String;
+    fecha_ingreso?:Date;
     activo?:Boolean;
     convenio?:Convenio;
 }

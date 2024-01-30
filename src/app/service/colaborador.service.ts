@@ -46,4 +46,8 @@ export class ColaboradorService {
   {
     return this.httpClient.delete(this.URL+'/'+id);
   }
-}
+
+  cambiarEstadoActivoColaborador(id: number, nuevoEstado: boolean): Observable<any> {
+    return this.httpClient.put(`${this.URL}/cambiarEstado/${id}`, nuevoEstado);
+  }
+} 

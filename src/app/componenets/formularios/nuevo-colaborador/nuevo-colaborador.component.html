@@ -17,8 +17,10 @@
                 <input type="text" name="dni" class="form-control" placeholder="DNI" [(ngModel)]="nuevoColaborador.dni">
 
                 <label for="">Fecha Nacimiento</label>
-                <input type="date" name="nacimiento" class="form-control" placeholder="Fehca Nacimiento" [ngModel]="nuevoColaborador.nacimiento">
-                  
+                <input type="date" name="nacimiento" class="form-control"
+                        [ngModel]="nuevoColaborador.nacimiento | date:'yyyy-MM-dd'"
+                        (ngModelChange)="nuevoColaborador.nacimiento = $event"> 
+                          
                 <input type="text" name="edad" class="form-control" placeholder="Edad" [(ngModel)]="nuevoColaborador.edad">
         
                 <input type="text" name="domicilio" class="form-control" placeholder="Ingrese Dirección" [(ngModel)]="nuevoColaborador.direccion">
@@ -38,8 +40,10 @@
               <h2>Datos Laborales</h2>
               
               <label for="">Fecha Ingreso</label>
-              <input type="date" name="ingreso" class="form-control" placeholder="Fehca Ingreso" [ngModel]="nuevoColaborador.nacimiento">
-                
+              <input type="date" name="nacimiento" class="form-control"
+              [ngModel]="nuevoColaborador.nacimiento | date:'yyyy-MM-dd'"
+              (ngModelChange)="nuevoColaborador.fecha_ingreso= $event"> 
+
               <mat-slide-toggle [(ngModel)]="nuevoColaborador.activo">Activo!</mat-slide-toggle>
 
               <mat-form-field appearance="fill" class="mt20 w100">
@@ -64,7 +68,7 @@
         
           </div>
 
-      </div>     
+        </div>     
   
     </div>
 
