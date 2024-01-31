@@ -16,6 +16,8 @@
   
                 <input type="text" name="dni" class="form-control" placeholder="DNI" [(ngModel)]="nuevoColaborador.dni">
 
+                <input type="text" name="cuit" class="form-control" placeholder="CUIT" [(ngModel)]="nuevoColaborador.cuit">
+
                 <label for="">Fecha Nacimiento</label>
                 <input type="date" name="nacimiento" class="form-control"
                         [ngModel]="nuevoColaborador.nacimiento | date:'yyyy-MM-dd'"
@@ -44,8 +46,6 @@
               [ngModel]="nuevoColaborador.nacimiento | date:'yyyy-MM-dd'"
               (ngModelChange)="nuevoColaborador.fecha_ingreso= $event"> 
 
-              <mat-slide-toggle [(ngModel)]="nuevoColaborador.activo">Activo!</mat-slide-toggle>
-
               <mat-form-field appearance="fill" class="mt20 w100">
                 <mat-label>Convenio</mat-label>
                 <mat-select name="convenio" [(ngModel)]="nuevoColaborador.convenio.idConvenio" (ngModelChange)="onConvenioChange()">
@@ -64,6 +64,15 @@
                 </mat-select>
               </mat-form-field>
         
+              <mat-form-field appearance="fill" class="mt20 w100">
+                <mat-label>Obra Social</mat-label>
+                <mat-select name="categoria" [(ngModel)] = "nuevoColaborador.categoria.idCategoria">
+                  <mat-option *ngFor = "let cate of categorias" [value] = "cate.idCategoria">
+                    {{ cate.nombre }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+
             </form>
         
           </div>
