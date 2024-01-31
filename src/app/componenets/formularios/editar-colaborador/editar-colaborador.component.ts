@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Colaborador } from 'src/app/models/colaborador';
 import { ColaboradorService } from 'src/app/service/colaborador.service';
+import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-editar-colaborador',
@@ -18,7 +19,8 @@ export class EditarColaboradorComponent implements OnInit{
   constructor(
     private colaboradorService:ColaboradorService,
     private antivatedRouter: ActivatedRoute,
-    private router:Router
+    private router:Router,
+    private el: ElementRef
     ) { }
 
     ngOnInit(): void {
@@ -66,5 +68,18 @@ export class EditarColaboradorComponent implements OnInit{
   set nacimiento(value: string) {
     // Realiza cualquier transformación necesaria antes de asignarla
     this._fechaNacimiento = value;
+  }
+
+  //formato cuit
+  @HostListener('input', ['$event']) onInput(event: any) {
+    const inputVal = event.target.value.replace(/\D/g, ''); // Eliminar caracteres no numéricos
+    if (inputVal.length <= 11) {
+      event.target.value = this.formatCuit(inputVal);
+    }
+  }
+
+  private formatCuit(value: string): string {
+    const formattedCuit = value.replace(/(\d{2})(\d{8})(\d{1})/, '$1-$2-$3');
+    return formattedCuit;
   }
 }

@@ -15,15 +15,15 @@
   
                 <input type="text" name="dni" class="form-control" placeholder="DNI" [(ngModel)]="actual.dni">
 
+                <input type="text" name="cuit" class="form-control" placeholder="CUIT" [(ngModel)]="actual.cuit" appCuitFormat>
+                
                 <label for="">Fecha Nacimiento</label>
                 <input type="date" name="nacimiento" class="form-control" placeholder="Fehca Nacimiento" [ngModel]="actual.nacimiento">
                   
                 <input type="text" name="edad" class="form-control" placeholder="Edad" [(ngModel)]="actual.edad">
         
                 <input type="text" name="direccion" class="form-control" placeholder="Ingrese Dirección" [(ngModel)]="actual.direccion">
-  
-                <input type="text" name="convenio" class="form-control" placeholder="Convenio" [(ngModel)]="actual.convenio">
-  
+    
               </form>
           
             </div>
@@ -39,8 +39,6 @@
               
               <label for="">Fecha Ingreso</label>
               <input type="date" name="ingreso" class="form-control" placeholder="Fehca Ingreso" >
-                
-              <mat-slide-toggle >Activo!</mat-slide-toggle>
 
               <mat-form-field appearance="fill" class="mt20 w100">
                 <mat-label>Convenio</mat-label>
@@ -60,6 +58,15 @@
                 </mat-select>
               </mat-form-field>
         
+              <mat-form-field appearance="fill" class="mt20 w100">
+                <mat-label>Obra Social</mat-label>
+                <mat-select name="categoria">
+                  <mat-option >
+                   
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+
             </form>
         
           </div>
