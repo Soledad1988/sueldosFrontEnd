@@ -31,6 +31,8 @@ import { NuevaLiquidacionComponent } from './componenets/formularios/nueva-liqui
 import { CalcularLiquidacionComponent } from './componenets/calcular-liquidacion/calcular-liquidacion.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
+//import { CuitFormatDirective } from './path-to-your-directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +47,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     NuevaCategoriaComponent,
     LiquidacionComponent,
     NuevaLiquidacionComponent,
-    CalcularLiquidacionComponent
+    CalcularLiquidacionComponent,
+    
   ],
   imports: [
     BrowserModule,

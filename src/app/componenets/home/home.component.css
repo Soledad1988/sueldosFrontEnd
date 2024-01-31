@@ -1,0 +1,19 @@
+ 
+ 
+ /* Estilo para cambiar el color al pasar el mouse */
+ button:hover {
+    background-color: lightblue;
+}
+
+
+/* Estilo para agrandar los iconos al pasar el mouse sobre el botón */
+button:hover .fa {
+    font-size: 24px; /* Tamaño más grande para el ícono */
+    transition: font-size 0.3s; /* Suaviza la transición del tamaño del ícono */
+}
+
+/* Estilo inicial para los iconos */
+.fa {
+    font-size: 16px;
+    transition: font-size 0.3s; /* Suaviza la transición del tamaño del ícono */
+}
