@@ -5,6 +5,7 @@ export class Colaborador{
     nombre?:String;
     apellido?:String;
     dni?:String;
+    cuit?:String;
     nacimiento?:Date;
     edad?:number;
     direccion?:String;
