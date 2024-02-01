@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Convenio } from 'src/app/models/Convenio';
 import { ConvenioService } from 'src/app/service/convenio.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-convenios',
@@ -7,10 +10,12 @@ import { ConvenioService } from 'src/app/service/convenio.service';
   styleUrls: ['./convenios.component.css']
 })
 export class ConveniosComponent implements OnInit{
+  title='Convenio Registardo';
 
+  nuevo: Convenio = new Convenio();
   lista:any=[];
   
-  constructor(private convenioService: ConvenioService){}
+  constructor(private convenioService: ConvenioService, private router:Router){}
 
   ngOnInit(): void {
     this.listar();
@@ -32,6 +37,17 @@ export class ConveniosComponent implements OnInit{
     this.convenioService.eliminar(idConvenio).subscribe(
       res=>{this.ngOnInit()
         ;},
+      err=>console.log(err)
+    );
+  }
+
+  agregar(){
+    this.convenioService.guardar(this.nuevo).subscribe(
+      res=>{
+        console.log(res);
+        Swal.fire(this.title,`Convenio creado con exito`, 'success') //${res.idConvenio}
+        this.router.navigate(['/convenio']);
+      },
       err=>console.log(err)
     );
   }
