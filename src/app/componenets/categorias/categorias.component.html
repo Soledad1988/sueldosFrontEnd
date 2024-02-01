@@ -1,9 +1,44 @@
-<div class="container">
+<div class="container-fluid">
+  <div class="row">
 
-    <div>
-      <button mat-mini-fab color="stroked" [routerLink]="['/nuevoCategoria']"><mat-icon>add_circle</mat-icon></button>
+    <!-- Formulario -->
+    <div class="col-md-6">
+        <div class="bg-white p-4 rounded-5 text-secondary shadow">
+          <form class="d-grid gap-2">
+            <h2>Ingrese Datos de la categoria</h2>
+            
+            <input type="text" name="nombre" class="form-control" placeholder="Ingrese Nombre de la Categoria" [(ngModel)]="nuevaCategoria.nombre">
+
+            <input type="text" name="descripcion" class="form-control" placeholder="Ingrese Descripcion de la categoria" [(ngModel)]="nuevaCategoria.descripcion">
+
+            <input type="text" name="monto" class="form-control" placeholder="Ingrese Monto de la Categoria" [(ngModel)]="nuevaCategoria.monto">
+
+            <h4>Seleccione el convenio al que pertence</h4>
+
+            <mat-form-field appearance="fill" class="mt20 w100">
+              <mat-label>Convenios</mat-label>
+              <mat-select name="categoria" [(ngModel)] = "nuevaCategoria.convenio.idConvenio">
+                <mat-option *ngFor = "let c of convenios" [value] = "c.idConvenio">
+                  {{ c.nombre }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          
+
+              <div class="form-footer d-flex justify-content-between">
+                <button type="submit" class="button" class= "btn btn-info" [routerLink]="['/categoria']" routerLinkActive="router-link-active" (click)="agregarCategoria()">Confirmar</button>
+                <button type="reset" class="button" class="btn btn-secondary" [routerLink]="['/menu']" routerLinkActive="router-link-active">Cancelar</button>
+              </div>
+            
+      
+          </form>
+        </div>
     </div>
-      <table class="table">
+    <!-- Tabla -->
+    <div class="col-md-6">
+      <div class="bg-white p-4 rounded-5 text-secondary shadow">
+        <h2>Categorias Generadas</h2>
+        <table class="table table-striped">
           <thead>
             <tr>
               <th scope="col">Id</th>
@@ -29,8 +64,11 @@
             </tr>
             
           </tbody>
-      </table>
-  
-  </div>
+        </table>
+      </div>
+    </div>
+ </div>
+</div>
+
   
   
