@@ -22,14 +22,13 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { NuevoColaboradorComponent } from './componenets/formularios/nuevo-colaborador/nuevo-colaborador.component';
 import { EditarColaboradorComponent } from './componenets/formularios/editar-colaborador/editar-colaborador.component';
 import { ConveniosComponent } from './componenets/convenios/convenios.component';
-import { NuevoConvenioComponent } from './componenets/formularios/nuevo-convenio/nuevo-convenio.component';
 import { EditarConvenioComponent } from './componenets/formularios/editar-convenio/editar-convenio.component';
 import { CategoriasComponent } from './componenets/categorias/categorias.component';
-import { NuevaCategoriaComponent } from './componenets/formularios/nueva-categoria/nueva-categoria.component';
 import { LiquidacionComponent } from './componenets/liquidacion/liquidacion.component';
 import { NuevaLiquidacionComponent } from './componenets/formularios/nueva-liquidacion/nueva-liquidacion.component';
 import { CalcularLiquidacionComponent } from './componenets/calcular-liquidacion/calcular-liquidacion.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ObrasocialComponent } from './componenets/obrasocial/obrasocial.component';
 
 //import { CuitFormatDirective } from './path-to-your-directive';
 
@@ -41,13 +40,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     NuevoColaboradorComponent,
     EditarColaboradorComponent,
     ConveniosComponent,
-    NuevoConvenioComponent,
     EditarConvenioComponent,
     CategoriasComponent,
-    NuevaCategoriaComponent,
     LiquidacionComponent,
     NuevaLiquidacionComponent,
     CalcularLiquidacionComponent,
+    ObrasocialComponent,
     
   ],
   imports: [
