@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="d-flex justify-content-center">
+
+    <!-- Formulario -->
+    <div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 30rem">
+      <form class="d-grid gap-2">
+        <h2>Ingrese Datos de la Obra Social</h2>
+        
+        <input type="text" name="numero" class="form-control" placeholder="Ingrese Codigo Obra Social" [(ngModel)]="nuevo.codigo">
+        <input type="text" name="nombre" class="form-control" placeholder="Ingrese nombr Obra Social" [(ngModel)]="nuevo.nombre">
+
+        <div class="form-footer d-flex justify-content-between">
+          <button type="submit" class="btn btn-info" [routerLink]="['/obrasocial']" routerLinkActive="router-link-active" (click)="agregar()">Confirmar Cambios</button>
+          <button type="reset" class="btn btn-secondary" [routerLink]="['/menu']" routerLinkActive="router-link-active">Cancelar</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Tabla -->
+    <div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 30rem">
+      <h2>Obra Social Generada</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">N°</th>
+            <th scope="col">Nombre Convenio</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let obrasocial of lista">
+            <td>{{obrasocial.idObrasocial}}</td>
+            <td>{{obrasocial.nombre}}</td>
+            <td>{{obrasocial.codigo}}</td>
+            <td>
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button mat-mini-fab color="stroked"><mat-icon>create</mat-icon></button>
+                <button mat-mini-fab color="stroked"><mat-icon>delete</mat-icon></button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+
