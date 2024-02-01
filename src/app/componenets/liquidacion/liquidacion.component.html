@@ -1,39 +1,37 @@
+<div class="container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh;">
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-4 bg-white p-5 rounded-5 text-secondary shadow">
-            <div class="mb-3">
-                <button type="submit" class="btn btn-info btn-block">
-                  Ingresar Periodo de Liquidación
-                </button>
-            </div>
-
-            <div class="mb-3">
-                <button type="submit" class="btn btn-info btn-block" [routerLink]="['/nuevaLiquidacion']">
-                  Liquidación
-                </button>
-            </div>
-
-            <div class="mb-3">
-                <button type="submit" class="btn btn-info btn-block">
-                  Emisión de Recibos
-                </button>
-            </div>
-
-            <div class="mb-3">
-                <button type="submit" class="btn btn-info btn-block">
-                  Consulta de Liquidaciones
-                </button>
-            </div>
-        </div>
+  <section style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+    
+    <div style="text-align: center;">
+      <label for="btn2" style="display: block; margin-bottom: 10px;">Periodo liquidación</label>
+      <button id="btn2" mat-stroked-button class="mat-primary" style="width: 200px; height: 150px;">
+          <mat-icon style="font-size: 16px;"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></mat-icon>
+      </button>
     </div>
+
+    <div style="text-align: center;">
+      <label for="btn2" style="display: block; margin-bottom: 10px;">Nueva Liquidación</label>
+      <button id="btn2" mat-stroked-button class="mat-primary" style="width: 200px; height: 150px;" [routerLink]="['/nuevaLiquidacion']">
+          <mat-icon style="font-size: 16px;"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></mat-icon>
+      </button>
+    </div>
+
+    <div style="text-align: center;">
+      <label for="btn2" style="display: block; margin-bottom: 10px;">Emisiòn de Recibos</label>
+      <button id="btn2" mat-stroked-button class="mat-primary" style="width: 200px; height: 150px;">
+          <mat-icon style="font-size: 16px;"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></mat-icon>
+      </button>
+    </div>
+
+    <div style="text-align: center;">
+      <label for="btn2" style="display: block; margin-bottom: 10px;">Consulta de Liquidaciones</label>
+      <button id="btn2" mat-stroked-button class="mat-primary" style="width: 200px; height: 150px;">
+          <mat-icon style="font-size: 16px;"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></mat-icon>
+      </button>
+    </div>
+
+  </section>
+
+
 </div>
 
-<!--
-    <label for="">Ingrese el periodo de liquidacion</label>
-     <input type="text" name="nombre" class="form-control" placeholder="Ingrese periodo">
-
-    <label for="">Ingrese Fecha de pago</label>
-    <input type="text" name="nombre" class="form-control" placeholder="Fecha de pago">
-
--->
