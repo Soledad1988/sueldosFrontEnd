@@ -1,7 +1,6 @@
 <div class="container receipt-container">
-
-     <!-- Navegación entre recibos -->
-     <div class="navigation-buttons">
+    <!-- Navegación entre recibos -->
+    <div class="navigation-buttons">
         <button class="btn btn-primary" onclick="navigateToPreviousReceipt()">
             <i class="bi bi-arrow-left"></i> Anterior
         </button>
@@ -19,10 +18,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td colspan="3">MENDEZ OSCAR</td>
-                <td>24-22332222-3</td>
-                <td colspan="2">1</td>
+            <tr *ngFor="let liquidacion of liquidaciones">
+                <td colspan="3">{{ liquidacion.colaborador?.nombre }}</td>
+                <td>{{ liquidacion.colaborador?.cuil }}</td>
+                <td colspan="2">{{ liquidacion.colaborador?.legajo }}</td>
             </tr>
 
             <tr class="table-active">
@@ -30,10 +29,10 @@
                 <th scope="col" colspan="2">CATEGORÍA</th>
                 <th scope="col" colspan="3">CONTRATACIÓN</th>
             </tr>
-            <tr>
-                <td>12-01-2024</td>
-                <td colspan="2">Administrativo A</td>
-                <td colspan="3">Periodo de prueba</td>
+            <tr *ngFor="let liquidacion of liquidaciones">
+                <td>{{ liquidacion.fecha }}</td>
+                <td colspan="2">{{ liquidacion.categoria }}</td>
+                <td colspan="3">{{ liquidacion.contratacion }}</td>
             </tr>
 
             <tr class="table-active">
@@ -41,68 +40,23 @@
                 <th scope="col">PERIODO DE PAGO</th>
                 <th scope="col" colspan="2">RECIBO N°</th>
             </tr>
-            <tr>
-                <td colspan="3">$ 50.000</td>
-                <td>Diciembre 2023</td>
-                <td colspan="2">1</td>
+            <tr *ngFor="let liquidacion of liquidaciones">
+                <td colspan="3">{{ liquidacion.remuneracionAsignada }}</td>
+                <td>{{ liquidacion.periodoPago }}</td>
+                <td colspan="2">{{ liquidacion.recibo }}</td>
             </tr>
 
-            <tr class="table-active">
-                <th scope="col" colspan="4">DETALLE DE LIQUIDACIÓN</th>
-            </tr>
-            <tr class="table-active">
-                <th scope="col">CONCEPTO</th>
-                <th scope="col">VALOR UNITARIO</th>
-                <th scope="col">CANTIDAD</th>
-                <th scope="col">REMUNERATIVO</th>
-                <th scope="col">NO REMUNERATIVO</th>
-                <th scope="col">DESCUENTOS</th>
-            </tr>
-            <tr>
-                <td>Sueldo Básico</td>
-                <td>$ [monto]</td>
-                <td>1</td>
-                <td>$ [monto]</td>
-                <td>-</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>Antigüedad</td>
-                <td>$ [monto]</td>
-                <td>[cantidad años]</td>
-                <td>$ [monto total]</td>
-                <td>-</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>Presentismo</td>
-                <td>$ [monto]</td>
-                <td>1</td>
-                <td>$ [monto]</td>
-                <td>-</td>
-                <td>-</td>
-            </tr>
-            <!-- Repetir para otros conceptos -->
-            <tr class="table-active">
-                <th scope="row" colspan="3">Total a Percibir</th>
-                <td>$ [total remunerativo]</td>
-                <td>$ [total no remunerativo]</td>
-                <td>$ [total descuentos]</td>
-            </tr>
-            <tr class="table-active">
-                <th scope="row" colspan="5">Neto a Pagar</th>
-                <td>$ [neto a pagar]</td>
-            </tr>
+            <!-- Repetir para otros detalles de liquidación -->
         </tbody>
     </table>
 
-     <!-- Botón para aceptar la liquidación -->
-     <div class="accept-button">
+    <!-- Botón para aceptar la liquidación -->
+    <div class="accept-button">
         <button class="btn btn-success" onclick="acceptLiquidation()">
             Aceptar Liquidación
         </button>
     </div>
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
 </div>

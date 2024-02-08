@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { Liquidacion } from 'src/app/models/liquidacion';
+import { LiquidacionService } from 'src/app/service/liquidacion.service';
 
 
 @Component({
@@ -7,8 +8,20 @@ import { Component } from '@angular/core';
   templateUrl: './calcular-liquidacion.component.html',
   styleUrls: ['./calcular-liquidacion.component.css']
 })
-export class CalcularLiquidacionComponent {
+export class CalcularLiquidacionComponent implements OnInit{
 
+  liquidaciones: Liquidacion[] | undefined;
+
+  constructor(private liquidacionService: LiquidacionService) { }
+
+  ngOnInit(): void {
+    this.obtenerLiquidaciones();
+  }
+
+  obtenerLiquidaciones(): void {
+    this.liquidacionService.obtenerLiquidaciones()
+      .subscribe(liquidaciones => this.liquidaciones = liquidaciones);
+  }
   
 
 
