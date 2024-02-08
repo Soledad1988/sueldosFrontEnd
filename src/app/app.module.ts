@@ -29,6 +29,7 @@ import { NuevaLiquidacionComponent } from './componenets/formularios/nueva-liqui
 import { CalcularLiquidacionComponent } from './componenets/calcular-liquidacion/calcular-liquidacion.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ObrasocialComponent } from './componenets/obrasocial/obrasocial.component';
+import { RecibosComponent } from './componenets/recibos/recibos.component';
 
 //import { CuitFormatDirective } from './path-to-your-directive';
 
@@ -46,6 +47,7 @@ import { ObrasocialComponent } from './componenets/obrasocial/obrasocial.compone
     NuevaLiquidacionComponent,
     CalcularLiquidacionComponent,
     ObrasocialComponent,
+    RecibosComponent,
     
   ],
   imports: [

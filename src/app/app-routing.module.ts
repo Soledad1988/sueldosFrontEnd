@@ -11,6 +11,7 @@ import { LiquidacionComponent } from './componenets/liquidacion/liquidacion.comp
 import { NuevaLiquidacionComponent } from './componenets/formularios/nueva-liquidacion/nueva-liquidacion.component';
 import { CalcularLiquidacionComponent } from './componenets/calcular-liquidacion/calcular-liquidacion.component';
 import { ObrasocialComponent } from './componenets/obrasocial/obrasocial.component';
+import { RecibosComponent } from './componenets/recibos/recibos.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'menu', pathMatch:'full'},
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path:'liquidacion', component:LiquidacionComponent},
   {path:'nuevaLiquidacion', component:NuevaLiquidacionComponent}, 
   {path:'calcularLiquidacion', component:CalcularLiquidacionComponent},
+  {path:'recibos', component:RecibosComponent},
 ];
 
 @NgModule({
