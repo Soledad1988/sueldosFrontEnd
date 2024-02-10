@@ -1,5 +1,5 @@
-.boton-agregar {
-    margin: 10px; /* Ajusta el margen según sea necesario */
+/*.boton-agregar {
+    margin: 10px; /* Ajusta el margen según sea necesario 
 }
 
 
@@ -46,3 +46,78 @@ mat-icon {
   vertical-align: middle;
 }
 
+*/
+
+.legajo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.legajo {
+  width: 80%;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.titulo-seccion {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.campo {
+  margin-bottom: 10px;
+}
+
+.etiqueta {
+  font-weight: bold;
+}
+
+.valor {
+  margin-left: 10px;
+}
+
+/* Puedes agregar estilos adicionales según necesites */
+
+.activo-indicador {
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.inactivo-indicador {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.boton-navegacion {
+  background-color: transparent; /* Fondo transparente para el botón */
+  border: 1px solid #ccc; /* Borde del botón */
+  border-radius: 5px; /* Borde redondeado */
+  padding: 8px 16px; /* Espaciado interno (vertical y horizontal) */
+  margin-right: 10px; /* Espacio entre botones */
+  color: #333; /* Color del texto */
+  font-weight: bold; /* Texto en negrita */
+  transition: all 0.3s ease; /* Transición suave al cambiar propiedades */
+}
+
+.boton-navegacion:hover {
+  background-color: #f0f0f0; /* Cambia el color de fondo al pasar el ratón por encima */
+}
