@@ -57,21 +57,21 @@
 
               <mat-form-field appearance="fill" class="mt20 w100">
                 <mat-label>Categoria</mat-label>
-                <mat-select name="categoria" [(ngModel)] = "nuevoColaborador.categoria.idCategoria">
-                  <mat-option *ngFor = "let cate of categorias" [value] = "cate.idCategoria">
-                    {{ cate.nombre }}
-                  </mat-option>
+                <mat-select name="categoria" [(ngModel)]="nuevoColaborador.categoria.idCategoria">
+                    <mat-option *ngFor="let cate of categorias" [value]="cate.idCategoria">
+                        {{ cate.nombre }}
+                    </mat-option>
                 </mat-select>
-              </mat-form-field>
-        
-              <mat-form-field appearance="fill" class="mt20 w100">
+            </mat-form-field>
+            
+            <mat-form-field appearance="fill" class="mt20 w100">
                 <mat-label>Obra Social</mat-label>
-                <mat-select name="categoria" [(ngModel)] = "nuevoColaborador.categoria.idCategoria">
-                  <mat-option *ngFor = "let cate of categorias" [value] = "cate.idCategoria">
-                    {{ cate.nombre }}
-                  </mat-option>
+                <mat-select name="obraSocial" [(ngModel)]="nuevoColaborador.obraSocial.idObraSocial">
+                    <mat-option *ngFor="let obra of obraSocial" [value]="obra.idObraSocial">
+                        {{ obra.nombre }}
+                    </mat-option>
                 </mat-select>
-              </mat-form-field>
+            </mat-form-field>
 
             </form>
         

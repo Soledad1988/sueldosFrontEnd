@@ -1,10 +1,9 @@
+import { Convenio } from "./Convenio";
 
-export class Categoria{
-    idCategoria?:number;
-    nombre?:String;
-    monto?:number;
-    descripcion?:String;
-    Convenio?:{
-        idConvenio?: number;
-      };
+export class Categoria {
+  idCategoria?: number;
+  nombre?: string;
+  monto?: number;
+  descripcion?: string;
+  convenio?: Convenio; // Relaciona Categoria con Convenio
 }

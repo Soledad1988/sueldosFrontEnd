@@ -7,6 +7,8 @@ import { ColaboradorService } from 'src/app/service/colaborador.service';
 import { ConvenioService } from 'src/app/service/convenio.service';
 import Swal from 'sweetalert2';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ObrasocialService } from 'src/app/service/obrasocial.service';
+import { ObraSocial } from 'src/app/models/ObraSocial';
 
 @Component({
   selector: 'app-nuevo-colaborador',
@@ -15,34 +17,32 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 })
 export class NuevoColaboradorComponent implements OnInit{
 
-  convenios: Convenio[] = [];  
-
-  categorias: Categoria[] = [];  
+  convenios: Convenio[] = [];
+  categorias: Categoria[] = [];
+  obraSocial: ObraSocial[] = [];
 
   nuevoColaborador = {
-    id:'',
-    nombre:'',
-    apellido:'',
-    dni:'',
-    cuit:'',
-    nacimiento:'',
-    edad:'',
-    direccion:'',
-    fecha_ingreso:'',
-    activo:'true',
-    convenio:{
-      idConvenio:''
-    },
-    categoria:{
-      idCategoria:''
-    }
+    nombre: '',
+    apellido: '',
+    dni: '',
+    cuit: '',
+    nacimiento: '',
+    edad: '',
+    direccion: '',
+    fecha_ingreso: '',
+    activo: true,
+    categoria: { idCategoria: 0 },
+    obraSocial: { idObraSocial: 0 },
+    convenio: { idConvenio: 0 } 
   }
 
 
   constructor(private colaboradorService: ColaboradorService,
     private convenioService:ConvenioService,
     private categoriaService:CategoriaService,
-    private router:Router){}
+    private obraSocialService: ObrasocialService,
+    private router:Router,
+    ){ }
 
   ngOnInit(): void {
 
@@ -67,6 +67,19 @@ export class NuevoColaboradorComponent implements OnInit{
         Swal.fire('Error !!','Error al cargar los datos','error');
       }
     )
+
+    //++++++++++++++++++++++++++++
+
+    this.obraSocialService.obraSocial().subscribe(
+      (dato:any) => {
+        this.obraSocial = dato;
+        console.log(this.obraSocial);
+      },(error) => {
+        console.log(error);
+        Swal.fire('Error !!','Error al cargar los datos','error');
+      }
+    )
+
   }
 
   agregar(){
@@ -78,22 +91,18 @@ export class NuevoColaboradorComponent implements OnInit{
 
         Swal.fire('Colaborador guardado','El colaborador ha sido guardado con éxito.','success');
         this.nuevoColaborador = {
-          id:'',
-          nombre:'',
-          apellido:'',
-          dni:'',
-          cuit:'',
-          nacimiento:'',
-          edad:'',
-          direccion:'',
-          fecha_ingreso:'',
-          activo:'false',
-          convenio:{
-            idConvenio:''
-          },
-          categoria:{
-            idCategoria:''
-          }
+          nombre: '',
+          apellido: '',
+          dni: '',
+          cuit: '',
+          nacimiento: '',
+          edad: '',
+          direccion: '',
+          fecha_ingreso: '',
+          activo: true,
+          categoria: { idCategoria: 0 },
+          obraSocial: { idObraSocial: 0 },
+          convenio: { idConvenio: 0 } 
         }
         this.router.navigate(['/colaborador']);
       },

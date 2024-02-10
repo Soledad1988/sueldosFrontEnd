@@ -1,5 +1,5 @@
 export class ObraSocial{
-    idObrasocial?:number;
+    idObraSocial?:number;
     nombre?:String;
     codigo?:number;
 }

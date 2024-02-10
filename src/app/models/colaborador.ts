@@ -1,4 +1,5 @@
-import { Convenio } from "./Convenio";
+import { ObraSocial } from "./ObraSocial";
+import { Categoria } from "./categorias";
 
 export class Colaborador{
     id?:number;
@@ -11,5 +12,6 @@ export class Colaborador{
     direccion?:String;
     fecha_ingreso?:Date;
     activo?:Boolean;
-    convenio?:Convenio;
+    categoria?:Categoria;
+    obraSocial?: ObraSocial;
 }
