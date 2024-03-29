@@ -55,6 +55,25 @@ mat-icon {
   height: 100vh;
 }
 
+.datos-container {
+  display: flex; /* Utiliza flexbox para mostrar las columnas */
+  justify-content: center; /* Centra las columnas horizontalmente */
+}
+
+.datos-personales, .datos-laborales {
+  width: 50%; /* Ancho de cada columna */
+}
+
+/* Estilos adicionales para cada sección de datos */
+.datos-personales {
+  margin-right: 10px; /* Espacio entre las columnas */
+}
+
+.datos-laborales {
+  margin-left: 10px; /* Espacio entre las columnas */
+}
+
+
 .legajo {
   width: 80%;
   background-color: #f9f9f9;
@@ -121,3 +140,4 @@ mat-icon {
 .boton-navegacion:hover {
   background-color: #f0f0f0; /* Cambia el color de fondo al pasar el ratón por encima */
 }
+

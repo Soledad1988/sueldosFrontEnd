@@ -3,83 +3,63 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Colaborador } from 'src/app/models/colaborador';
 import { ColaboradorService } from 'src/app/service/colaborador.service';
-import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-editar-colaborador',
   templateUrl: './editar-colaborador.component.html',
   styleUrls: ['./editar-colaborador.component.css']
 })
-export class EditarColaboradorComponent implements OnInit{
-
-  id=null;
-  actual:Colaborador=new Colaborador();
-  suscription: Subscription = new Subscription();
+export class EditarColaboradorComponent implements OnInit {
+  //actual: Colaborador = new Colaborador();
+  actual: Colaborador = {
+    categoria: {
+      convenio: undefined // Inicializa convenio como undefined
+    }
+  };
+  suscripcion: Subscription = new Subscription();
 
   constructor(
-    private colaboradorService:ColaboradorService,
-    private antivatedRouter: ActivatedRoute,
-    private router:Router,
-    private el: ElementRef
-    ) { }
+    private colaboradorService: ColaboradorService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+  ) { }
 
-    ngOnInit(): void {
+  ngOnInit(): void {
+    this.getColaborador();
+
+    this.suscripcion = this.colaboradorService.refresh$.subscribe(() => {
       this.getColaborador();
+    });
+  }
 
-      this.suscription = this.colaboradorService.refresh$.subscribe(()=>{
-        this.getColaborador();
-      })
-    }
+  getColaborador(): void {
+    this.activatedRoute.params.subscribe(params => {
+      const id = params['id'];
+      if (id) {
+        this.colaboradorService.UnColaborador(id).subscribe(
+          res => {
+            this.actual = res;
+            // Convierte la fecha de nacimiento de string a Date
+            this.actual.nacimiento = new Date(this.actual.nacimiento + 'T00:00:00'); // Añade la hora para formar un formato ISO 8601
+          },
+          error => {
+            console.error('Error al obtener el colaborador:', error);
+          }
+        );
+      }
+    });
+  }
 
-    
-    getColaborador():void{
-    this.antivatedRouter.params.subscribe(
-      e=>{
-        let id=e['id'];
-        if(id){
-          this.colaboradorService.UnColaborador(id).subscribe(
-            res=>this.actual=res
-          );
-        }
+  guardar(): void {
+    console.log('Colaborador actual:', this.actual);
+    this.colaboradorService.crearColaborador(this.actual).subscribe(
+      res => {
+        console.log('Colaborador actualizado correctamente:', res);
+        this.router.navigate(['/colaborador']);
+      },
+      error => {
+        console.error('Error al guardar el colaborador:', error);
       }
     );
-  }
-
-  //metodo para implementar la logica del guardado
-  guardar():void{
-    console.log(this.actual);
-    this.colaboradorService.guardar(this.actual).subscribe(
-      res=>{
-
-      this.router.navigate(['/colaborador'])
-    });
-  } 
-
-  _fechaNacimiento!: string;
-
-  get fechaNacimiento(): string {
-    if (this._fechaNacimiento === undefined) {
-      // Manejar el caso undefined, por ejemplo, devolver un valor predeterminado o lanzar un error
-      return ''; // o manejar de otra manera
-    }
-    return this._fechaNacimiento;
-  }
-
-  set nacimiento(value: string) {
-    // Realiza cualquier transformación necesaria antes de asignarla
-    this._fechaNacimiento = value;
-  }
-
-  //formato cuit
-  @HostListener('input', ['$event']) onInput(event: any) {
-    const inputVal = event.target.value.replace(/\D/g, ''); // Eliminar caracteres no numéricos
-    if (inputVal.length <= 11) {
-      event.target.value = this.formatCuit(inputVal);
-    }
-  }
-
-  private formatCuit(value: string): string {
-    const formattedCuit = value.replace(/(\d{2})(\d{8})(\d{1})/, '$1-$2-$3');
-    return formattedCuit;
   }
 }

@@ -74,82 +74,84 @@
 
 
 <div class="legajo-container">
-  
   <div class="legajo">
     <div class="boton-agregar">
       <button mat-fab color="primary" matTooltip="Agregar Nuevo Colaborador" [routerLink]="['/nuevo']">
-          <mat-icon>add_circle</mat-icon>
+        <mat-icon>add_circle</mat-icon>
       </button>
     </div>
     <div class="titulo">Legajo de Colaborador</div>
     <div class="navegacion">
       <!-- Botón Editar -->
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <button mat-mini-fab color="primary" matTooltip="Editar Colaborador" [routerLink]="['/editar', colaboradorActual]">
-        <mat-icon>edit</mat-icon>
-      </button>
-      <!-- Botón Activar/Desactivar -->
-      <button mat-mini-fab matTooltip="Cambiar Estado" [color]="colaboradorActual?.activo ? 'warn' : 'primary'" (click)="colaboradorActual && toggleEstadoColaborador(colaboradorActual)">
-        <mat-icon>{{ colaboradorActual?.activo ? 'delete' : 'check_circle' }}</mat-icon>
-      </button>
-
-         <!-- Luz verde o roja según el estado -->
-    <span [ngClass]="{
-      'activo-indicador': colaboradorActual?.activo,
-      'inactivo-indicador': !colaboradorActual?.activo
-    }"></span>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button mat-mini-fab color="primary" matTooltip="Editar Colaborador" [routerLink]="['/editar', colaboradorActual?.id]">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <!-- Botón Activar/Desactivar -->
+        <button mat-mini-fab matTooltip="Cambiar Estado" [color]="colaboradorActual?.activo ? 'warn' : 'primary'" (click)="colaboradorActual && toggleEstadoColaborador(colaboradorActual)">
+          <mat-icon>{{ colaboradorActual?.activo ? 'delete' : 'check_circle' }}</mat-icon>
+        </button>
+        <!-- Luz verde o roja según el estado -->
+        <span [ngClass]="{
+          'activo-indicador': colaboradorActual?.activo,
+          'inactivo-indicador': !colaboradorActual?.activo
+        }"></span>
+      </div>
     </div>
 
- 
-    <div class="datos-personales">
-      <div class="titulo-seccion"><i class="fas fa-users"></i> Datos Personales</div>
-      <div class="campo">
-        <span class="etiqueta">Nombre:</span>
-        <span class="valor">{{ colaboradorActual?.nombre }}</span>
+    <div class="datos-container">
+      <div class="columna-datos">
+        <div class="titulo-seccion"><i class="fas fa-users"></i> Datos Personales</div>
+        <div class="datos-personales">
+          <div class="campo">
+            <span class="etiqueta">Nombre:</span>
+            <span class="valor">{{ colaboradorActual?.nombre }}</span>
+          </div>
+          <div class="campo">
+            <span class="etiqueta">Apellido:</span>
+            <span class="valor">{{ colaboradorActual?.apellido }}</span>
+          </div>
+          <div class="campo">
+            <span class="etiqueta">DNI:</span>
+            <span class="valor">{{ colaboradorActual?.dni }}</span>
+          </div>
+          <div class="campo">
+            <span class="etiqueta">CUIT:</span>
+            <span class="valor">{{ colaboradorActual?.cuit }}</span>
+          </div>
+          <div class="campo">
+            <span class="etiqueta">Fecha Nacimiento:</span>
+            <span class="valor">{{ colaboradorActual?.nacimiento | date }}</span>
+          </div>
+          <div class="campo">
+            <span class="etiqueta">Dirección:</span>
+            <span class="valor">{{ colaboradorActual?.direccion }}</span>
+          </div>
+        </div>
       </div>
-      <div class="campo">
-        <span class="etiqueta">Apellido:</span>
-        <span class="valor">{{ colaboradorActual?.apellido }}</span>
-      </div>
-      <div class="campo">
-        <span class="etiqueta">DNI:</span>
-        <span class="valor">{{ colaboradorActual?.dni }}</span>
-      </div>
-      <div class="campo">
-        <span class="etiqueta">CUIT:</span>
-        <span class="valor">{{ colaboradorActual?.cuit }}</span>
-      </div>
-      <div class="campo">
-        <span class="etiqueta">Fecha Nacimiento:</span>
-        <span class="valor">{{ colaboradorActual?.nacimiento | date }}</span>
-      </div>
-      <div class="campo">
-        <span class="etiqueta">Dirección:</span>
-        <span class="valor">{{ colaboradorActual?.direccion }}</span>
-      </div>
-      <!-- Agrega más campos para otros datos personales -->
-    </div>
-    <div class="datos-laborales">
-      <div class="titulo-seccion"> <i class="far fa-calendar-alt"></i> Datos Laborales</div>
-      <div class="campo">
-        <span class="etiqueta">Fecha de Ingreso:</span>
-        <span class="valor">{{ colaboradorActual?.fecha_ingreso | date }}</span>
-      </div>
-      <div class="campo">
-        <span class="etiqueta">Convenio:</span>
-        <span class="valor">{{ colaboradorActual?.categoria?.convenio?.nombre }}</span>
-    </div>
-      <div class="campo">
-        <span class="etiqueta">Categoría:</span>
-        <span class="valor">{{ colaboradorActual?.categoria?.nombre }}</span>
-      </div>
-      <div class="campo">
-        <span class="etiqueta">Obra Social:</span>
-        <span class="valor">{{ colaboradorActual?.obraSocial?.nombre }}</span>
-      </div>
-      <!-- Agrega más campos para otros datos laborales -->
-    </div>
 
+      <div class="columna-datos">
+        <div class="titulo-seccion"><i class="far fa-calendar-alt"></i> Datos Laborales</div>
+        <div class="datos-laborales">
+          <div class="campo">
+            <span class="etiqueta">Fecha de Ingreso:</span>
+            <span class="valor">{{ colaboradorActual?.fecha_ingreso | date }}</span>
+          </div>
+          <div class="campo">
+            <span class="etiqueta">Convenio:</span>
+            <span class="valor">{{ colaboradorActual?.categoria?.convenio?.nombre }}</span>
+          </div>
+          <div class="campo">
+            <span class="etiqueta">Categoría:</span>
+            <span class="valor">{{ colaboradorActual?.categoria?.nombre }}</span>
+          </div>
+          <div class="campo">
+            <span class="etiqueta">Obra Social:</span>
+            <span class="valor">{{ colaboradorActual?.obraSocial?.nombre }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="navegacion">
       <button mat-button class="boton-navegacion" (click)="irColaboradorAnterior()">Anterior</button>
@@ -157,6 +159,7 @@
     </div>
   </div>
 </div>
+
 
 
 

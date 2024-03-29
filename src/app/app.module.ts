@@ -26,10 +26,8 @@ import { EditarConvenioComponent } from './componenets/formularios/editar-conven
 import { CategoriasComponent } from './componenets/categorias/categorias.component';
 import { LiquidacionComponent } from './componenets/liquidacion/liquidacion.component';
 import { NuevaLiquidacionComponent } from './componenets/formularios/nueva-liquidacion/nueva-liquidacion.component';
-import { CalcularLiquidacionComponent } from './componenets/calcular-liquidacion/calcular-liquidacion.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ObrasocialComponent } from './componenets/obrasocial/obrasocial.component';
-import { RecibosComponent } from './componenets/recibos/recibos.component';
 
 //import { CuitFormatDirective } from './path-to-your-directive';
 
@@ -45,9 +43,7 @@ import { RecibosComponent } from './componenets/recibos/recibos.component';
     CategoriasComponent,
     LiquidacionComponent,
     NuevaLiquidacionComponent,
-    CalcularLiquidacionComponent,
     ObrasocialComponent,
-    RecibosComponent,
     
   ],
   imports: [
@@ -66,6 +62,7 @@ import { RecibosComponent } from './componenets/recibos/recibos.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatTooltipModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
