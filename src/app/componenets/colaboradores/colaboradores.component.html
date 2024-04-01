@@ -80,6 +80,16 @@
         <mat-icon>add_circle</mat-icon>
       </button>
     </div>
+
+     <!-- Agregar botones de exportación -->
+  <div class="exportar-container">
+    <button mat-icon-button matTooltip="Exportar a Excel" (click)="generarExcel()">
+      <mat-icon>file_download</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="Exportar a PDF" (click)="imprimirPdf()">
+      <mat-icon>picture_as_pdf</mat-icon>
+    </button>
+  </div>
     <div class="titulo">Legajo de Colaborador</div>
     <div class="navegacion">
       <!-- Botón Editar -->
@@ -157,6 +167,8 @@
       <button mat-button class="boton-navegacion" (click)="irColaboradorAnterior()">Anterior</button>
       <button mat-button class="boton-navegacion" (click)="irColaboradorSiguiente()">Siguiente</button>
     </div>
+
+     
   </div>
 </div>
 

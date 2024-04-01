@@ -15,19 +15,21 @@
 
     <!-- Grilla de Liquidación -->
     <div style="text-align: center;">
-      <h2>Grilla de Liquidación</h2>
+      <h2>Grilla de Novedades</h2>
       <table>
         <thead>
           <tr>
-            <th>Nombre</th>
+            <th>Colaborador</th>
+            <th>CUIT</th>
             <th>Vacaciones</th>
-            <th>Licencias</th>
-            <th>Ausentismo</th>
+            <th>Feriado</th>
+            <th>Inasistencia Justificada</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><input type="text"></td>
+          <tr *ngFor="let colaborador of colaboradores">
+            <td>{{ colaborador.nombre }} {{ colaborador.apellido }}</td>
+            <td>{{ colaborador.cuit }}</td>
             <td><input type="number"></td>
             <td><input type="number"></td>
             <td><input type="number"></td>
@@ -35,6 +37,8 @@
         </tbody>
       </table>
     </div>
+    
+    
 
     <!-- Botones de exportar PDF y Excel -->
     <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 20px;">
