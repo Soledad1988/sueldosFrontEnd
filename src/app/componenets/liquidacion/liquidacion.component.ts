@@ -21,7 +21,7 @@ export class LiquidacionComponent implements OnInit{
     this.listarColaboradores();
   }
 
-  listarColaboradores(): void {
+ /* listarColaboradores(): void {
     this.colaboradorService.colaborador().subscribe(
       (data: Colaborador[]) => {
         this.colaboradores = data;
@@ -29,6 +29,23 @@ export class LiquidacionComponent implements OnInit{
         this.colaboradores.forEach(colaborador => {
           if (!colaborador.novedades) {
             colaborador.novedades = {};
+          }
+        });
+      },
+      (error: any) => {
+        console.error('Error al cargar los colaboradores:', error);
+      }
+    );
+  }*/
+
+  listarColaboradores(): void {
+    this.colaboradorService.colaborador().subscribe(
+      (data: Colaborador[]) => {
+        this.colaboradores = data;
+        // Asegúrate de que cada colaborador tenga un array de novedades inicializado
+        this.colaboradores.forEach(colaborador => {
+          if (!colaborador.novedades) {
+            colaborador.novedades = []; // Inicializa novedades como un array vacío
           }
         });
       },
@@ -55,6 +72,7 @@ export class LiquidacionComponent implements OnInit{
       // Puedes mostrar un mensaje de error al usuario si lo deseas
     }
   }
+  
   
 
 }
