@@ -28,6 +28,8 @@ import { LiquidacionComponent } from './componenets/liquidacion/liquidacion.comp
 import { NuevaLiquidacionComponent } from './componenets/formularios/nueva-liquidacion/nueva-liquidacion.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ObrasocialComponent } from './componenets/obrasocial/obrasocial.component';
+import { NuevaNovedadComponent } from './componenets/formularios/nueva-novedad/nueva-novedad.component';
+import { NovedadesComponent } from './componenets/novedades/novedades.component';
 
 //import { CuitFormatDirective } from './path-to-your-directive';
 
@@ -44,6 +46,8 @@ import { ObrasocialComponent } from './componenets/obrasocial/obrasocial.compone
     LiquidacionComponent,
     NuevaLiquidacionComponent,
     ObrasocialComponent,
+    NuevaNovedadComponent,
+    NovedadesComponent,
     
   ],
   imports: [
