@@ -15,5 +15,11 @@ export class Colaborador{
     activo?:Boolean;
     categoria?:Categoria;
     obraSocial?: ObraSocial;
-    novedades?: Novedad;
+    novedades?: Novedad[];
+    nuevaNovedad?: {
+        vacaciones?: number;
+        feriado?: number;
+        inasistenciaJustificada?: number;
+        inasistenciaInjustificada?: number;
+    };
 }
