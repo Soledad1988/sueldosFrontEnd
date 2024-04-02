@@ -1,7 +1,10 @@
-export interface Novedad {
-    idNovedad?: number;
-    vacaciones?: number;
-    feriados?: number;
-    inasistenciaJustificada?: number;
-    inasistenciaInjustificada?: number;
-  }
+import { Colaborador } from "./colaborador";
+
+export class Novedad {
+  idNovedad?: number;
+  vacaciones?: number;
+  feriado?: number;
+  inasistenciaJustificada?: number;
+  inasistenciaInjustificada?: number;
+  colaborador?: Colaborador;
+}
