@@ -1,64 +1,24 @@
 <div class="container" style="position: relative; height: 100vh;">
-
-  <!-- Botón "Periodo liquidación" en el margen superior izquierdo -->
-  <div style="position: absolute; top: 10px; left: 10px;">
-    <div style="display: flex; flex-direction: column; align-items: center;">
-      <label for="btn-periodo">Periodo liquidación</label>
-      <button id="btn-periodo" mat-stroked-button class="mat-primary">
-          <mat-icon style="font-size: 16px;"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></mat-icon>
-      </button>
-    </div>
- </div>
-
-  <!-- Contenedor principal -->
-  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
-
-    <!-- Grilla de Liquidación -->
-    <div style="text-align: center;">
-      <h2>Grilla de Liquidación</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Vacaciones</th>
-            <th>Licencias</th>
-            <th>Ausentismo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><input type="text"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Botones de exportar PDF y Excel -->
+  <div class="centered-content">
     <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 20px;">
-
       <div style="text-align: center;">
         <div style="display: flex; flex-direction: column; align-items: center;">
-          <label for="btn-pdf">Exportar PDF</label>
-          <button id="btn-pdf" mat-stroked-button class="mat-primary" style="width: 150px; height: 100px;"  [routerLink]="['/recibos']">
-              <mat-icon style="font-size: 16px;"><i class="far fa-file-alt" aria-hidden="true"></i></mat-icon>
-            </button>
+          <label for="btn-pdf">Nueva Novedad</label>
+          <button id="btn-pdf" mat-stroked-button class="mat-primary custom-button" [routerLink]="['/nuevaNovedad']">
+            <mat-icon style="font-size: 24px;">add_circle</mat-icon>
+          </button>
         </div>
-     </div>
-
+      </div>
       <div style="text-align: center;">
         <div style="display: flex; flex-direction: column; align-items: center;">
-            <label for="btn-excel">Exportar Excel</label>
-            <button id="btn-excel" mat-stroked-button class="mat-primary" style="width: 150px; height: 100px;">
-                <mat-icon style="font-size: 16px;">file_download</mat-icon>
-            </button>
+          <label for="btn-excel">Consulta Novedades</label>
+          <button id="btn-excel" mat-stroked-button class="mat-primary custom-button" [routerLink]="['/novedades']">
+            <mat-icon style="font-size: 24px;">search</mat-icon>
+          </button>
         </div>
-     </div>
-
+      </div>
     </div>
-
   </div>
-
 </div>
+
+

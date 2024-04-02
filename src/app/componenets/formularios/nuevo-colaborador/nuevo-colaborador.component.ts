@@ -33,7 +33,8 @@ export class NuevoColaboradorComponent implements OnInit{
     activo: true,
     categoria: { idCategoria: 0 },
     obraSocial: { idObraSocial: 0 },
-    convenio: { idConvenio: 0 } 
+    convenio: { idConvenio: 0 },
+    novedad : { idNovedad: 0 } 
   }
 
 
@@ -102,7 +103,8 @@ export class NuevoColaboradorComponent implements OnInit{
           activo: true,
           categoria: { idCategoria: 0 },
           obraSocial: { idObraSocial: 0 },
-          convenio: { idConvenio: 0 } 
+          convenio: { idConvenio: 0 },
+          novedad : { idNovedad: 0 }
         }
         this.router.navigate(['/colaborador']);
       },

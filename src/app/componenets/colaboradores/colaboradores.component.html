@@ -1,77 +1,3 @@
-<!--
-<div class="container">
-
-  <div class="boton-agregar">
-    <button mat-fab color="primary" matTooltip="Agregar Nuevo Colaborador" [routerLink]="['/nuevo']">
-        <mat-icon>add_circle</mat-icon>
-    </button>
-  </div>
-
-  <div class="d-flex justify-content-center align-items-center mt-4">
-
-    <table class="table w-100">
-        <thead>
-          <tr>
-            <th scope="col">Legajo</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellido</th>
-            <th scope="col">DNI</th>
-            <th scope="col">CUIT</th>
-            <th scope="col">Nacimiento</th>
-            <th scope="col">Edad</th>
-            <th scope="col">Direccion</th>
-            <th scope="col">Fecha Ingreso</th>
-            <th scope="col">Activo</th>
-            <th scope="col">Convenio</th>
-            <th scope="col">Categoria</th>
-            <th scope="col">Obra Social</th>
-            <th scope="col">Acciones</th>
-            <th scope="col">Estado</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let colaborador of lista">
-            <td>{{ colaborador.id }}</td>
-            <td>{{ colaborador.nombre }}</td>
-            <td>{{ colaborador.apellido }}</td>
-            <td>{{ colaborador.dni }}</td>
-            <td>{{ colaborador.cuit }}</td>
-            <td>{{ colaborador.nacimiento | date:'yyyy-MM-dd' }}</td>
-            <td>{{ colaborador.edad }}</td>
-            <td>{{ colaborador.direccion }}</td>
-            <td>{{ colaborador.fecha_ingreso | date:'yyyy-MM-dd' }}</td>
-            <td>{{ colaborador.activo }}</td>
-            <td>{{ colaborador.categoria?.convenio.nombre }}</td>
-            <td>{{ colaborador.categoria?.nombre }}</td>
-            <td>{{ colaborador.obraSocial?.nombre }}</td>
-            <td>
-              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <!-- Botón Editar 
-                <button mat-mini-fab color="primary" matTooltip="Editar Colaborador" [routerLink]="['/editar', colaborador.id]">
-                  <mat-icon>edit</mat-icon>
-                </button>
-            
-                 <!-- Botón Activar/Desactivar 
-                <button mat-mini-fab matTooltip="Cambiar Estado" [color]="colaborador.activo ? 'warn' : 'primary'" (click)="toggleEstadoColaborador(colaborador)">
-                  <mat-icon>{{ colaborador.activo ? 'delete' : 'check_circle' }}</mat-icon>
-                </button>
-              </div>
-            </td>
-            <td>
-              <span [ngClass]="{
-                'activo-indicador': colaborador.activo,
-                'inactivo-indicador': !colaborador.activo
-              }"></span>
-            </td>
-          </tr>
-          
-        </tbody>
-    </table>
-
-  </div>
-  
-</div>-->
-
 
 <div class="legajo-container">
   <div class="legajo">
@@ -80,6 +6,16 @@
         <mat-icon>add_circle</mat-icon>
       </button>
     </div>
+
+     <!-- Agregar botones de exportación -->
+  <div class="exportar-container">
+    <button mat-icon-button matTooltip="Exportar a Excel" (click)="generarExcel()">
+      <mat-icon>file_download</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="Exportar a PDF" (click)="imprimirPdf()">
+      <mat-icon>picture_as_pdf</mat-icon>
+    </button>
+  </div>
     <div class="titulo">Legajo de Colaborador</div>
     <div class="navegacion">
       <!-- Botón Editar -->
@@ -157,6 +93,8 @@
       <button mat-button class="boton-navegacion" (click)="irColaboradorAnterior()">Anterior</button>
       <button mat-button class="boton-navegacion" (click)="irColaboradorSiguiente()">Siguiente</button>
     </div>
+
+     
   </div>
 </div>
 

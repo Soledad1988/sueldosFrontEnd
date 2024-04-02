@@ -1,0 +1,13 @@
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .custom-button {
+    width: 150px;
+    height: 100px;
+    border-radius: 10px; /* Añade bordes redondeados para hacer que los botones se vean mejor */
+    font-size: 16px; /* Ajusta el tamaño del texto del icono */
+  }

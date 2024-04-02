@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject, pipe, tap } from 'rxjs';
 import { Colaborador } from '../models/colaborador';
+import { Novedad } from '../models/novedad';
 
 @Injectable({
   providedIn: 'root'
@@ -49,5 +50,10 @@ export class ColaboradorService {
 
   cambiarEstadoActivoColaborador(id: number, nuevoEstado: boolean): Observable<any> {
     return this.httpClient.put(`${this.URL}/cambiarEstado/${id}`, nuevoEstado);
+  }
+
+  asignarNovedadAColaborador(id: number, novedad: Novedad): Observable<any> {
+    const url = `${this.URL}/${id}/novedad`;
+    return this.httpClient.post(url, novedad);
   }
 } 

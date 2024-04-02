@@ -1,5 +1,6 @@
 import { ObraSocial } from "./ObraSocial";
 import { Categoria } from "./categorias";
+import { Novedad } from "./novedad";
 
 export class Colaborador{
     id?:number;
@@ -14,4 +15,11 @@ export class Colaborador{
     activo?:Boolean;
     categoria?:Categoria;
     obraSocial?: ObraSocial;
+    novedades?: Novedad[];
+    nuevaNovedad?: {
+        vacaciones?: number;
+        feriado?: number;
+        inasistenciaJustificada?: number;
+        inasistenciaInjustificada?: number;
+    };
 }

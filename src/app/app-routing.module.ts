@@ -10,6 +10,8 @@ import { CategoriasComponent } from './componenets/categorias/categorias.compone
 import { LiquidacionComponent } from './componenets/liquidacion/liquidacion.component';
 import { NuevaLiquidacionComponent } from './componenets/formularios/nueva-liquidacion/nueva-liquidacion.component';
 import { ObrasocialComponent } from './componenets/obrasocial/obrasocial.component';
+import { NuevaNovedadComponent } from './componenets/formularios/nueva-novedad/nueva-novedad.component';
+import { NovedadesComponent } from './componenets/novedades/novedades.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'menu', pathMatch:'full'},
@@ -23,6 +25,8 @@ const routes: Routes = [
   {path:'obrasocial', component:ObrasocialComponent},
   {path:'liquidacion', component:LiquidacionComponent},
   {path:'nuevaLiquidacion', component:NuevaLiquidacionComponent},
+  {path:'nuevaNovedad', component:NuevaNovedadComponent},
+  {path:'novedades', component:NovedadesComponent},
 ];
 
 @NgModule({
