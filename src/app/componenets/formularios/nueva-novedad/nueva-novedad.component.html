@@ -1,19 +1,15 @@
-<p>nueva-novedad works!</p>
 <div class="container" style="position: relative; height: 100vh;">
 
   <!-- Botón "Periodo liquidación" en el margen superior izquierdo -->
   <div style="position: absolute; top: 10px; left: 10px;">
     <div style="display: flex; flex-direction: column; align-items: center;">
-      <button id="btn-periodo" mat-stroked-button class="mat-primary" (click)="togglePeriodSelector()">
-        <mat-icon style="font-size: 16px;"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></mat-icon>
-        <span id="periodo-text">Seleccionar período</span> <!-- Aquí se mostrará el texto del período seleccionado -->
-      </button>
-      <!-- Lista desplegable para seleccionar el período -->
-      <div *ngIf="showPeriodSelector" style="margin-top: 10px;">
-        <select [(ngModel)]="selectedPeriod">
-          <option *ngFor="let periodo of periodos" [value]="periodo">{{ periodo }}</option>
-        </select>
-      </div>
+      <mat-form-field>
+        <mat-label>Seleccionar Período</mat-label>
+        <input matInput [matDatepicker]="dp" [formControl]="date">
+        <mat-hint>MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker #dp startView="multi-year" panelClass="example-month-picker"></mat-datepicker>
+      </mat-form-field>
     </div>
   </div>
    

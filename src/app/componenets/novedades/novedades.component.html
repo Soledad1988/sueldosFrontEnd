@@ -1,14 +1,26 @@
-<div style="text-align: center;">
-  <h2>Grilla de Novedades</h2>
-<!-- Lista desplegable para seleccionar el período -->
-<div style="margin-bottom: 20px;">
-  <label for="periodoSelect">Seleccionar período:</label>
-  <select id="periodoSelect" [(ngModel)]="selectedPeriod">
-    <option *ngFor="let periodo of periodos; let i = index" [value]="i + 1">{{ periodo }}</option>
-  </select>
-  <button mat-stroked-button class="mat-primary" (click)="filtrarNovedades()">Filtrar</button>
+<div class="container">
+  <h2 class="title">Grilla de Novedades</h2>
+
+  <!-- Lista desplegable para seleccionar el período 
+  <div class="filter-container">
+    <label for="periodoSelect">Seleccionar período:</label>
+    <select id="periodoSelect" [(ngModel)]="selectedPeriod" class="periodo-select">
+      <option *ngFor="let periodo of periodos; let i = index" [value]="i + 1">{{ periodo }}</option>
+    </select>
+    <button mat-stroked-button class="mat-primary" (click)="filtrarNovedades()">Filtrar</button>
+  </div>-->
+
+  <div class="filter-container">
+  <mat-form-field>
+    <mat-label>Seleccionar Período</mat-label>
+    <input matInput [matDatepicker]="dp" [formControl]="date">
+    <mat-hint>MM/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
+    <mat-datepicker #dp startView="multi-year" panelClass="example-month-picker"></mat-datepicker>
+  </mat-form-field>
 </div>
-  <table>
+
+  <table class="novedades-table">
     <thead>
       <tr>
         <th>Colaborador</th>
@@ -27,11 +39,7 @@
         <td>{{ novedad.feriado }}</td>
         <td>{{ novedad.inasistenciaJustificada }}</td>
         <td>{{ novedad.inasistenciaInjustificada }}</td>
-        <td>
-          <!-- Aquí puedes agregar botones o enlaces para acciones adicionales -->
-        </td>
       </tr>
     </tbody>
   </table>
 </div>
-

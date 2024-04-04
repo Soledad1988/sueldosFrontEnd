@@ -52,5 +52,12 @@ export class NovedadService {
     return this.httpClient.get<Novedad[]>(`${this.URL}/periodo`, { params });
   }
 
+  // Método para crear una nueva novedad con el período
+  crearNovedadConPeriodo(novedad: Novedad, idColaborador: number, periodo: Date): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const formattedPeriodo = formatDate(periodo, 'yyyy-MM-dd', 'en-US'); // Formatea la fecha
+    return this.httpClient.post(`${this.URL}/${idColaborador}?periodo=${formattedPeriodo}`, novedad, { headers });
+}
+
   
 }
