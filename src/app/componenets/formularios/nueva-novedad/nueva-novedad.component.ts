@@ -5,6 +5,7 @@ import { ColaboradorService } from 'src/app/service/colaborador.service';
 import { NovedadService } from 'src/app/service/novedad.service';
 import { FormControl } from '@angular/forms'; // Importa FormControl
 import swal from 'sweetalert2';
+import { Novedad } from 'src/app/models/novedad';
 
 @Component({
   selector: 'app-nueva-novedad',
@@ -47,9 +48,51 @@ export class NuevaNovedadComponent implements OnInit{
   }
   
   asignarNovedadAColaborador(colaborador: Colaborador): void {
+    if (colaborador && colaborador.id && this.date.value) {
+      const periodo = this.date.value;
+      const nuevaNovedad: Novedad = {
+        ...colaborador.nuevaNovedad,
+        colaborador,
+        periodo // Asignar la fecha
+      };
+
+      this.novedadSevice.crearNovedad(nuevaNovedad).subscribe(
+        (response: any) => {
+          console.log('Novedad creada y asignada correctamente:', response);
+          // Mostrar mensaje de éxito
+          swal.fire({
+            icon: 'success',
+            title: 'Novedad creada y asignada correctamente',
+            showConfirmButton: false,
+            timer: 1500
+          });
+        },
+        (error: any) => {
+          console.error('Error al crear y asignar la novedad:', error);
+          // Mostrar mensaje de error
+          swal.fire({
+            icon: 'error',
+            title: 'Error al crear y asignar la novedad',
+            text: 'Por favor, inténtelo de nuevo más tarde',
+            confirmButtonText: 'Cerrar'
+          });
+        }
+      );
+    } else {
+      console.error('Error: Datos incompletos para crear y asignar la novedad');
+      // Mostrar mensaje de error
+      swal.fire({
+        icon: 'error',
+        title: 'Error: Datos incompletos para crear y asignar la novedad',
+        confirmButtonText: 'Cerrar'
+      });
+    }
+  }
+
+  asignarNovedadAColaborador2(colaborador: Colaborador): void {
     if (colaborador && colaborador.id) {
       
-      this.novedadSevice.crearNovedad(colaborador.nuevaNovedad, colaborador.id).subscribe(
+      this.novedadSevice.crearNovedad2(colaborador.nuevaNovedad, colaborador.id).subscribe(
         (response: any) => {
           console.log('Novedad creada y asignada correctamente:', response);
           // Mostrar mensaje de éxito

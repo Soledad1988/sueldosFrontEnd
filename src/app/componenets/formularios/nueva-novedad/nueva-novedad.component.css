@@ -1,0 +1,39 @@
+.container {
+    text-align: center;
+  }
+  
+  .title {
+    margin-bottom: 20px;
+  }
+  
+  .filter-container {
+    margin-bottom: 20px;
+  }
+  
+  .periodo-select {
+    margin-right: 10px;
+  }
+  
+  .novedades-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .novedades-table th,
+  .novedades-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .novedades-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .novedades-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .novedades-table tr:hover {
+    background-color: #ddd;
+  }
