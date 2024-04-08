@@ -1,24 +1,32 @@
 <div class="container">
   <h2 class="title">Grilla de Novedades</h2>
 
-  <!-- Lista desplegable para seleccionar el período 
   <div class="filter-container">
-    <label for="periodoSelect">Seleccionar período:</label>
-    <select id="periodoSelect" [(ngModel)]="selectedPeriod" class="periodo-select">
-      <option *ngFor="let periodo of periodos; let i = index" [value]="i + 1">{{ periodo }}</option>
-    </select>
-    <button mat-stroked-button class="mat-primary" (click)="filtrarNovedades()">Filtrar</button>
-  </div>-->
+    <mat-form-field>
+      <mat-label>Seleccionar Mes</mat-label>
+      <mat-select [(ngModel)]="selectedMonth">
+        <mat-option *ngFor="let month of months" [value]="month.value">{{ month.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Seleccionar Año</mat-label>
+      <mat-select [(ngModel)]="selectedYear">
+        <mat-option *ngFor="let year of years" [value]="year">{{ year }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-button (click)="filtrarNovedadesByMonth()">Filtrar</button>
+  </div>
 
-  <div class="filter-container">
-  <mat-form-field>
-    <mat-label>Seleccionar Período</mat-label>
-    <input matInput [matDatepicker]="dp" [formControl]="date">
-    <mat-hint>MM/YYYY</mat-hint>
-    <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
-    <mat-datepicker #dp startView="multi-year" panelClass="example-month-picker"></mat-datepicker>
-  </mat-form-field>
-</div>
+    <!-- Agregar botones de exportación -->
+    <div class="exportar-container">
+      <button mat-icon-button matTooltip="Exportar a Excel" (click)="generarExcelNovedades()">
+        <mat-icon>file_download</mat-icon>
+      </button>
+      <button mat-icon-button matTooltip="Exportar a PDF" (click)="imprimirPdfNovedades()">
+        <mat-icon>picture_as_pdf</mat-icon>
+      </button>
+    </div>
+
 
   <table class="novedades-table">
     <thead>
