@@ -1,0 +1,53 @@
+.container {
+    text-align: center;
+  }
+  
+  .title {
+    margin-bottom: 20px;
+  }
+  
+  .filter-container,
+  .exportar-container {
+    margin-bottom: 40px;
+  }
+  
+  .form-container,
+  .table-container {
+    margin-bottom: 20px;
+  }
+  
+  .form-container .bg-white,
+  .table-container .bg-white {
+    width: 30rem;
+  }
+  
+  .table-container .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table-container th,
+  .table-container td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .table-container th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .table-container tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .table-container tr:hover {
+    background-color: #ddd;
+  }
+
+  .form-container {
+    width: 300px; /* Ancho deseado del formulario */
+    margin: 20px auto 40px;
+  }
+  
+  

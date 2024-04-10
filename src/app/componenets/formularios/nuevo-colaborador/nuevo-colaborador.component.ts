@@ -6,7 +6,6 @@ import { CategoriaService } from 'src/app/service/categoria.service';
 import { ColaboradorService } from 'src/app/service/colaborador.service';
 import { ConvenioService } from 'src/app/service/convenio.service';
 import Swal from 'sweetalert2';
-import { MatTooltipModule } from '@angular/material/tooltip';
 import { ObrasocialService } from 'src/app/service/obrasocial.service';
 import { ObraSocial } from 'src/app/models/ObraSocial';
 
@@ -17,6 +16,7 @@ import { ObraSocial } from 'src/app/models/ObraSocial';
 })
 export class NuevoColaboradorComponent implements OnInit{
 
+  
   convenios: Convenio[] = [];
   categorias: Categoria[] = [];
   obraSocial: ObraSocial[] = [];
@@ -44,6 +44,7 @@ export class NuevoColaboradorComponent implements OnInit{
     private obraSocialService: ObrasocialService,
     private router:Router,
     ){ }
+
 
   ngOnInit(): void {
 

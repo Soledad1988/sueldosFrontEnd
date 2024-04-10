@@ -1,19 +1,17 @@
-<div class="container-fluid">
-  <div class="row">
+<div class="container">
+
+  <h2 class="title">Ingrese Datos de la categoria</h2>
 
     <!-- Formulario -->
-    <div class="col-md-6">
-        <div class="bg-white p-4 rounded-5 text-secondary shadow">
+    <div class="form-container">
+  
           <form class="d-grid gap-2">
-            <h2>Ingrese Datos de la categoria</h2>
-            
+          
             <input type="text" name="nombre" class="form-control" placeholder="Ingrese Nombre de la Categoria" [(ngModel)]="nuevaCategoria.nombre">
 
             <input type="text" name="descripcion" class="form-control" placeholder="Ingrese Descripcion de la categoria" [(ngModel)]="nuevaCategoria.descripcion">
 
             <input type="text" name="monto" class="form-control" placeholder="Ingrese Monto de la Categoria" [(ngModel)]="nuevaCategoria.monto">
-
-            <h4>Seleccione el convenio al que pertence</h4>
 
             <mat-form-field appearance="fill" class="mt20 w100">
               <mat-label>Convenios</mat-label>
@@ -32,13 +30,15 @@
             
       
           </form>
-        </div>
+      
     </div>
+
+    <h2 class="title">Categorias Generadas</h2>
+
     <!-- Tabla -->
-    <div class="col-md-6">
-      <div class="bg-white p-4 rounded-5 text-secondary shadow">
-        <h2>Categorias Generadas</h2>
-        <table class="table table-striped">
+    <div class="table-container">
+       
+      <table class="table table-striped">
           <thead>
             <tr>
               <th scope="col">Id</th>
@@ -65,9 +65,7 @@
             
           </tbody>
         </table>
-      </div>
     </div>
- </div>
 </div>
 
   

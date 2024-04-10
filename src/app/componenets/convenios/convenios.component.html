@@ -1,34 +1,37 @@
 <div class="container">
+  <!-- Botón Categorías -->
   <div class="d-flex justify-content-end mt-2">
     <button mat-raised-button [routerLink]="['/categoria']">Categorías</button>
   </div>
+   <!-- Título y formularios -->
+  <h2 class="title">Ingrese Datos del Convenio</h2>
 
-  <div class="d-flex justify-content-center">
-    <!-- Formulario -->
-    <div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 30rem">
+  <div class="filter-container">
+    <!-- Agregar filtros si es necesario -->
+  </div>
+
+  <div class="exportar-container">
+    <!-- Agregar botones de exportación si es necesario -->
+  </div>
+
+  <div class="form-container">
+    
       <form class="d-grid gap-2">
-        <h2>Ingrese Datos del Convenio</h2>
-        
         <input type="text" name="numero" class="form-control" placeholder="Ingrese Numero Convenio" [(ngModel)]="nuevo.numero">
-
         <input type="text" name="nombre" class="form-control" placeholder="Ingrese Nombre de Convenio" [(ngModel)]="nuevo.nombre">
-
         <div class="form-footer">
-
           <div class="form-footer d-flex justify-content-between">
-            <button type="submit" class="button" class= "btn btn-info" [routerLink]="['/convenio']" routerLinkActive="router-link-active" (click)="agregar()">Confirmar</button>
-            <button type="reset" class="button" class="btn btn-secondary" [routerLink]="['/menu']" routerLinkActive="router-link-active">Cancelar</button>
+            <button type="submit" class="button btn btn-info" [routerLink]="['/convenio']" routerLinkActive="router-link-active" (click)="agregar()">Confirmar</button>
+            <button type="reset" class="button btn btn-secondary" [routerLink]="['/menu']" routerLinkActive="router-link-active">Cancelar</button>
           </div>
-          
         </div>
-  
       </form>
-  
-    </div>
+    
+  </div>
 
-    <!-- Tabla -->
-    <div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 30rem">
-      <h2>Convenios Generados</h2>
+  <h2 class="title">Convenios Generados</h2>
+
+  <div class="table-container">
       <table class="table table-striped">
         <thead>
           <tr>
@@ -49,11 +52,8 @@
               </div>
             </td>
           </tr>
-          
         </tbody>
       </table>
-  </div>
-
-  </div>
+    </div>
 </div>
 

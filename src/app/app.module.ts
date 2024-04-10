@@ -31,6 +31,7 @@ import { ObrasocialComponent } from './componenets/obrasocial/obrasocial.compone
 import { NuevaNovedadComponent } from './componenets/formularios/nueva-novedad/nueva-novedad.component';
 import { NovedadesComponent } from './componenets/novedades/novedades.component';
 import { MatInputModule } from '@angular/material/input';
+import { MatTabsModule } from '@angular/material/tabs';
 //import { CuitFormatDirective } from './path-to-your-directive';
 
 @NgModule({
@@ -67,6 +68,7 @@ import { MatInputModule } from '@angular/material/input';
     MatNativeDateModule,
     MatTooltipModule,
     MatInputModule,
+    MatTabsModule,
     
   ],
   providers: [],
