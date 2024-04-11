@@ -1,24 +1,26 @@
-<div class="container" style="position: relative; height: 100vh;">
-  <div class="centered-content">
-    <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 20px;">
-      <div style="text-align: center;">
-        <div style="display: flex; flex-direction: column; align-items: center;">
-          <label for="btn-pdf">Nueva Novedad</label>
-          <button id="btn-pdf" mat-stroked-button class="mat-primary custom-button" [routerLink]="['/nuevaNovedad']">
-            <mat-icon style="font-size: 24px;">add_circle</mat-icon>
+<div class="container">
+
+  <section class="section-1">
+    <h1>Control de Novedades</h1>
+  </section>
+
+  <section class="section-2">
+
+      <div class="section-2-1">
+          <label class="label">Nueva Novedad</label>
+          <button mat-stroked-button class="mat-primary" [routerLink]="['/nuevaNovedad']">
+              <i class="icon fa fa-plus-circle"></i>
           </button>
-        </div>
       </div>
-      <div style="text-align: center;">
-        <div style="display: flex; flex-direction: column; align-items: center;">
-          <label for="btn-excel">Consulta Novedades</label>
-          <button id="btn-excel" mat-stroked-button class="mat-primary custom-button" [routerLink]="['/novedades']">
-            <mat-icon style="font-size: 24px;">search</mat-icon>
+
+      <div class="section-2-1">
+          <label class="label">Consulta Novedades</label>
+          <button mat-stroked-button class="mat-primary" [routerLink]="['/novedades']">
+            <i class="icon fa fa-search"></i>
           </button>
-        </div>
+
       </div>
-    </div>
-  </div>
+  </section>
 </div>
 
 
