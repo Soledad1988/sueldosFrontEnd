@@ -104,21 +104,19 @@ export class NovedadesComponent implements OnInit {
   );
 }
 
-imprimirPdfNovedades(): void {
-  /*if (this.colaboradorActual) {
-    this.archivoService.imprimirPdf(this.colaboradorActual).subscribe(
-      (response: Blob) => {
-        this.descargarArchivo(response, 'colaborador.pdf');
-      },
-      (error: any) => {
-        console.error('Error al imprimir PDF:', error);
-      }
-    );
-  }*/
+imprimirPdfNovedades(month: number): void {
+  this.archivoService.imprimirPdfNoedades(month).subscribe(
+    (response: Blob) => {
+      this.descargarArchivo(response, 'novedades.pdf');
+    },
+    (error: any) => {
+      console.error('Error al imprimir PDF:', error);
+    }
+  );
 }
 
-generarExcelNovedades(): void {
-  this.archivoService.generarExcel().subscribe(
+generarExcelNovedades(month: number, year: number): void {
+  this.archivoService.generarExcelNovedades(month, year).subscribe(
     (response: Blob) => {
       this.descargarArchivo(response, 'colaboradores.xlsx');
     },
