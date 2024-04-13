@@ -1,19 +1,44 @@
- 
- 
- /* Estilo para cambiar el color al pasar el mouse */
- button:hover {
-    background-color: lightblue;
+/* Estilo para la sección 1 */
+.section-1 {
+    text-align: center; 
+    margin-bottom: 50px;
+    font-family: 'Arial', sans-serif; /* Cambiar el font-family a uno más estético */
+    font-size: 24px; /* Aumentar el tamaño del texto */
+    line-height: 1.5; /* Ajustar el espacio entre líneas */
+    padding-top: 50px; /* Añadir espacio superior */
 }
 
-
 /* Estilo para agrandar los iconos al pasar el mouse sobre el botón */
-button:hover .fa {
-    font-size: 24px; /* Tamaño más grande para el ícono */
-    transition: font-size 0.3s; /* Suaviza la transición del tamaño del ícono */
+.mat-primary:hover .icon {
+    transform: scale(1.9); /* Escalar el icono al 120% */
 }
 
 /* Estilo inicial para los iconos */
-.fa {
-    font-size: 16px;
-    transition: font-size 0.3s; /* Suaviza la transición del tamaño del ícono */
+.icon {
+    font-size:25px;
+    transition: transform 0.3s; /* Suaviza la transición del tamaño del ícono */
+}
+
+/*seccion 2 */
+.section-2 {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding-top: 40px; /* Añadir espacio superior */
+}
+
+.section-2-1 {
+    text-align: center;
+}
+
+.label {
+    display: block; 
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+}
+
+.mat-primary {
+    width: 250px; 
+    height: 200px;
 }

@@ -1,10 +1,10 @@
 <div class="container">
-  <div class="d-flex justify-content-center">
+ 
+  <h2 class="title">Ingrese Datos de la Obra Social</h2>
 
     <!-- Formulario -->
-    <div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 30rem">
+    <div class="form-container">
       <form class="d-grid gap-2">
-        <h2>Ingrese Datos de la Obra Social</h2>
         
         <input type="text" name="numero" class="form-control" placeholder="Ingrese Codigo Obra Social" [(ngModel)]="nuevo.codigo">
         <input type="text" name="nombre" class="form-control" placeholder="Ingrese nombr Obra Social" [(ngModel)]="nuevo.nombre">
@@ -16,9 +16,9 @@
       </form>
     </div>
 
+    <h2 class="title">Obra Social Generada</h2>
     <!-- Tabla -->
-    <div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 30rem">
-      <h2>Obra Social Generada</h2>
+    <div class="table-container">
       <table class="table table-striped">
         <thead>
           <tr>
@@ -44,7 +44,6 @@
       </table>
     </div>
 
-  </div>
 </div>
 
 

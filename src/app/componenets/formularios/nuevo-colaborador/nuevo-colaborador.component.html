@@ -1,47 +1,36 @@
 
-<div class="container">
+  <div class="container">
 
-    <div class="container" class="d-flex justify-content-center">
-  
-        <div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 30rem">
-  
-            <div class="d-grid" class="p-2 bd-highlight" class="d-flex justify-content-center"> 
-  
+    <h2 class="title">Ingrese Nuevo Colaborador</h2>
+    
+      <mat-tab-group>
+
+        <mat-tab label="Datos Personales">
+      
+            <div class="d-grid p-2 bd-highlight d-flex justify-content-center">
               <form class="d-grid gap-2">
-                <h2>Datos Personales</h2>
-                
+              
                 <input type="text" name="nombre" class="form-control" placeholder="Ingrese Nombre" [(ngModel)]="nuevoColaborador.nombre">
-  
                 <input type="text" name="apellido" class="form-control" placeholder="Ingrese Apellido" [(ngModel)]="nuevoColaborador.apellido">
-  
                 <input type="text" name="dni" class="form-control" placeholder="DNI" [(ngModel)]="nuevoColaborador.dni">
-
                 <input type="text" name="cuit" class="form-control" placeholder="CUIT" [(ngModel)]="nuevoColaborador.cuit">
-
                 <label for="">Fecha Nacimiento</label>
                 <input type="date" name="nacimiento" class="form-control"
                         [ngModel]="nuevoColaborador.nacimiento | date:'yyyy-MM-dd'"
                         (ngModelChange)="nuevoColaborador.nacimiento = $event"> 
-                          
                 <input type="text" name="edad" class="form-control" placeholder="Edad" [(ngModel)]="nuevoColaborador.edad">
-        
                 <input type="text" name="domicilio" class="form-control" placeholder="Ingrese Dirección" [(ngModel)]="nuevoColaborador.direccion">
   
-          
               </form>
-          
             </div>
-  
-        </div>
+          
+        </mat-tab>
 
-        <div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 30rem">
-  
-          <div class="d-grid" class="p-2 bd-highlight" class="d-flex justify-content-center"> 
+        <mat-tab label="Datos Laborales">
 
-            <form class="d-grid gap-2">
-              <h2>Datos Laborales</h2>
-              
-              <label for="">Fecha Ingreso</label>
+            <div class="d-grid p-2 bd-highlight d-flex justify-content-center">
+              <form class="d-grid gap-2">
+                <label for="">Fecha Ingreso</label>
               <input type="date" name="nacimiento" class="form-control"
               [ngModel]="nuevoColaborador.nacimiento | date:'yyyy-MM-dd'"
               (ngModelChange)="nuevoColaborador.fecha_ingreso= $event"> 
@@ -72,22 +61,25 @@
                     </mat-option>
                 </mat-select>
             </mat-form-field>
+              </form>
+            </div>
 
-            </form>
-        
-          </div>
+            <div class="form-footer d-flex justify-content-center">
+              <button type="submit" class="btn btn-info m-2" [routerLink]="['/colaborador']" routerLinkActive="router-link-active" (click)="agregar()">
+                Confirmar
+              </button>
+              <button type="reset" class="btn btn-secondary m-2" [routerLink]="['/menu']" routerLinkActive="router-link-active">
+                Cancelar
+              </button>
+            </div>
+        </mat-tab>
 
-        </div>     
-  
-    </div>
-
-    <div class="form-footer d-flex justify-content-center">
-        <button type="submit" class="btn btn-info m-2" [routerLink]="['/colaborador']" routerLinkActive="router-link-active" (click)="agregar()">
-            Confirmar
-        </button>
-        <button type="reset" class="btn btn-secondary m-2" [routerLink]="['/menu']" routerLinkActive="router-link-active">
-            Cancelar
-        </button>
-    </div>
-  
+      </mat-tab-group>
+    
+    
   </div>
+
+
+
+  
+  

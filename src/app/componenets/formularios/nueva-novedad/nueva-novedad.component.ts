@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Colaborador } from 'src/app/models/colaborador';
 import { ColaboradorService } from 'src/app/service/colaborador.service';
 import { NovedadService } from 'src/app/service/novedad.service';
+import { FormControl } from '@angular/forms'; // Importa FormControl
+import swal from 'sweetalert2';
+import { Novedad } from 'src/app/models/novedad';
 
 @Component({
   selector: 'app-nueva-novedad',
@@ -10,14 +14,11 @@ import { NovedadService } from 'src/app/service/novedad.service';
 })
 export class NuevaNovedadComponent implements OnInit{
 
+  date = new FormControl(); // Define la propiedad date como un FormControl
   colaboradores: Colaborador[] = [];
   colaboradorActual: Colaborador | null = null;
   nuevaNovedad: any = {};
-  showPeriodSelector: boolean = false;
-  selectedPeriod: string = ""; // Variable para almacenar el período seleccionado
-  periodos: string[] = ["enero 2024", "febrero 2024", "marzo 2024", "abril 2024"]; // Lista de períodos
-
-
+  
   constructor(
     private colaboradorService: ColaboradorService, 
     private novedadSevice: NovedadService) {}
@@ -25,28 +26,8 @@ export class NuevaNovedadComponent implements OnInit{
   ngOnInit(): void {
     this.listarColaboradores();
   }
+  
 
-  // Función para mostrar u ocultar la lista desplegable del período
-  togglePeriodSelector() {
-    this.showPeriodSelector = !this.showPeriodSelector;
-  }
-  /*
-  listarColaboradores(): void {
-    this.colaboradorService.colaborador().subscribe(
-      (data: Colaborador[]) => {
-        this.colaboradores = data;
-        // Asegúrate de que cada colaborador tenga un objeto Novedad inicializado
-        this.colaboradores.forEach(colaborador => {
-          if (!colaborador.novedades) {
-            colaborador.novedades = {};
-          }
-        });
-      },
-      (error: any) => {
-        console.error('Error al cargar los colaboradores:', error);
-      }
-    );
-  }*/
   listarColaboradores(): void {
     this.colaboradorService.colaborador().subscribe(
       (data: Colaborador[]) => {
@@ -67,20 +48,80 @@ export class NuevaNovedadComponent implements OnInit{
   }
   
   asignarNovedadAColaborador(colaborador: Colaborador): void {
-    if (colaborador && colaborador.id) {
-      this.novedadSevice.crearNovedad(colaborador.nuevaNovedad, colaborador.id).subscribe(
+    if (colaborador && colaborador.id && this.date.value) {
+      const periodo = this.date.value;
+      const nuevaNovedad: Novedad = {
+        ...colaborador.nuevaNovedad,
+        colaborador,
+        periodo // Asignar la fecha
+      };
+
+      this.novedadSevice.crearNovedad(nuevaNovedad).subscribe(
         (response: any) => {
           console.log('Novedad creada y asignada correctamente:', response);
-          // Puedes mostrar un mensaje de éxito al usuario si lo deseas
+          // Mostrar mensaje de éxito
+          swal.fire({
+            icon: 'success',
+            title: 'Novedad creada y asignada correctamente',
+            showConfirmButton: false,
+            timer: 1500
+          });
         },
         (error: any) => {
           console.error('Error al crear y asignar la novedad:', error);
-          // Puedes mostrar un mensaje de error al usuario si lo deseas
+          // Mostrar mensaje de error
+          swal.fire({
+            icon: 'error',
+            title: 'Error al crear y asignar la novedad',
+            text: 'Por favor, inténtelo de nuevo más tarde',
+            confirmButtonText: 'Cerrar'
+          });
         }
       );
     } else {
       console.error('Error: Datos incompletos para crear y asignar la novedad');
-      // Puedes mostrar un mensaje de error al usuario si lo deseas
+      // Mostrar mensaje de error
+      swal.fire({
+        icon: 'error',
+        title: 'Error: Datos incompletos para crear y asignar la novedad',
+        confirmButtonText: 'Cerrar'
+      });
+    }
+  }
+
+  asignarNovedadAColaborador2(colaborador: Colaborador): void {
+    if (colaborador && colaborador.id) {
+      
+      this.novedadSevice.crearNovedad2(colaborador.nuevaNovedad, colaborador.id).subscribe(
+        (response: any) => {
+          console.log('Novedad creada y asignada correctamente:', response);
+          // Mostrar mensaje de éxito
+          swal.fire({
+            icon: 'success',
+            title: 'Novedad creada y asignada correctamente',
+            showConfirmButton: false,
+            timer: 1500
+          });
+        },
+        (error: any) => {
+          console.error('Error al crear y asignar la novedad:', error);
+          // Mostrar mensaje de error
+          swal.fire({
+            icon: 'error',
+            title: 'Error al crear y asignar la novedad',
+            text: 'Por favor, inténtelo de nuevo más tarde',
+            confirmButtonText: 'Cerrar'
+          });
+        }
+      );
+    } else {
+      console.error('Error: Datos incompletos para crear y asignar la novedad');
+      // Mostrar mensaje de error
+      swal.fire({
+        icon: 'error',
+        title: 'Error: Datos incompletos para crear y asignar la novedad',
+        confirmButtonText: 'Cerrar'
+      });
     }
   }
   

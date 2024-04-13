@@ -37,20 +37,39 @@ export class NovedadService {
     return this.httpClient.delete(this.URL+'/'+idNovedad);
   }
 
-  crearNovedad(novedad: any, idColaborador: number): Observable<any> {
+  crearNovedad2(novedad: any, idColaborador: number): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.httpClient.post(`${this.URL}/${idColaborador}`, novedad, { headers });
   }
 
-   // Método para obtener novedades filtradas por período
-  getNovedadesByPeriod(periodo: Date): Observable<Novedad[]> {
-    // Formatea la fecha al formato esperado por el backend (YYYY-MM-DD)
-    const formattedPeriodo = formatDate(periodo, 'yyyy-MM-dd', 'en-US');
-
-    // Para enviar el período como parámetro en la URL, puedes utilizar HttpParams
-    const params = new HttpParams().set('periodo', formattedPeriodo);
-    return this.httpClient.get<Novedad[]>(`${this.URL}/periodo`, { params });
+  crearNovedad(novedad: Novedad): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.httpClient.post(this.URL, novedad, { headers });
   }
+
+   // Método para obtener novedades filtradas por período
+   getNovedadesByPeriod2(periodo: Date): Observable<Novedad[]> {
+    const formattedPeriodo = formatDate(periodo, 'yyyy-MM-dd', 'en-US');
+    return this.httpClient.get<Novedad[]>(`${this.URL}/periodo/${formattedPeriodo}`);
+   } 
+
+   // Método para obtener novedades filtradas por un rango de fechas
+  getNovedadesByPeriod(startDate: Date, endDate: Date): Observable<Novedad[]> {
+    const formattedStartDate = formatDate(startDate, 'yyyy-MM-dd', 'en-US');
+    const formattedEndDate = formatDate(endDate, 'yyyy-MM-dd', 'en-US');
+    return this.httpClient.get<Novedad[]>(`${this.URL}/period?start=${formattedStartDate}&end=${formattedEndDate}`);
+  }
+
+
+   // Método para obtener novedades filtradas por mes
+  getNovedadesByMonth(month: number): Observable<Novedad[]> {
+    return this.httpClient.get<Novedad[]>(`${this.URL}/month/${month}`);
+  } 
+
+    // Método para obtener novedades filtradas por mes y año
+    getNovedadesByMonthAndYear(month: number, year: number): Observable<Novedad[]> {
+      return this.httpClient.get<Novedad[]>(`${this.URL}/month/${month}/year/${year}`);
+    }
 
   
 }

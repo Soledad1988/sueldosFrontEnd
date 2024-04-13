@@ -1,52 +1,3 @@
-/*.boton-agregar {
-    margin: 10px; /* Ajusta el margen según sea necesario 
-}
-
-
-.activo-indicador {
-    height: 15px;
-    width: 15px;
-    background-color: green;
-    border-radius: 50%;
-    display: inline-block;
-}
-  
-.inactivo-indicador {
-    height: 15px;
-    width: 15px;
-    background-color: red;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.table tr:nth-child(odd) {
-    background-color: #f2f2f2;
-}
-
-.table tr:hover {
-  background-color: #ddd;
-}
-
-.table thead th {
-  background-color: #004085;
-  color: white;
-  text-align: center;
-}
-
-.table th, .table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-button.mat-mini-fab {
-  margin-right: 5px;
-}
-
-mat-icon {
-  vertical-align: middle;
-}
-
-*/
 
 .legajo-container {
   display: flex;
@@ -61,16 +12,16 @@ mat-icon {
 }
 
 .datos-personales, .datos-laborales {
-  width: 50%; /* Ancho de cada columna */
+  width: 100%; /* Ancho de cada columna */
 }
 
 /* Estilos adicionales para cada sección de datos */
 .datos-personales {
-  margin-right: 10px; /* Espacio entre las columnas */
+  margin-right: 15px; /* Espacio entre las columnas */
 }
 
 .datos-laborales {
-  margin-left: 10px; /* Espacio entre las columnas */
+  margin-left: 15px; /* Espacio entre las columnas */
 }
 
 
@@ -79,7 +30,7 @@ mat-icon {
   background-color: #f9f9f9;
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 20px;
+  padding: 25px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -87,17 +38,18 @@ mat-icon {
   font-size: 24px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .titulo-seccion {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
 .campo {
   margin-bottom: 10px;
+  font-size: 16px;
 }
 
 .etiqueta {
