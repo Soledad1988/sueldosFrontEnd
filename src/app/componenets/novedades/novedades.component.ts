@@ -104,8 +104,8 @@ export class NovedadesComponent implements OnInit {
   );
 }
 
-imprimirPdfNovedades(month: number): void {
-  this.archivoService.imprimirPdfNoedades(month).subscribe(
+imprimirPdfNovedades(month: number, year: number): void {
+  this.archivoService.imprimirPdfNoedades(month, year).subscribe(
     (response: Blob) => {
       this.descargarArchivo(response, 'novedades.pdf');
     },

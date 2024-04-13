@@ -18,8 +18,11 @@ export class ArchivoService {
     return this.http.get('http://localhost:8080/generar/excel', { responseType: 'blob' });
   }
 
-  imprimirPdfNoedades(month: number): Observable<Blob> {
-    const params = new HttpParams().set('month', month.toString());
+  imprimirPdfNoedades(month: number, year: number): Observable<Blob> {
+    const params = new HttpParams()
+      .set('month', month.toString())
+      .set('year', year.toString()); // Agregar el parámetro 'year'
+  
     return this.http.get('http://localhost:8080/novedad/pdf', { params, responseType: 'blob' });
   }
 
