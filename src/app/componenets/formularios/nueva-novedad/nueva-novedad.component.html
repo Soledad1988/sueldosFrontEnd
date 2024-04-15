@@ -1,55 +1,3 @@
-<!--<div class="container" style="position: relative; height: 100vh;">
-
-   Botón "Periodo liquidación" en el margen superior izquierdo 
-  <div style="position: absolute; top: 10px; left: 10px;">
-    <div style="display: flex; flex-direction: column; align-items: center;">
-      <mat-form-field>
-        <mat-label>Seleccionar Período</mat-label>
-        <input matInput [matDatepicker]="dp" [formControl]="date">
-        <mat-hint>MM/YYYY</mat-hint>
-        <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
-        <mat-datepicker #dp startView="multi-year" panelClass="example-month-picker"></mat-datepicker>
-      </mat-form-field>
-    </div>
-  </div>
-   
-      Contenedor principal
-     <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
-   
-       Grilla de Liquidación
-       <div style="text-align: center;">
-         <h2>Grilla de Novedades</h2>
-         <table>
-           <thead>
-             <tr>
-              <th>Colaborador</th>
-              <th>CUIT</th>
-              <th>Vacaciones</th>
-              <th>Feriado</th>
-              <th>Inasistencia Justificada</th>
-              <th>Inasistencia Injustificada</th>
-             </tr>
-           </thead>
-           <tbody>
-             <tr *ngFor="let colaborador of colaboradores">
-               <td>{{ colaborador.nombre }} {{ colaborador.apellido }}</td>
-               <td>{{ colaborador.cuit }}</td>
-               <td *ngIf="colaborador && colaborador.nuevaNovedad"><input type="number" [(ngModel)]="colaborador.nuevaNovedad.vacaciones"></td>
-               <td *ngIf="colaborador && colaborador.nuevaNovedad"><input type="number" [(ngModel)]="colaborador.nuevaNovedad.feriado"></td>
-               <td *ngIf="colaborador && colaborador.nuevaNovedad"><input type="number" [(ngModel)]="colaborador.nuevaNovedad.inasistenciaJustificada"></td>
-               <td *ngIf="colaborador && colaborador.nuevaNovedad"><input type="number" [(ngModel)]="colaborador.nuevaNovedad.inasistenciaInjustificada"></td>
-                <button (click)="asignarNovedadAColaborador(colaborador)">Asignar</button>
-                </tr>
-           </tbody>
-         </table>
-       </div>
-       
-      
-     </div>
-   
-   </div>-->
-   
-
 
    <div class="container">
     <h2 class="title">Grilla de Novedades</h2>
@@ -65,7 +13,7 @@
   </div>
   
     <table class="novedades-table">
-      <thead>
+      <thead class="membrete">
         <tr>
           <th>Colaborador</th>
           <th>CUIT</th>
@@ -84,8 +32,8 @@
           <td *ngIf="colaborador && colaborador.nuevaNovedad"><input type="number" [(ngModel)]="colaborador.nuevaNovedad.feriado"></td>
           <td *ngIf="colaborador && colaborador.nuevaNovedad"><input type="number" [(ngModel)]="colaborador.nuevaNovedad.inasistenciaJustificada"></td>
           <td *ngIf="colaborador && colaborador.nuevaNovedad"><input type="number" [(ngModel)]="colaborador.nuevaNovedad.inasistenciaInjustificada"></td>
-           <button (click)="asignarNovedadAColaborador(colaborador)">Asignar</button>
-           </tr>
+          <td><button class="btn-asignar" (click)="asignarNovedadAColaborador(colaborador)">Asignar</button></td>
+        </tr>
       </tbody>
     </table>
   </div>
