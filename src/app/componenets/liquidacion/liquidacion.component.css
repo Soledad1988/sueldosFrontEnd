@@ -13,11 +13,11 @@
   }
 
   /* Estilo para la sección 1 */
-.section-1 {
+.section-1 h1{
+  font-family: Garamond;
   text-align: center; 
   margin-bottom: 50px;
-  font-family: 'Arial', sans-serif; /* Cambiar el font-family a uno más estético */
-  font-size: 24px; /* Aumentar el tamaño del texto */
+  font-size: 30px; /* Aumentar el tamaño del texto */
   color: #333;
   line-height: 1.5; /* Ajustar el espacio entre líneas */
   padding-top: 50px; /* Añadir espacio superior */
@@ -52,8 +52,8 @@
 .label {
   display: block; 
   margin-bottom: 10px;
-  font-family: 'Arial', sans-serif;
-  font-size: 20px;
+  font-family: Garamond;
+  font-size: 25px;
 }
 
 .mat-primary {

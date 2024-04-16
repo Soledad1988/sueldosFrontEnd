@@ -1,4 +1,12 @@
 .title {
-    margin-bottom: 20px;
+    font-family: Garamond;
+    font-size: 30px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .datos {
+    font-family: Garamond;
+    color: black;
   }
   
