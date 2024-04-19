@@ -32,6 +32,7 @@ import { NuevaNovedadComponent } from './componenets/formularios/nueva-novedad/n
 import { NovedadesComponent } from './componenets/novedades/novedades.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatMenuModule } from '@angular/material/menu';
 //import { CuitFormatDirective } from './path-to-your-directive';
 
 @NgModule({
@@ -69,6 +70,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatTooltipModule,
     MatInputModule,
     MatTabsModule,
+    MatMenuModule,
     
   ],
   providers: [],

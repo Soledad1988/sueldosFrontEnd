@@ -7,6 +7,12 @@
 
   .datos {
     font-family: Garamond;
+    font-size: 20px;
     color: black;
+  }
+
+  mat-label {
+    font-family: Garamond;
+    font-size: 20px;
   }
   

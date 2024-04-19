@@ -31,7 +31,8 @@ export class NuevaNovedadComponent implements OnInit{
   listarColaboradores(): void {
     this.colaboradorService.colaborador().subscribe(
       (data: Colaborador[]) => {
-        this.colaboradores = data.map(colaborador => ({
+        // Filtrar solo los colaboradores activos
+        this.colaboradores = data.filter(colaborador => colaborador.activo).map(colaborador => ({
           ...colaborador,
           nuevaNovedad: {
             vacaciones: 0,

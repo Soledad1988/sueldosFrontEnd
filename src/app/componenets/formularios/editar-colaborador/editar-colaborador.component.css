@@ -1,0 +1,18 @@
+.title {
+    font-family: Garamond;
+    font-size: 30px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .datos {
+    font-family: Garamond;
+    font-size: 20px;
+    color: black;
+  }
+
+  mat-label {
+    font-family: Garamond;
+    font-size: 20px;
+  }
+  

@@ -8,7 +8,7 @@
         <mat-tab label="Datos Personales">
       
             <div class="d-grid p-2 bd-highlight d-flex justify-content-center">
-              <form class="d-grid gap-2">
+              <form class="d-grid gap-3">
               
                 <input type="text" name="nombre" class="form-control" placeholder="Ingrese Nombre" [(ngModel)]="nuevoColaborador.nombre">
                 <input type="text" name="apellido" class="form-control" placeholder="Ingrese Apellido" [(ngModel)]="nuevoColaborador.apellido">
@@ -29,7 +29,7 @@
         <mat-tab label="Datos Laborales">
 
             <div class="d-grid p-2 bd-highlight d-flex justify-content-center">
-              <form class="d-grid gap-2">
+              <form class="d-grid gap-3">
                 <label for="">Fecha Ingreso</label>
               <input type="date" name="nacimiento" class="form-control"
               [ngModel]="nuevoColaborador.nacimiento | date:'yyyy-MM-dd'"
