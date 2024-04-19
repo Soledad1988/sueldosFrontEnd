@@ -14,15 +14,18 @@ export class ColaboradoresComponent implements OnInit{
   colaboradorActual: Colaborador | null = null;
   indiceActual = 0;
 
+  filtroEstado: string = 'activos'; // Inicializar el filtro con "activos" por defecto
+
   constructor(private colaboradorService: ColaboradorService,
     private archivoService: ArchivoService) {}
 
   ngOnInit(): void {
-    this.listarColaboradores();
+   // this.listarColaboradores();
+    this.aplicarFiltro(this.filtroEstado);
   }
 
   listarColaboradores(): void {
-    this.colaboradorService.colaborador().subscribe(
+    this.colaboradorService.getColaboradoresPorEstado(this.filtroEstado === 'activos').subscribe(
       (data: Colaborador[]) => {
         this.colaboradores = data;
         if (this.colaboradores.length > 0) {
@@ -110,5 +113,13 @@ export class ColaboradoresComponent implements OnInit{
     a.click();
     document.body.removeChild(a);
     window.URL.revokeObjectURL(url);
+  }
+
+  aplicarFiltro(estado: string) {
+    // Asignar el estado del filtro
+    this.filtroEstado = estado;
+
+    // Llamar al método para cargar los colaboradores filtrados
+    this.listarColaboradores();
   }
 }

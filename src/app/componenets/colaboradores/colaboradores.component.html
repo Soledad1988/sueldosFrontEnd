@@ -1,5 +1,4 @@
 
-
 <div class="titulo">Legajo de Colaborador</div>
 <div class="legajo-container">
 
@@ -21,6 +20,18 @@
           <mat-icon>picture_as_pdf</mat-icon>
         </button>
       </div>
+
+      
+    <div class="filtro-container">
+      <mat-menu #filtroMenu="matMenu">
+        <button mat-menu-item (click)="aplicarFiltro('todos')">Todos</button>
+        <button mat-menu-item (click)="aplicarFiltro('activos')">Solo Activos</button>
+      </mat-menu>
+      <button mat-button [matMenuTriggerFor]="filtroMenu">
+        <mat-icon>filter_alt</mat-icon> Filtrar por estado
+      </button>
+    </div>
+
    </div>
 
    
