@@ -20,12 +20,16 @@ export class ColaboradoresComponent implements OnInit{
     private archivoService: ArchivoService) {}
 
   ngOnInit(): void {
-   // this.listarColaboradores();
-    this.aplicarFiltro(this.filtroEstado);
+    this.listarColaboradores();
+    //this.aplicarFiltro(this.filtroEstado);
   }
 
   listarColaboradores(): void {
-    this.colaboradorService.getColaboradoresPorEstado(this.filtroEstado === 'activos').subscribe(
+    let filtro: boolean | null = null; // Cambio aquí
+    if (this.filtroEstado === 'activos') {
+      filtro = true;
+    }
+    this.colaboradorService.getColaboradoresPorEstado(filtro).subscribe(
       (data: Colaborador[]) => {
         this.colaboradores = data;
         if (this.colaboradores.length > 0) {
@@ -37,23 +41,27 @@ export class ColaboradoresComponent implements OnInit{
       }
     );
   }
-
+  
   irColaboradorAnterior(): void {
+    console.log('Ir colaborador anterior');
     if (this.indiceActual > 0) {
       this.indiceActual--;
       this.colaboradorActual = this.colaboradores[this.indiceActual];
     } else {
+      console.log('Estamos en el primer colaborador, yendo al último');
       // Si estamos en el primer colaborador, vamos al último
       this.indiceActual = this.colaboradores.length - 1;
       this.colaboradorActual = this.colaboradores[this.indiceActual];
     }
   }
-
+  
   irColaboradorSiguiente(): void {
+    console.log('Ir colaborador siguiente');
     if (this.indiceActual < this.colaboradores.length - 1) {
       this.indiceActual++;
       this.colaboradorActual = this.colaboradores[this.indiceActual];
     } else {
+      console.log('Estamos en el último colaborador, yendo al primero');
       // Si estamos en el último colaborador, vamos al primero
       this.indiceActual = 0;
       this.colaboradorActual = this.colaboradores[this.indiceActual];

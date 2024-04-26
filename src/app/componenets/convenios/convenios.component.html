@@ -1,6 +1,6 @@
 <div class="container">
   <!-- Botón Categorías -->
-  <div class="d-flex justify-content-end mt-2">
+  <div class="d-flex justify-content-end">
     <button mat-raised-button [routerLink]="['/categoria']">Categorías</button>
   </div>
    <!-- Título y formularios -->
@@ -21,8 +21,8 @@
         <input type="text" name="nombre" class="form-control" placeholder="Ingrese Nombre de Convenio" [(ngModel)]="nuevo.nombre">
         <div class="form-footer">
           <div class="form-footer d-flex justify-content-between">
-            <button type="submit" class="button btn btn-info" [routerLink]="['/convenio']" routerLinkActive="router-link-active" (click)="agregar()">Confirmar</button>
-            <button type="reset" class="button btn btn-secondary" [routerLink]="['/menu']" routerLinkActive="router-link-active">Cancelar</button>
+            <button type="submit" class="button btn btn-custom" [routerLink]="['/convenio']" routerLinkActive="router-link-active" (click)="agregar()">Confirmar</button>
+            <button type="reset" class="button btn btn-custom2" [routerLink]="['/menu']" routerLinkActive="router-link-active">Cancelar</button>
           </div>
         </div>
       </form>

@@ -1,18 +1,32 @@
 .title {
-    font-family: Garamond;
-    font-size: 30px;
-    padding: 20px;
-    text-align: center;
-  }
+  font-family: Garamond;
+  font-size: 30px;
+  padding: 20px;
+  text-align: center;
+}
 
-  .datos {
-    font-family: Garamond;
-    font-size: 20px;
-    color: black;
-  }
+.input {
+  width: 300px; /* Puedes ajustar este valor según tus necesidades */
+}
 
-  mat-label {
-    font-family: Garamond;
-    font-size: 20px;
-  }
-  
+.datos {
+  font-family: Garamond;
+  font-size: 20px;
+  color: black;
+}
+
+mat-label {
+  font-family: Garamond;
+  font-size: 20px;
+}
+
+.btn-custom {
+  background-color: #959888;
+  margin: 3px;
+}
+
+.btn-custom2 {
+  color: white;
+  background-color: #333;
+  margin: 3px;
+}

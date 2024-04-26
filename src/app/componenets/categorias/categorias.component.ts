@@ -4,6 +4,7 @@ import { CategoriaService } from 'src/app/service/categoria.service';
 import { ConvenioService } from 'src/app/service/convenio.service';
 import Swal from 'sweetalert2';
 
+
 @Component({
   selector: 'app-categorias',
   templateUrl: './categorias.component.html',

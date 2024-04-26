@@ -63,7 +63,13 @@ export class ColaboradorService {
   }
 
    // Método para obtener colaboradores filtrados por estado
-   getColaboradoresPorEstado(activo: boolean): Observable<Colaborador[]> {
-    return this.httpClient.get<Colaborador[]>(`${this.URL}/estado/${activo}`);
+   getColaboradoresPorEstado(activo: boolean | null): Observable<Colaborador[]> {
+    let url: string;
+    if (activo !== null) {
+      url = `${this.URL}/estado/${activo}`;
+    } else {
+      url = `${this.URL}/estado?activo=null`;
+    }
+    return this.httpClient.get<Colaborador[]>(url);
   }
 } 

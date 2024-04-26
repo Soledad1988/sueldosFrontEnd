@@ -99,7 +99,7 @@
           <div class="d-grid p-2 bd-highlight d-flex justify-content-center">
             <form class="d-grid gap-3">
             
-              <input type="text" name="nombre" class="form-control" placeholder="Ingrese Nombre" [(ngModel)]="actual.nombre">
+              <input type="text" name="nombre" class="form-control input" placeholder="Ingrese Nombre" [(ngModel)]="actual.nombre">
   
           <input type="text" name="apellido" class="form-control" placeholder="Ingrese Apellido" [(ngModel)]="actual.apellido">
   
@@ -126,7 +126,7 @@
               <label for="">Fecha Ingreso</label>
               <input type="date" name="ingreso" class="form-control" placeholder="Fehca Ingreso" >    
 
-            <mat-form-field appearance="fill" class="mt20 w100">
+            <mat-form-field appearance="fill" class="mt20 w100" class="input">
               <mat-label>Convenio</mat-label>
             <mat-select name="convenio">
               <mat-option >
@@ -156,10 +156,10 @@
           </div>
 
           <div class="form-footer d-flex justify-content-center">
-            <button type="submit" class="btn btn-info m-2" [routerLink]="['/colaborador']" routerLinkActive="router-link-active" (click)="guardar()">
+            <button type="submit" class="btn btn-custom" [routerLink]="['/colaborador']" routerLinkActive="router-link-active" (click)="guardar()">
               Confirmar Cambios
             </button>
-            <button type="reset" class="btn btn-secondary m-2" [routerLink]="['/menu']" routerLinkActive="router-link-active">
+            <button type="reset" class="btn btn-custom2" [routerLink]="['/menu']" routerLinkActive="router-link-active">
                 Cancelar
             </button>
           </div>

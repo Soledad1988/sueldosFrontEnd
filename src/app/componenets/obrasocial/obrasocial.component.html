@@ -10,8 +10,8 @@
         <input type="text" name="nombre" class="form-control" placeholder="Ingrese nombr Obra Social" [(ngModel)]="nuevo.nombre">
 
         <div class="form-footer d-flex justify-content-between">
-          <button type="submit" class="btn btn-info" [routerLink]="['/obrasocial']" routerLinkActive="router-link-active" (click)="agregar()">Confirmar Cambios</button>
-          <button type="reset" class="btn btn-secondary" [routerLink]="['/menu']" routerLinkActive="router-link-active">Cancelar</button>
+          <button type="submit" class="btn btn-custom" [routerLink]="['/obrasocial']" routerLinkActive="router-link-active" (click)="agregar()">Confirmar Cambios</button>
+          <button type="reset" class="btn btn-custom2" [routerLink]="['/menu']" routerLinkActive="router-link-active">Cancelar</button>
         </div>
       </form>
     </div>
@@ -22,15 +22,13 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th scope="col">N°</th>
-            <th scope="col">Nombre Convenio</th>
+            <th scope="col">Obra Social</th>
             <th scope="col">Codigo</th>
             <th scope="col">Acciones</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let obrasocial of lista">
-            <td>{{obrasocial.idObrasocial}}</td>
             <td>{{obrasocial.nombre}}</td>
             <td>{{obrasocial.codigo}}</td>
             <td>

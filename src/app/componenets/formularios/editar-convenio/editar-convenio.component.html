@@ -1,13 +1,11 @@
 <div class="container">
 
-    <div class="container" class="d-flex justify-content-center">
-  
-        <div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 30rem">
-  
-            <div class="d-grid" class="p-2 bd-highlight" class="d-flex justify-content-center"> 
+  <h2 class="title">Editar Convenio</h2>
+
+    <div class="form-container">
   
               <form class="d-grid gap-2">
-                <h2>Ingrese Datos del Convenio</h2>
+           
                 
                 <input type="text" name="numero" class="form-control" placeholder="Ingrese Numero Convenio" [(ngModel)]="actual.numero">
   
@@ -16,22 +14,18 @@
                 <div class="form-footer">
   
                   <div class="col" class="d-inline p-2">
-                  <button type="submit" class="button" class= "btn btn-info" [routerLink]="['/convenio']" routerLinkActive="router-link-active" (click)="guardar()">
+                  <button type="submit" class="button" class= "btn btn-custom" [routerLink]="['/convenio']" routerLinkActive="router-link-active" (click)="guardar()">
                     Confirmar Cambios</button>
                   </div>
   
                   <div class="col" class="d-inline p-2">
-                    <button type="reset" class="button" class="btn btn-secondary" [routerLink]="['/menu']" routerLinkActive="router-link-active">
+                    <button type="reset" class="button" class="btn btn-custom2" [routerLink]="['/menu']" routerLinkActive="router-link-active">
                     Cancelar</button>
                   </div>
                   
                 </div>
           
               </form>
-          
-            </div>
-  
-        </div>
   
     </div>
   
