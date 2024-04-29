@@ -1,0 +1,36 @@
+<div class="container">
+
+    <h2 class="title">Editar categoria</h2>
+  
+      <!-- Formulario -->
+      <div class="form-container">
+    
+            <form class="d-grid gap-2">
+            
+              <input type="text" name="nombre" class="form-control" placeholder="Ingrese Nombre de la Categoria">
+  
+              <input type="text" name="descripcion" class="form-control" placeholder="Ingrese Descripcion de la categoria">
+  
+              <input type="text" name="monto" class="form-control" placeholder="Ingrese Monto de la Categoria">
+  
+              <mat-form-field appearance="fill" class="mt20 w100">
+                <mat-label>Convenios</mat-label>
+                <mat-select name="categoria">
+                  <mat-option >
+                    
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            
+  
+                <div class="form-footer d-flex justify-content-between">
+                  <button type="submit" class="button" class= "btn btn-custom" [routerLink]="['/categoria']" routerLinkActive="router-link-active">Confirmar cambios</button>
+                  <button type="reset" class="button" class="btn btn-custom2" [routerLink]="['/menu']" routerLinkActive="router-link-active">Cancelar</button>
+                </div>
+              
+        
+            </form>
+        
+      </div>
+     
+  </div>
