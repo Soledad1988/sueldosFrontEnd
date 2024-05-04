@@ -38,6 +38,7 @@
   .table-container td {
     border: 1px solid #959888;
     padding: 8px;
+    background-color: inherit;
   }
   
   .table-container th {

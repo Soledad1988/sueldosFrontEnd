@@ -53,7 +53,7 @@ export class ColaboradorService {
   }
 
   // Método para cambiar el estado activo de un colaborador
-  cambiarEstadoActivoColaborador(id: number, nuevoEstado: boolean): Observable<any> {
+  cambiarEstadoColaborador(id: number, nuevoEstado: boolean): Observable<any> {
     return this.httpClient.put(`${this.URL}/cambiarEstado/${id}`, nuevoEstado);
   }
 
@@ -63,12 +63,12 @@ export class ColaboradorService {
   }
 
    // Método para obtener colaboradores filtrados por estado
-   getColaboradoresPorEstado(activo: boolean | null): Observable<Colaborador[]> {
+   getColaboradoresPorEstado(estado: string): Observable<Colaborador[]> {
     let url: string;
-    if (activo !== null) {
-      url = `${this.URL}/estado/${activo}`;
+    if (estado === 'todos') {
+      url = `${this.URL}/estado?activo=todos`; // Cambiar a 'activo=todos'
     } else {
-      url = `${this.URL}/estado?activo=null`;
+      url = `${this.URL}/estado?activo=${estado}`; // Cambiar a 'activo=${estado}'
     }
     return this.httpClient.get<Colaborador[]>(url);
   }

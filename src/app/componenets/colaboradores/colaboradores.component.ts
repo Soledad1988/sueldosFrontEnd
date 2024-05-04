@@ -14,7 +14,9 @@ export class ColaboradoresComponent implements OnInit{
   colaboradorActual: Colaborador | null = null;
   indiceActual = 0;
 
-  filtroEstado: string = 'activos'; // Inicializar el filtro con "activos" por defecto
+  filtroEstado: string = 'activo'; // Inicializar el filtro con "activo" por defecto
+  estadoSeleccionado: string = 'activo'; // Variable para rastrear el estado seleccionado en la lista desplegable
+
 
   constructor(private colaboradorService: ColaboradorService,
     private archivoService: ArchivoService) {}
@@ -25,11 +27,7 @@ export class ColaboradoresComponent implements OnInit{
   }
 
   listarColaboradores(): void {
-    let filtro: boolean | null = null; // Cambio aquí
-    if (this.filtroEstado === 'activos') {
-      filtro = true;
-    }
-    this.colaboradorService.getColaboradoresPorEstado(filtro).subscribe(
+    this.colaboradorService.colaborador().subscribe(
       (data: Colaborador[]) => {
         this.colaboradores = data;
         if (this.colaboradores.length > 0) {
@@ -41,37 +39,33 @@ export class ColaboradoresComponent implements OnInit{
       }
     );
   }
-  
+
   irColaboradorAnterior(): void {
-    console.log('Ir colaborador anterior');
     if (this.indiceActual > 0) {
       this.indiceActual--;
       this.colaboradorActual = this.colaboradores[this.indiceActual];
     } else {
-      console.log('Estamos en el primer colaborador, yendo al último');
       // Si estamos en el primer colaborador, vamos al último
       this.indiceActual = this.colaboradores.length - 1;
       this.colaboradorActual = this.colaboradores[this.indiceActual];
     }
   }
-  
+
   irColaboradorSiguiente(): void {
-    console.log('Ir colaborador siguiente');
     if (this.indiceActual < this.colaboradores.length - 1) {
       this.indiceActual++;
       this.colaboradorActual = this.colaboradores[this.indiceActual];
     } else {
-      console.log('Estamos en el último colaborador, yendo al primero');
       // Si estamos en el último colaborador, vamos al primero
       this.indiceActual = 0;
       this.colaboradorActual = this.colaboradores[this.indiceActual];
     }
   }
 
-  toggleEstadoColaborador(colaborador: Colaborador) {
+  EstadoColaborador(colaborador: Colaborador) {
     if (colaborador.id !== undefined) {
       const nuevoEstado = !colaborador.activo;
-      this.colaboradorService.cambiarEstadoActivoColaborador(colaborador.id, nuevoEstado)
+      this.colaboradorService.cambiarEstadoColaborador(colaborador.id, nuevoEstado)
         .subscribe({
           next: (response) => {
             // Actualiza la lista o el estado del colaborador en la vista
@@ -87,6 +81,7 @@ export class ColaboradoresComponent implements OnInit{
       // Por ejemplo, mostrar un mensaje de error
     }
   }
+  
 
   imprimirPdf(): void {
     if (this.colaboradorActual) {
@@ -124,10 +119,28 @@ export class ColaboradoresComponent implements OnInit{
   }
 
   aplicarFiltro(estado: string) {
-    // Asignar el estado del filtro
-    this.filtroEstado = estado;
-
+    this.filtroEstado = estado; // Actualizar el estado seleccionado
     // Llamar al método para cargar los colaboradores filtrados
-    this.listarColaboradores();
+    if (estado === 'activo') {
+      this.listarColaboradores(); // Llama al método original para cargar todos los colaboradores
+    } else {
+      // Llama al método que obtiene colaboradores filtrados por estado
+      this.colaboradorService.getColaboradoresPorEstado(estado).subscribe(
+        (colaboradores: Colaborador[]) => {
+          this.colaboradores = colaboradores;
+          if (this.colaboradores.length > 0) {
+            this.colaboradorActual = this.colaboradores[0];
+          }
+        },
+        (error: any) => {
+          console.error('Error al cargar los colaboradores:', error);
+        }
+      );
+    }
   }
+  
+  
+  
+  
+  
 }

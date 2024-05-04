@@ -11,7 +11,7 @@
           </button>
       </div>
 
-        <!-- Agregar botones de exportación -->
+        <!-- Agregar botones de exportación   -->
       <div class="exportar-container">
         <button mat-icon-button matTooltip="Exportar a Excel" (click)="generarExcel()">
           <mat-icon>file_download</mat-icon>
@@ -22,16 +22,17 @@
       </div>
 
       
-    <div class="filtro-container">
-      <mat-menu #filtroMenu="matMenu">
-        <button mat-menu-item (click)="aplicarFiltro('todos')">Todos</button>
-        <button mat-menu-item (click)="aplicarFiltro('activos')">Solo Activos</button>
-      </mat-menu>
-      <button mat-button [matMenuTriggerFor]="filtroMenu">
-        <mat-icon>filter_alt</mat-icon> Filtrar por estado
-      </button>
-    </div>
+    
 
+   </div>
+
+   <div>
+    <div class="filtro-container">
+      <button mat-button [class.active]="filtroEstado === 'activo'" (click)="aplicarFiltro('activos')">Activos</button>
+      <button mat-button [class.active]="filtroEstado === 'inactivos'" (click)="aplicarFiltro('inactivos')">Inactivos</button>
+      <button mat-button [class.active]="filtroEstado === 'todos'" (click)="aplicarFiltro('todos')">Todos</button>
+    </div>
+    
    </div>
 
    
@@ -41,15 +42,18 @@
         <button mat-mini-fab color="#959888" matTooltip="Editar Colaborador" [routerLink]="['/editar', colaboradorActual?.id]">
           <mat-icon>edit</mat-icon>
         </button>
-        <!-- Botón Activar/Desactivar -->
-        <button mat-mini-fab matTooltip="Cambiar Estado" [color]="colaboradorActual?.activo ? 'warn' : 'primary'" (click)="colaboradorActual && toggleEstadoColaborador(colaboradorActual)">
-          <mat-icon>{{ colaboradorActual?.activo ? 'delete' : 'check_circle' }}</mat-icon>
-        </button>
-        <!-- Luz verde o roja según el estado -->
-        <span [ngClass]="{
-          'activo-indicador': colaboradorActual?.activo,
-          'inactivo-indicador': !colaboradorActual?.activo
-        }"></span>
+
+       <!-- Botón Activar/Desactivar -->
+       <button mat-mini-fab matTooltip="Cambiar Estado" [color]="colaboradorActual?.activo ? 'warn' : 'primary'" (click)="colaboradorActual && EstadoColaborador(colaboradorActual)">
+        <mat-icon>{{ colaboradorActual?.activo ? 'clear' : 'check_circle' }}</mat-icon>
+      </button>
+
+       <!-- Luz verde o roja según el estado -->
+       <span [ngClass]="{
+        'activo-indicador': colaboradorActual?.activo,
+        'inactivo-indicador': !colaboradorActual?.activo
+      }"></span>
+          
       </div>
     </div>
 
@@ -107,7 +111,7 @@
       </div>
     </div>
 
-    <div class="navegacion">
+    <div class="navegacion2">
       <button mat-button class="boton-navegacion" (click)="irColaboradorAnterior()">Anterior</button>
       <button mat-button class="boton-navegacion" (click)="irColaboradorSiguiente()">Siguiente</button>
     </div>

@@ -76,6 +76,23 @@
 }
 
 /* Puedes agregar estilos adicionales según necesites */
+.selector{
+  background-color: #d4d8c6; 
+  color: #333;
+  font-weight: bold;
+  border-radius: 20px;
+  width: 120px; 
+  border: 1px solid #8e956d;
+  transition: box-shadow 0.3s;
+}
+
+.selector option {
+  text-align: center; /* Centra el texto horizontalmente */
+}
+
+.selector:hover {
+  box-shadow: 0 0 10px rgba(0,0,0,0.3); /* Agrega la sombra al hacer hover */
+}
 
 .activo-indicador {
   width: 10px;
@@ -90,8 +107,24 @@
   height: 10px;
   background-color: red;
   border-radius: 50%;
-  display: inline-block;
 }
+
+.filtro-container {
+  display: flex; /* Utiliza flexbox para el contenedor de filtros */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+}
+
+.filtro-container button {
+  margin: 0 5px; /* Añade un margen entre los botones para separarlos */
+}
+
+.navegacion2 {
+  display: flex; /* Utiliza flexbox para los botones de navegación */
+  justify-content: center; /* Centra los botones horizontalmente */
+  margin-top: 20px; /* Espacio adicional arriba */
+}
+
 
 .boton-navegacion {
   background-color: transparent; /* Fondo transparente para el botón */
