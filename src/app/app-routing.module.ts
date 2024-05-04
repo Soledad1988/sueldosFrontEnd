@@ -26,7 +26,7 @@ const routes: Routes = [
   {path:'categoria', component:CategoriasComponent},
   {path:'editarCate/:id', component:EditarCategoriaComponent},
   {path:'obrasocial', component:ObrasocialComponent},
-  {path:'editarObra/:id', component:EditarObrasocialComponent},
+  {path:'editarObra/:id', component: EditarObrasocialComponent },
   {path:'liquidacion', component:LiquidacionComponent},
   {path:'nuevaLiquidacion', component:NuevaLiquidacionComponent},
   {path:'nuevaNovedad', component:NuevaNovedadComponent},

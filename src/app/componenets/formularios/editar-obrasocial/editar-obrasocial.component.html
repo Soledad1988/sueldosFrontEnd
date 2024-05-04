@@ -1,20 +1,18 @@
 <div class="container">
- 
     <h2 class="title">Editar Obra Social</h2>
-  
-      <!-- Formulario -->
-      <div class="form-container">
-        <form class="d-grid gap-2">
-          
-          <input type="text" name="numero" class="form-control" placeholder="Ingrese Codigo Obra Social">
-          <input type="text" name="nombre" class="form-control" placeholder="Ingrese nombr Obra Social">
-  
-          <div class="form-footer d-flex justify-content-between">
-            <button type="submit" class="btn btn-custom" [routerLink]="['/obrasocial']" routerLinkActive="router-link-active">Confirmar Cambios</button>
-            <button type="reset" class="btn btn-custom2" [routerLink]="['/menu']" routerLinkActive="router-link-active">Cancelar</button>
-          </div>
+
+    <!-- Formulario -->
+    <div class="form-container">
+        <form class="d-grid gap-2" (ngSubmit)="guardar()">
+            <input type="text" name="codigo" class="form-control" placeholder="Código" [(ngModel)]="actual.codigo">
+            <input type="text" name="nombre" class="form-control" placeholder="Nombre" [(ngModel)]="actual.nombre">
+    
+            <div class="form-footer d-flex justify-content-between">
+                <button type="submit" class="btn btn-custom">Confirmar Cambios</button>
+                <button type="button" class="btn btn-custom2" (click)="cancelar()">Cancelar</button>
+            </div>
         </form>
-      </div>
-  
-  </div>
-  
+    </div>
+</div>
+
+

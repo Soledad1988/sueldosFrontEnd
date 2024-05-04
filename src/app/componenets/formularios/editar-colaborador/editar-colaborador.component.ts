@@ -16,6 +16,7 @@ export class EditarColaboradorComponent implements OnInit {
       convenio: undefined // Inicializa convenio como undefined
     }
   };
+  
   suscripcion: Subscription = new Subscription();
 
   constructor(
