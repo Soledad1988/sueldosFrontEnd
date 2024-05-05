@@ -17,11 +17,11 @@
   <div class="form-container">
     
       <form class="d-grid gap-2">
-        <input type="text" name="numero" class="form-control" placeholder="Ingrese Numero Convenio" [(ngModel)]="nuevo.numero">
-        <input type="text" name="nombre" class="form-control" placeholder="Ingrese Nombre de Convenio" [(ngModel)]="nuevo.nombre">
+        <input type="text" name="numero" class="form-control" placeholder="Número" [(ngModel)]="nuevo.numero">
+        <input type="text" name="nombre" class="form-control" placeholder="Nombre" [(ngModel)]="nuevo.nombre">
         <div class="form-footer">
           <div class="form-footer d-flex justify-content-between">
-            <button type="submit" class="button btn btn-custom" [routerLink]="['/convenio']" routerLinkActive="router-link-active" (click)="agregar()">Confirmar</button>
+            <button type="submit" class="button btn btn-custom" [routerLink]="['/convenio']" routerLinkActive="router-link-active" (click)="agregar()">Guardar</button>
             <button type="reset" class="button btn btn-custom2" [routerLink]="['/menu']" routerLinkActive="router-link-active">Cancelar</button>
           </div>
         </div>
@@ -36,7 +36,7 @@
         <thead class="membrete">
           <tr>
             <th scope="col">N°</th>
-            <th scope="col">Numero</th>
+            <th scope="col">Número</th>
             <th scope="col">Nombre Convenio</th>
             <th scope="col">Acciones</th>
           </tr>
@@ -48,8 +48,8 @@
             <td>{{convenio.nombre}}</td>
             <td>
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button mat-mini-fab color="stroked" routerLink="/editarC/{{convenio.idConvenio}}"><mat-icon>create</mat-icon></button>
-                <button mat-mini-fab color="stroked" (click)="eliminar(convenio.idConvenio)"><mat-icon>delete</mat-icon></button>
+                <button mat-mini-fab color="stroked" matTooltip="Editar" routerLink="/editarC/{{convenio.idConvenio}}"><mat-icon>create</mat-icon></button>
+                <button mat-mini-fab color="stroked" matTooltip="Eliminar" (click)="eliminar(convenio.idConvenio)"><mat-icon>delete</mat-icon></button>
               </div>
             </td>
           </tr>

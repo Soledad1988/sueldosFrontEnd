@@ -3,16 +3,16 @@
 
   <!-- Formulario -->
   <div class="form-container">
-    <form class="d-grid gap-2" (ngSubmit)="onSubmit()">
-      <input type="text" name="nombre" class="form-control" [(ngModel)]="categoria.nombre" placeholder="Ingrese Nombre de la Categoria">
+    <form class="d-grid gap-2" (ngSubmit)="guardar()">
+      <input type="text" name="nombre" class="form-control" [(ngModel)]="actual.nombre" placeholder="Nombre">
 
-      <input type="text" name="descripcion" class="form-control" [(ngModel)]="categoria.descripcion" placeholder="Ingrese Descripcion de la categoria">
+      <input type="text" name="descripcion" class="form-control" [(ngModel)]="actual.descripcion" placeholder="Descripcion">
 
-      <input type="text" name="monto" class="form-control" [(ngModel)]="categoria.monto" placeholder="Ingrese Monto de la Categoria">
+      <input type="text" name="monto" class="form-control" [(ngModel)]="actual.sueldoBasico" placeholder="Monto">
 
       <mat-form-field appearance="fill" class="mt20 w100">
         <mat-label>Convenio</mat-label>
-        <mat-select name="convenio" [(ngModel)]="categoria.convenio">
+        <mat-select name="convenio" [(ngModel)]="actual.convenio">
           <mat-option *ngFor="let convenio of convenios" [value]="convenio.idConvenio">
             {{ convenio.nombre }}
           </mat-option>
@@ -21,7 +21,7 @@
 
       <div class="form-footer d-flex justify-content-between">
         <button type="submit" class="button btn btn-custom">Confirmar cambios</button>
-        <button type="reset" class="button btn btn-custom2" [routerLink]="['/menu']">Cancelar</button>
+        <button type="reset" class="button btn btn-custom2" (click)="cancelar()">Cancelar</button>
       </div>
     </form>
   </div>

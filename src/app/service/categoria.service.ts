@@ -36,6 +36,10 @@ export class CategoriaService {
     return this.httpClient.put<Categoria>(`${this.URL}/${id}`, categoria);
   }
 
+  UnaCategoria(idCategoria:number):Observable<Categoria>{
+    return this.httpClient.get<Categoria>(`${this.URL}/${idCategoria}`);
+  }
+
   eliminar(idCategoria:number):Observable<any>{
     return this.httpClient.delete(this.URL+'/'+idCategoria);
   }

@@ -57,6 +57,6 @@ export class EditarObrasocialComponent implements OnInit{
   cancelar(): void {
     // Redirigir al usuario a la vista de lista de obras sociales o a donde sea necesario
     this.router.navigate(['/obrasocial']);
-}
+    }
 
 }
