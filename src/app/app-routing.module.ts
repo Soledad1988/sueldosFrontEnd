@@ -14,10 +14,12 @@ import { NuevaNovedadComponent } from './componenets/formularios/nueva-novedad/n
 import { NovedadesComponent } from './componenets/novedades/novedades.component';
 import { EditarObrasocialComponent } from './componenets/formularios/editar-obrasocial/editar-obrasocial.component';
 import { EditarCategoriaComponent } from './componenets/formularios/editar-categoria/editar-categoria.component';
+import { SobreNosotrosComponent } from './componenets/sobre-nosotros/sobre-nosotros.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'menu', pathMatch:'full'},
   {path:'menu', component:HomeComponent},
+  {path:'sobreNosotros', component:SobreNosotrosComponent},
   {path:'colaborador', component:ColaboradoresComponent},
   {path:'nuevo', component:NuevoColaboradorComponent},
   {path:'editar/:id', component:EditarColaboradorComponent},
