@@ -3,7 +3,10 @@
   }
   
   .title {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    font-family: Garamond;
+    font-size: 30px;
+    padding: 20px;
   }
   
   .filter-container {
@@ -18,22 +21,35 @@
     width: 100%;
     border-collapse: collapse;
   }
+
+  .membrete{
+    background-color: #333;
+  }
   
   .novedades-table th,
   .novedades-table td {
-    border: 1px solid #ddd;
+    border: 1px solid #959888;
     padding: 8px;
   }
   
   .novedades-table th {
-    background-color: #f2f2f2;
+    background-color: #333;
+    color: #ddd;
     font-weight: bold;
   }
   
-  .novedades-table tr:nth-child(even) {
-    background-color: #f2f2f2;
+  .btn-asignar {
+    background-color: #959888;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
   }
   
-  .novedades-table tr:hover {
-    background-color: #ddd;
+  .btn-asignar:hover {
+    background-color: fff;
+    color: #333;
   }
+  

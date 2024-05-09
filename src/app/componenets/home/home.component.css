@@ -1,26 +1,35 @@
 /* Estilo para la sección 1 */
-.section-1 {
+.section-1{
     text-align: center; 
-    margin-bottom: 50px;
-    font-family: 'Arial', sans-serif; /* Cambiar el font-family a uno más estético */
+    margin-bottom: 55px;
+    font-family: Garamond;
     font-size: 24px; /* Aumentar el tamaño del texto */
+    color: #333;
     line-height: 1.5; /* Ajustar el espacio entre líneas */
     padding-top: 50px; /* Añadir espacio superior */
+}
+
+.section-1 h1{
+    font-family: Garamond;
+    font-size: 40px;
 }
 
 /* Estilo para agrandar los iconos al pasar el mouse sobre el botón */
 .mat-primary:hover .icon {
     transform: scale(1.9); /* Escalar el icono al 120% */
+    color: black;
 }
 
 /* Estilo inicial para los iconos */
 .icon {
-    font-size:25px;
+    font-size:30px;
+    color: #959888;
     transition: transform 0.3s; /* Suaviza la transición del tamaño del ícono */
 }
 
 /*seccion 2 */
 .section-2 {
+    margin-bottom: 50px;
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
@@ -34,8 +43,9 @@
 .label {
     display: block; 
     margin-bottom: 10px;
-    font-family: 'Arial', sans-serif;
-    font-size: 20px;
+    font-family: Garamond;
+    font-size: 25px;
+    color: #333;
 }
 
 .mat-primary {

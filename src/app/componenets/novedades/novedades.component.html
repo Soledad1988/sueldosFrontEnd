@@ -22,14 +22,14 @@
       <button mat-icon-button matTooltip="Exportar a Excel" (click)="generarExcelNovedades(selectedMonth, selectedYear)">
         <mat-icon>file_download</mat-icon>
       </button>
-      <button mat-icon-button matTooltip="Exportar a PDF" (click)="imprimirPdfNovedades(selectedMonth, selectedYear)">
+      <button class="icon" mat-icon-button matTooltip="Exportar a PDF" (click)="imprimirPdfNovedades(selectedMonth, selectedYear)">
         <mat-icon>picture_as_pdf</mat-icon>
       </button>
     </div>
 
 
   <table class="novedades-table">
-    <thead>
+    <thead class="membrete">
       <tr>
         <th>Colaborador</th>
         <th>CUIT</th>

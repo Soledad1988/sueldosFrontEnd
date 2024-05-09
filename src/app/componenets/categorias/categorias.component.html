@@ -7,14 +7,14 @@
   
           <form class="d-grid gap-2">
           
-            <input type="text" name="nombre" class="form-control" placeholder="Ingrese Nombre de la Categoria" [(ngModel)]="nuevaCategoria.nombre">
+            <input type="text" name="nombre" class="form-control" placeholder="Nombre" [(ngModel)]="nuevaCategoria.nombre">
 
-            <input type="text" name="descripcion" class="form-control" placeholder="Ingrese Descripcion de la categoria" [(ngModel)]="nuevaCategoria.descripcion">
+            <input type="text" name="descripcion" class="form-control" placeholder="Descripción" [(ngModel)]="nuevaCategoria.descripcion">
 
-            <input type="text" name="monto" class="form-control" placeholder="Ingrese Monto de la Categoria" [(ngModel)]="nuevaCategoria.monto">
+            <input type="text" name="monto" class="form-control" placeholder="Monto" [(ngModel)]="nuevaCategoria.monto">
 
             <mat-form-field appearance="fill" class="mt20 w100">
-              <mat-label>Convenios</mat-label>
+              <mat-label>Convenio</mat-label>
               <mat-select name="categoria" [(ngModel)] = "nuevaCategoria.convenio.idConvenio">
                 <mat-option *ngFor = "let c of convenios" [value] = "c.idConvenio">
                   {{ c.nombre }}
@@ -24,8 +24,8 @@
           
 
               <div class="form-footer d-flex justify-content-between">
-                <button type="submit" class="button" class= "btn btn-info" [routerLink]="['/categoria']" routerLinkActive="router-link-active" (click)="agregarCategoria()">Confirmar</button>
-                <button type="reset" class="button" class="btn btn-secondary" [routerLink]="['/menu']" routerLinkActive="router-link-active">Cancelar</button>
+                <button type="submit" class="button" class= "btn btn-custom" [routerLink]="['/categoria']" routerLinkActive="router-link-active" (click)="agregarCategoria()">Guardar</button>
+                <button type="reset" class="button" class="btn btn-custom2" [routerLink]="['/menu']" routerLinkActive="router-link-active">Cancelar</button>
               </div>
             
       
@@ -38,27 +38,28 @@
     <!-- Tabla -->
     <div class="table-container">
        
-      <table class="table table-striped">
-          <thead>
+      <table class="table">
+          <thead class="membrete">
             <tr>
               <th scope="col">Id</th>
               <th scope="col">Nombre Categoria</th>
               <th scope="col">Monto</th>
               <th scope="col">Descripcion</th>
               <th scope="col">Convenio Asociado</th>
+              <th scope="col">Acción</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let categoria of lista">
               <td>{{categoria.idCategoria}}</td>
               <td>{{categoria.nombre}}</td>
-              <td>{{categoria.monto}}</td>
+              <td>{{categoria.sueldoBasico}}</td>
               <td>{{categoria.descripcion}}</td>
               <td>{{categoria.convenio.nombre}}</td>
               <td>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                  <button mat-mini-fab color="stroked" routerLink="/editar/{{categoria.idCategoria}}"><mat-icon>create</mat-icon></button>
-                  <button mat-mini-fab color="stroked" (click)="eliminar(categoria.idCategoria)"><mat-icon>delete</mat-icon></button>
+                  <button mat-mini-fab color="stroked" matTooltip="Editar" [routerLink]="['/editarCate', categoria.idCategoria]"><mat-icon>create</mat-icon></button>
+                  <button mat-mini-fab color="stroked" matTooltip="Eliminar" (click)="eliminar(categoria.idCategoria)"><mat-icon>delete</mat-icon></button>
                 </div>
               </td>
             </tr>

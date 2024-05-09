@@ -22,10 +22,10 @@ export class ObrasocialService {
     
   }
 
-  UnObraSocial(idObrasocial:number):Observable<ObraSocial>{
-    return this.httpClient.get<ObraSocial>(this.URL+"/"+idObrasocial);
+  UnaObraSocial(idObrasocial:number):Observable<ObraSocial>{
+    return this.httpClient.get<ObraSocial>(`${this.URL}/${idObrasocial}`);
   }
-
+  
   editar(idObrasocial:number, obraSocial: ObraSocial):Observable<ObraSocial>
   {
     return this.httpClient.put<ObraSocial>(this.URL+'/'+idObrasocial, obraSocial);

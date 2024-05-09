@@ -3,14 +3,14 @@
 
     <h2 class="title">Ingrese Nuevo Colaborador</h2>
     
-      <mat-tab-group>
+      <mat-tab-group class="datos">
 
         <mat-tab label="Datos Personales">
       
             <div class="d-grid p-2 bd-highlight d-flex justify-content-center">
-              <form class="d-grid gap-2">
+              <form class="d-grid gap-3">
               
-                <input type="text" name="nombre" class="form-control" placeholder="Ingrese Nombre" [(ngModel)]="nuevoColaborador.nombre">
+                <input type="text" name="nombre" class="form-control input" placeholder="Ingrese Nombre" [(ngModel)]="nuevoColaborador.nombre">
                 <input type="text" name="apellido" class="form-control" placeholder="Ingrese Apellido" [(ngModel)]="nuevoColaborador.apellido">
                 <input type="text" name="dni" class="form-control" placeholder="DNI" [(ngModel)]="nuevoColaborador.dni">
                 <input type="text" name="cuit" class="form-control" placeholder="CUIT" [(ngModel)]="nuevoColaborador.cuit">
@@ -29,15 +29,15 @@
         <mat-tab label="Datos Laborales">
 
             <div class="d-grid p-2 bd-highlight d-flex justify-content-center">
-              <form class="d-grid gap-2">
+              <form class="d-grid gap-3">
                 <label for="">Fecha Ingreso</label>
-              <input type="date" name="nacimiento" class="form-control"
+              <input type="date" name="nacimiento" class="form-control input"
               [ngModel]="nuevoColaborador.nacimiento | date:'yyyy-MM-dd'"
               (ngModelChange)="nuevoColaborador.fecha_ingreso= $event"> 
 
               <mat-form-field appearance="fill" class="mt20 w100">
                 <mat-label>Convenio</mat-label>
-                <mat-select name="convenio" [(ngModel)]="nuevoColaborador.convenio.idConvenio" (ngModelChange)="onConvenioChange()">
+                <mat-select name="convenio" class="input" [(ngModel)]="nuevoColaborador.convenio.idConvenio" (ngModelChange)="onConvenioChange()">
                   <mat-option *ngFor = "let c of convenios" [value] = "c.idConvenio">
                     {{ c.nombre }}
                   </mat-option>
@@ -65,10 +65,10 @@
             </div>
 
             <div class="form-footer d-flex justify-content-center">
-              <button type="submit" class="btn btn-info m-2" [routerLink]="['/colaborador']" routerLinkActive="router-link-active" (click)="agregar()">
+              <button type="submit" class="btn btn-custom" [routerLink]="['/colaborador']" routerLinkActive="router-link-active" (click)="agregar()">
                 Confirmar
               </button>
-              <button type="reset" class="btn btn-secondary m-2" [routerLink]="['/menu']" routerLinkActive="router-link-active">
+              <button type="reset" class="btn btn-custom2" [routerLink]="['/menu']" routerLinkActive="router-link-active">
                 Cancelar
               </button>
             </div>

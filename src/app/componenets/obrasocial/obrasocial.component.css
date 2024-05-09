@@ -4,6 +4,9 @@
   
   .title {
     margin-bottom: 20px;
+    padding: 20px;
+    font-size: 30px;
+    font-family: Garamond;
   }
   
   .filter-container,
@@ -28,26 +31,33 @@
   
   .table-container th,
   .table-container td {
-    border: 1px solid #ddd;
+    border: 1px solid #959888;
     padding: 8px;
+    background-color: inherit;
   }
   
   .table-container th {
-    background-color: #f2f2f2;
+    background-color: #333;
+    color: #ddd;
     font-weight: bold;
   }
-  
-  .table-container tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  .table-container tr:hover {
-    background-color: #ddd;
-  }
+
 
   .form-container {
     width: 300px; /* Ancho deseado del formulario */
     margin: 20px auto 40px;
   }
   
+  .btn-custom {
+    background-color: #959888;
+    margin: 3px;
+    font-family: Garamond;
+  }
+  
+  .btn-custom2 {
+    color: white;
+    background-color: #333;
+    margin: 3px;
+    font-family: Garamond;
+  }
   

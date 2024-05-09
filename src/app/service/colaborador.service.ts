@@ -19,12 +19,13 @@ export class ColaboradorService {
     return this._refersh$;
   }
 
+  // Método para obtener todos los colaboradores
   colaborador():Observable<any>{
     return this.httpClient.get(this.URL);
   }
 
-  guardar(colaborador: Colaborador):Observable<any>
-  {
+  // Método para crear un colaborador
+  guardar(colaborador: Colaborador):Observable<any>{
     return this.httpClient.post(this.URL, colaborador)
   }
 
@@ -33,22 +34,23 @@ export class ColaboradorService {
     return this.httpClient.post(`${this.URL}`, categoria, { headers });
   }
 
-  //Obtener un huesped
+ // Método para obtener un colaborador por su ID
   UnColaborador(id:number):Observable<Colaborador>{
     return this.httpClient.get<Colaborador>(this.URL+"/"+id);
   }
 
-  editar(id:number, colaborador: Colaborador):Observable<Colaborador>
-  {
+  // Método para editar un colaborador
+  editar(id:number, colaborador: Colaborador):Observable<Colaborador>{
     return this.httpClient.put<Colaborador>(this.URL+'/'+id, colaborador);
   }
 
-  eliminar(id:number):Observable<any>
-  {
+    // Método para eliminar un colaborador
+  eliminar(id:number):Observable<any>{
     return this.httpClient.delete(this.URL+'/'+id);
   }
 
-  cambiarEstadoActivoColaborador(id: number, nuevoEstado: boolean): Observable<any> {
+  // Método para cambiar el estado activo de un colaborador
+  cambiarEstadoColaborador(id: number, nuevoEstado: boolean): Observable<any> {
     return this.httpClient.put(`${this.URL}/cambiarEstado/${id}`, nuevoEstado);
   }
 
@@ -56,4 +58,16 @@ export class ColaboradorService {
     const url = `${this.URL}/${id}/novedad`;
     return this.httpClient.post(url, novedad);
   }
+
+   // Método para obtener colaboradores filtrados por estado
+  getColaboradoresPorEstado(estado: boolean): Observable<Colaborador[]> {
+    let url: string;
+    
+    // Construir la URL según el estado
+    url = `${this.URL}/estado?activo=${estado}`;
+    
+    // Hacer la solicitud HTTP y devolver el observable
+    return this.httpClient.get<Colaborador[]>(url);
+  }
+
 } 

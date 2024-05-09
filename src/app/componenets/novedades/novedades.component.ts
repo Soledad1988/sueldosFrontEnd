@@ -6,6 +6,11 @@ import { FormControl } from '@angular/forms'; // Importa FormControl
 import { NovedadService } from 'src/app/service/novedad.service';
 import { ArchivoService } from 'src/app/service/archivo.service';
 
+import { jsPDF } from 'jspdf';
+import 'jspdf-autotable'; 
+declare let jsPDF_AutoTable: any;
+
+
 
 @Component({
   selector: 'app-novedades',
@@ -114,6 +119,8 @@ imprimirPdfNovedades(month: number, year: number): void {
     }
   );
 }
+
+
 
 generarExcelNovedades(month: number, year: number): void {
   this.archivoService.generarExcelNovedades(month, year).subscribe(

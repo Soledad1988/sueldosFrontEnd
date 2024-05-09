@@ -14,11 +14,15 @@ export class ColaboradoresComponent implements OnInit{
   colaboradorActual: Colaborador | null = null;
   indiceActual = 0;
 
+  filtroEstado: boolean = true; // Inicializar con el valor de true o false según corresponda
+  estadoSeleccionado: boolean = true;  // Variable para rastrear el estado seleccionado en la lista desplegable
+
   constructor(private colaboradorService: ColaboradorService,
     private archivoService: ArchivoService) {}
 
   ngOnInit(): void {
     this.listarColaboradores();
+    //this.aplicarFiltro(this.filtroEstado);
   }
 
   listarColaboradores(): void {
@@ -57,14 +61,14 @@ export class ColaboradoresComponent implements OnInit{
     }
   }
 
-  toggleEstadoColaborador(colaborador: Colaborador) {
+  EstadoColaborador(colaborador: Colaborador) {
     if (colaborador.id !== undefined) {
-      const nuevoEstado = !colaborador.activo;
-      this.colaboradorService.cambiarEstadoActivoColaborador(colaborador.id, nuevoEstado)
+      const nuevoEstado = !colaborador.activo; // Cambia el estado al contrario del actual
+      this.colaboradorService.cambiarEstadoColaborador(colaborador.id, nuevoEstado)
         .subscribe({
           next: (response) => {
             // Actualiza la lista o el estado del colaborador en la vista
-            colaborador.activo = nuevoEstado;
+            colaborador.activo = nuevoEstado; // Actualiza el estado del colaborador localmente
             // Opcionalmente, mostrar un mensaje de éxito/error
           },
           error: (error) => {
@@ -76,6 +80,8 @@ export class ColaboradoresComponent implements OnInit{
       // Por ejemplo, mostrar un mensaje de error
     }
   }
+  
+  
 
   imprimirPdf(): void {
     if (this.colaboradorActual) {
@@ -111,4 +117,23 @@ export class ColaboradoresComponent implements OnInit{
     document.body.removeChild(a);
     window.URL.revokeObjectURL(url);
   }
+
+  aplicarFiltro(estado: boolean) {
+    // Actualizar el estado seleccionado
+    this.filtroEstado = estado;
+  
+    // Llamar al método para cargar los colaboradores filtrados
+    this.colaboradorService.getColaboradoresPorEstado(estado).subscribe(
+      (colaboradores: Colaborador[]) => {
+        this.colaboradores = colaboradores;
+        if (this.colaboradores.length > 0) {
+          this.colaboradorActual = this.colaboradores[0];
+        }
+      },
+      (error: any) => {
+        console.error('Error al cargar los colaboradores:', error);
+      }
+    );
+  }
+  
 }

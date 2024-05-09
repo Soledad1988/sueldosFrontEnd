@@ -32,6 +32,10 @@ import { NuevaNovedadComponent } from './componenets/formularios/nueva-novedad/n
 import { NovedadesComponent } from './componenets/novedades/novedades.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatMenuModule } from '@angular/material/menu';
+import { EditarObrasocialComponent } from './componenets/formularios/editar-obrasocial/editar-obrasocial.component';
+import { EditarCategoriaComponent } from './componenets/formularios/editar-categoria/editar-categoria.component';
+import { SobreNosotrosComponent } from './componenets/sobre-nosotros/sobre-nosotros.component';
 //import { CuitFormatDirective } from './path-to-your-directive';
 
 @NgModule({
@@ -49,6 +53,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     ObrasocialComponent,
     NuevaNovedadComponent,
     NovedadesComponent,
+    EditarObrasocialComponent,
+    EditarCategoriaComponent,
+    SobreNosotrosComponent,
     
   ],
   imports: [
@@ -69,6 +76,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatTooltipModule,
     MatInputModule,
     MatTabsModule,
+    MatMenuModule,
     
   ],
   providers: [],

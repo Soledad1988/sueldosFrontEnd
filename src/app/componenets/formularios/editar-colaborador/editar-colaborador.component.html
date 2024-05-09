@@ -1,63 +1,60 @@
+
 <div class="container">
 
-  <div class="d-flex justify-content-center">
+  <h2 class="title">Editar Datos Colaborador</h2>
   
-    <div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 30rem">
+    <mat-tab-group class="datos">
+
+      <mat-tab label="Datos Personales">
+    
+          <div class="d-grid p-2 bd-highlight d-flex justify-content-center">
+            <form class="d-grid gap-3">
+            
+              <input type="text" name="nombre" class="form-control input" placeholder="Nombre" [(ngModel)]="actual.nombre">
   
-      <div class="d-grid p-2 bd-highlight justify-content-center">
-  
-        <form class="d-grid gap-2">
-          <h2>Editar Datos Colaborador</h2>
-          
-          <input type="text" name="nombre" class="form-control" placeholder="Ingrese Nombre" [(ngModel)]="actual.nombre">
-  
-          <input type="text" name="apellido" class="form-control" placeholder="Ingrese Apellido" [(ngModel)]="actual.apellido">
+          <input type="text" name="apellido" class="form-control" placeholder="Apellido" [(ngModel)]="actual.apellido">
   
           <input type="text" name="dni" class="form-control" placeholder="DNI" [(ngModel)]="actual.dni">
 
           <input type="text" name="cuit" class="form-control" placeholder="CUIT" [(ngModel)]="actual.cuit" appCuitFormat>
           
-          <label for="">Fecha Nacimiento</label>
-          <input type="date" name="nacimiento" class="form-control" placeholder="Fehca Nacimiento" [ngModel]="actual.nacimiento">
-            
+          <label for="">Fecha de Nacimiento</label>
+          <input type="date" name="nacimiento" class="form-control" placeholder="Fecha de Nacimiento" [(ngModel)]="actual.nacimiento">    
+
           <input type="text" name="edad" class="form-control" placeholder="Edad" [(ngModel)]="actual.edad">
   
           <input type="text" name="direccion" class="form-control" placeholder="Ingrese Dirección" [(ngModel)]="actual.direccion">
   
-        </form>
+            </form>
+          </div>
         
-      </div>
-  
-    </div>
+      </mat-tab>
 
-    <div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 30rem">
-  
-      <div class="d-grid p-2 bd-highlight justify-content-center"> 
+      <mat-tab label="Datos Laborales">
 
-        <form class="d-grid gap-2">
-          <h2>Editar Datos Laborales</h2>
-          
-          <label for="">Fecha Ingreso</label>
-          <input type="date" name="ingreso" class="form-control" placeholder="Fehca Ingreso" >
+          <div class="d-grid p-2 bd-highlight d-flex justify-content-center">
+            <form class="d-grid gap-3">
+              <label for="">Fecha Ingreso</label>
+              <input type="date" name="ingreso" class="form-control" placeholder="Fecha Ingreso" [(ngModel)]="actual.fecha_ingreso">    
 
-          <mat-form-field appearance="fill" class="mt20 w100">
-            <mat-label>Convenio</mat-label>
+            <mat-form-field appearance="fill" class="mt20 w100" class="input">
+              <mat-label>Convenio</mat-label>
             <mat-select name="convenio">
-              <mat-option >
-              
+              <mat-option>
+               
               </mat-option>
             </mat-select>
-          </mat-form-field>
+            </mat-form-field>
 
-          <mat-form-field appearance="fill" class="mt20 w100">
-            <mat-label>Categoria</mat-label>
+            <mat-form-field appearance="fill" class="mt20 w100">
+              <mat-label>Categoria</mat-label>
             <mat-select name="categoria"  [(ngModel)]="actual.categoria">
               <mat-option >
                
               </mat-option>
             </mat-select>
           </mat-form-field>
-    
+          
           <mat-form-field appearance="fill" class="mt20 w100">
             <mat-label>Obra Social</mat-label>
             <mat-select name="categoria" [(ngModel)]="actual.obraSocial">
@@ -66,22 +63,24 @@
               </mat-option>
             </mat-select>
           </mat-form-field>
+            </form>
+          </div>
 
-        </form>
-      
-      </div>
+          <div class="form-footer d-flex justify-content-center">
+            <button type="submit" class="btn btn-custom" [routerLink]="['/colaborador']" routerLinkActive="router-link-active" (click)="guardar()">
+              Confirmar Cambios
+            </button>
+            <button type="reset" class="btn btn-custom2" [routerLink]="['/menu']" routerLinkActive="router-link-active">
+                Cancelar
+            </button>
+          </div>
+      </mat-tab>
 
-    </div>   
+    </mat-tab-group>
   
-  </div>
-
-  <div class="form-footer d-flex justify-content-center">
-    <button type="submit" class="btn btn-info m-2" [routerLink]="['/colaborador']" routerLinkActive="router-link-active" (click)="guardar()">
-      Confirmar Cambios
-    </button>
-    <button type="reset" class="btn btn-secondary m-2" [routerLink]="['/menu']" routerLinkActive="router-link-active">
-        Cancelar
-    </button>
-  </div>
   
 </div>
+
+
+
+

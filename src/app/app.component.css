@@ -1,0 +1,42 @@
+.body{
+    background-color:#d4d8c6;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: #959888;
+    padding: 20px;
+}
+
+.navbar-nav .nav-link {
+    color: #fff; /* Cambia esto al color deseado para el texto de los enlaces */
+}
+
+.nav-item {
+    font-size: 18px;
+}
+
+.footer {
+    background-color: #333; /* Cambia esto al color deseado para el fondo del footer */
+    color: #fff; /* Cambia esto al color deseado para el texto del footer */
+    padding: 40px 0;
+  }
+  
+  .footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer ul li a {
+    color: #fff; /* Cambia esto al color deseado para los enlaces del footer */
+    text-decoration: none;
+  }
+  
+  .footer ul li a:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,0 +1,29 @@
+.container {
+    text-align: center;
+    background-color: transparent; 
+  }
+  
+  .title {
+    margin-bottom: 20px;
+    padding: 20px;
+    font-size: 30px;
+    font-family: Garamond;
+  }
+
+  .form-container {
+    width: 300px; /* Ancho deseado del formulario */
+    margin: 20px auto 40px;
+  }
+
+  .btn-custom {
+    background-color: #959888;
+    margin: 3px;
+    font-family: Garamond;
+  }
+  
+  .btn-custom2 {
+    color: white;
+    background-color: #333;
+    margin: 3px;
+    font-family: Garamond;
+  }

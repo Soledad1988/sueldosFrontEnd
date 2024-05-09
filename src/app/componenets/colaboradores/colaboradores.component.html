@@ -1,37 +1,59 @@
 
+<div class="titulo">Legajo de Colaborador</div>
 <div class="legajo-container">
-  <div class="legajo">
-    <div class="boton-agregar">
-      <button mat-fab color="primary" matTooltip="Agregar Nuevo Colaborador" [routerLink]="['/nuevo']">
-        <mat-icon>add_circle</mat-icon>
-      </button>
-    </div>
 
-     <!-- Agregar botones de exportación -->
-  <div class="exportar-container">
-    <button mat-icon-button matTooltip="Exportar a Excel" (click)="generarExcel()">
-      <mat-icon>file_download</mat-icon>
-    </button>
-    <button mat-icon-button matTooltip="Exportar a PDF" (click)="imprimirPdf()">
-      <mat-icon>picture_as_pdf</mat-icon>
-    </button>
-  </div>
-    <div class="titulo">Legajo de Colaborador</div>
+  <div class="legajo">
+
+    <div class="botones">
+      <div class="boton-agregar">
+          <button mat-fab color="#959888" matTooltip="Agregar Nuevo Colaborador" [routerLink]="['/nuevo']">
+            <mat-icon>add_circle</mat-icon>
+          </button>
+      </div>
+
+        <!-- Agregar botones de exportación   -->
+      <div class="exportar-container">
+        <button mat-icon-button matTooltip="Exportar a Excel" (click)="generarExcel()">
+          <mat-icon>file_download</mat-icon>
+        </button>
+        <button mat-icon-button matTooltip="Exportar a PDF" (click)="imprimirPdf()">
+          <mat-icon>picture_as_pdf</mat-icon>
+        </button>
+      </div>
+
+      
+    
+
+   </div>
+
+   <div>
+    <div class="filtro-container">
+      <button mat-button [class.active]="filtroEstado === true" (click)="aplicarFiltro(true)">Activos</button>
+      <button mat-button [class.active]="filtroEstado === false" (click)="aplicarFiltro(false)">Todos</button>
+    </div>
+    
+    
+   </div>
+
+   
     <div class="navegacion">
       <!-- Botón Editar -->
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button mat-mini-fab color="primary" matTooltip="Editar Colaborador" [routerLink]="['/editar', colaboradorActual?.id]">
+        <button mat-mini-fab color="#959888" matTooltip="Editar Colaborador" [routerLink]="['/editar', colaboradorActual?.id]">
           <mat-icon>edit</mat-icon>
         </button>
-        <!-- Botón Activar/Desactivar -->
-        <button mat-mini-fab matTooltip="Cambiar Estado" [color]="colaboradorActual?.activo ? 'warn' : 'primary'" (click)="colaboradorActual && toggleEstadoColaborador(colaboradorActual)">
-          <mat-icon>{{ colaboradorActual?.activo ? 'delete' : 'check_circle' }}</mat-icon>
-        </button>
-        <!-- Luz verde o roja según el estado -->
-        <span [ngClass]="{
-          'activo-indicador': colaboradorActual?.activo,
-          'inactivo-indicador': !colaboradorActual?.activo
-        }"></span>
+
+       <!-- Botón Activar/Desactivar -->
+       <button mat-mini-fab matTooltip="Cambiar Estado" [color]="colaboradorActual?.activo ? 'warn' : 'primary'" (click)="colaboradorActual && EstadoColaborador(colaboradorActual)">
+        <mat-icon>{{ colaboradorActual?.activo ? 'clear' : 'check_circle' }}</mat-icon>
+      </button>
+
+       <!-- Luz verde o roja según el estado -->
+       <span [ngClass]="{
+        'activo-indicador': colaboradorActual?.activo,
+        'inactivo-indicador': !colaboradorActual?.activo
+      }"></span>
+          
       </div>
     </div>
 
@@ -89,7 +111,7 @@
       </div>
     </div>
 
-    <div class="navegacion">
+    <div class="navegacion2">
       <button mat-button class="boton-navegacion" (click)="irColaboradorAnterior()">Anterior</button>
       <button mat-button class="boton-navegacion" (click)="irColaboradorSiguiente()">Siguiente</button>
     </div>

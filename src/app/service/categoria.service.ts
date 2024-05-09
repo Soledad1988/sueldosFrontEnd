@@ -22,19 +22,35 @@ export class CategoriaService {
     return this.httpClient.post(`${this.URL}`, categoria, { headers });
   }
 
-  guardar(categoria: Categoria):Observable<any>
-  {
+   // Método para obtener una categoria por su ID
+   getCategoria(id:number):Observable<Categoria>{
+    return this.httpClient.get<Categoria>(this.URL+"/"+id);
+  }
+
+  guardar(categoria: Categoria):Observable<any>{
     return this.httpClient.post(this.URL, categoria);
     
   }
 
-  eliminar(idCategoria:number):Observable<any>
-  {
+  editar(id: number, categoria: Categoria): Observable<Categoria> {
+    return this.httpClient.put<Categoria>(`${this.URL}/${id}`, categoria);
+  }
+
+  UnaCategoria(idCategoria:number):Observable<Categoria>{
+    return this.httpClient.get<Categoria>(`${this.URL}/${idCategoria}`);
+  }
+
+  eliminar(idCategoria:number):Observable<any>{
     return this.httpClient.delete(this.URL+'/'+idCategoria);
   }
   
   getCategoriasPorConvenio(idConvenio: number): Observable<any> {
     return this.httpClient.get(`${this.URL}/porConvenio/${idConvenio}`);
+  }
+
+   // Método para obtener detalles completos de una categoría
+   getCategoriaDetalles(id: number): Observable<Categoria> {
+    return this.httpClient.get<Categoria>(`${this.URL}/${id}/detalles`);
   }
 
 }

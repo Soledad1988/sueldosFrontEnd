@@ -1,0 +1,32 @@
+/* Estilo para la sección 1 */
+.section-1{
+    text-align: center; 
+    margin-bottom: 55px;
+    font-family: Garamond;
+    color: #333;
+    padding-top: 50px; /* Añadir espacio superior */
+}
+
+.section-1 h1{
+    font-size: 40px;
+}
+
+/* Estilo para la sección 2 */
+
+.section-2 h2{
+    font-family: Garamond;
+    font-size: 40px;
+    color: #333;
+}
+
+.section-2 {
+    font-family: Garamond;
+    font-size: 35px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 50px;
+}
+
+.section-2 p {
+    margin-bottom: 20px;
+}

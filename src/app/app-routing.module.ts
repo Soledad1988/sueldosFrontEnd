@@ -12,17 +12,23 @@ import { NuevaLiquidacionComponent } from './componenets/formularios/nueva-liqui
 import { ObrasocialComponent } from './componenets/obrasocial/obrasocial.component';
 import { NuevaNovedadComponent } from './componenets/formularios/nueva-novedad/nueva-novedad.component';
 import { NovedadesComponent } from './componenets/novedades/novedades.component';
+import { EditarObrasocialComponent } from './componenets/formularios/editar-obrasocial/editar-obrasocial.component';
+import { EditarCategoriaComponent } from './componenets/formularios/editar-categoria/editar-categoria.component';
+import { SobreNosotrosComponent } from './componenets/sobre-nosotros/sobre-nosotros.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'menu', pathMatch:'full'},
   {path:'menu', component:HomeComponent},
+  {path:'sobreNosotros', component:SobreNosotrosComponent},
   {path:'colaborador', component:ColaboradoresComponent},
   {path:'nuevo', component:NuevoColaboradorComponent},
   {path:'editar/:id', component:EditarColaboradorComponent},
   {path:'convenio', component:ConveniosComponent},
-  {path:'categoria', component:CategoriasComponent},
   {path:'editarC/:id', component:EditarConvenioComponent},
+  {path:'categoria', component:CategoriasComponent},
+  {path:'editarCate/:id', component:EditarCategoriaComponent},
   {path:'obrasocial', component:ObrasocialComponent},
+  {path:'editarObra/:id', component: EditarObrasocialComponent },
   {path:'liquidacion', component:LiquidacionComponent},
   {path:'nuevaLiquidacion', component:NuevaLiquidacionComponent},
   {path:'nuevaNovedad', component:NuevaNovedadComponent},
