@@ -10,17 +10,17 @@
           <div class="d-grid p-2 bd-highlight d-flex justify-content-center">
             <form class="d-grid gap-3">
             
-              <input type="text" name="nombre" class="form-control input" placeholder="Ingrese Nombre" [(ngModel)]="actual.nombre">
+              <input type="text" name="nombre" class="form-control input" placeholder="Nombre" [(ngModel)]="actual.nombre">
   
-          <input type="text" name="apellido" class="form-control" placeholder="Ingrese Apellido" [(ngModel)]="actual.apellido">
+          <input type="text" name="apellido" class="form-control" placeholder="Apellido" [(ngModel)]="actual.apellido">
   
           <input type="text" name="dni" class="form-control" placeholder="DNI" [(ngModel)]="actual.dni">
 
           <input type="text" name="cuit" class="form-control" placeholder="CUIT" [(ngModel)]="actual.cuit" appCuitFormat>
           
-          <label for="">Fecha Nacimiento</label>
-          <input type="date" name="nacimiento" class="form-control" placeholder="Fehca Nacimiento" [ngModel]="actual.nacimiento">
-            
+          <label for="">Fecha de Nacimiento</label>
+          <input type="date" name="nacimiento" class="form-control" placeholder="Fecha de Nacimiento" [(ngModel)]="actual.nacimiento">    
+
           <input type="text" name="edad" class="form-control" placeholder="Edad" [(ngModel)]="actual.edad">
   
           <input type="text" name="direccion" class="form-control" placeholder="Ingrese Dirección" [(ngModel)]="actual.direccion">
@@ -35,13 +35,13 @@
           <div class="d-grid p-2 bd-highlight d-flex justify-content-center">
             <form class="d-grid gap-3">
               <label for="">Fecha Ingreso</label>
-              <input type="date" name="ingreso" class="form-control" placeholder="Fehca Ingreso" >    
+              <input type="date" name="ingreso" class="form-control" placeholder="Fecha Ingreso" [(ngModel)]="actual.fecha_ingreso">    
 
             <mat-form-field appearance="fill" class="mt20 w100" class="input">
               <mat-label>Convenio</mat-label>
             <mat-select name="convenio">
-              <mat-option >
-              
+              <mat-option>
+               
               </mat-option>
             </mat-select>
             </mat-form-field>

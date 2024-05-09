@@ -14,9 +14,8 @@ export class ColaboradoresComponent implements OnInit{
   colaboradorActual: Colaborador | null = null;
   indiceActual = 0;
 
-  filtroEstado: string = 'activo'; // Inicializar el filtro con "activo" por defecto
-  estadoSeleccionado: string = 'activo'; // Variable para rastrear el estado seleccionado en la lista desplegable
-
+  filtroEstado: boolean = true; // Inicializar con el valor de true o false según corresponda
+  estadoSeleccionado: boolean = true;  // Variable para rastrear el estado seleccionado en la lista desplegable
 
   constructor(private colaboradorService: ColaboradorService,
     private archivoService: ArchivoService) {}
@@ -64,12 +63,12 @@ export class ColaboradoresComponent implements OnInit{
 
   EstadoColaborador(colaborador: Colaborador) {
     if (colaborador.id !== undefined) {
-      const nuevoEstado = !colaborador.activo;
+      const nuevoEstado = !colaborador.activo; // Cambia el estado al contrario del actual
       this.colaboradorService.cambiarEstadoColaborador(colaborador.id, nuevoEstado)
         .subscribe({
           next: (response) => {
             // Actualiza la lista o el estado del colaborador en la vista
-            colaborador.activo = nuevoEstado;
+            colaborador.activo = nuevoEstado; // Actualiza el estado del colaborador localmente
             // Opcionalmente, mostrar un mensaje de éxito/error
           },
           error: (error) => {
@@ -81,6 +80,7 @@ export class ColaboradoresComponent implements OnInit{
       // Por ejemplo, mostrar un mensaje de error
     }
   }
+  
   
 
   imprimirPdf(): void {
@@ -118,29 +118,22 @@ export class ColaboradoresComponent implements OnInit{
     window.URL.revokeObjectURL(url);
   }
 
-  aplicarFiltro(estado: string) {
-    this.filtroEstado = estado; // Actualizar el estado seleccionado
+  aplicarFiltro(estado: boolean) {
+    // Actualizar el estado seleccionado
+    this.filtroEstado = estado;
+  
     // Llamar al método para cargar los colaboradores filtrados
-    if (estado === 'activo') {
-      this.listarColaboradores(); // Llama al método original para cargar todos los colaboradores
-    } else {
-      // Llama al método que obtiene colaboradores filtrados por estado
-      this.colaboradorService.getColaboradoresPorEstado(estado).subscribe(
-        (colaboradores: Colaborador[]) => {
-          this.colaboradores = colaboradores;
-          if (this.colaboradores.length > 0) {
-            this.colaboradorActual = this.colaboradores[0];
-          }
-        },
-        (error: any) => {
-          console.error('Error al cargar los colaboradores:', error);
+    this.colaboradorService.getColaboradoresPorEstado(estado).subscribe(
+      (colaboradores: Colaborador[]) => {
+        this.colaboradores = colaboradores;
+        if (this.colaboradores.length > 0) {
+          this.colaboradorActual = this.colaboradores[0];
         }
-      );
-    }
+      },
+      (error: any) => {
+        console.error('Error al cargar los colaboradores:', error);
+      }
+    );
   }
-  
-  
-  
-  
   
 }

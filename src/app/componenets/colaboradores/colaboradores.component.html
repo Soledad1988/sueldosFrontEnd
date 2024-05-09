@@ -28,10 +28,10 @@
 
    <div>
     <div class="filtro-container">
-      <button mat-button [class.active]="filtroEstado === 'activo'" (click)="aplicarFiltro('activos')">Activos</button>
-      <button mat-button [class.active]="filtroEstado === 'inactivos'" (click)="aplicarFiltro('inactivos')">Inactivos</button>
-      <button mat-button [class.active]="filtroEstado === 'todos'" (click)="aplicarFiltro('todos')">Todos</button>
+      <button mat-button [class.active]="filtroEstado === true" (click)="aplicarFiltro(true)">Activos</button>
+      <button mat-button [class.active]="filtroEstado === false" (click)="aplicarFiltro(false)">Todos</button>
     </div>
+    
     
    </div>
 

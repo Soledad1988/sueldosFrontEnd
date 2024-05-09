@@ -25,8 +25,7 @@ export class ColaboradorService {
   }
 
   // Método para crear un colaborador
-  guardar(colaborador: Colaborador):Observable<any>
-  {
+  guardar(colaborador: Colaborador):Observable<any>{
     return this.httpClient.post(this.URL, colaborador)
   }
 
@@ -41,14 +40,12 @@ export class ColaboradorService {
   }
 
   // Método para editar un colaborador
-  editar(id:number, colaborador: Colaborador):Observable<Colaborador>
-  {
+  editar(id:number, colaborador: Colaborador):Observable<Colaborador>{
     return this.httpClient.put<Colaborador>(this.URL+'/'+id, colaborador);
   }
 
     // Método para eliminar un colaborador
-  eliminar(id:number):Observable<any>
-  {
+  eliminar(id:number):Observable<any>{
     return this.httpClient.delete(this.URL+'/'+id);
   }
 
@@ -63,13 +60,14 @@ export class ColaboradorService {
   }
 
    // Método para obtener colaboradores filtrados por estado
-   getColaboradoresPorEstado(estado: string): Observable<Colaborador[]> {
+  getColaboradoresPorEstado(estado: boolean): Observable<Colaborador[]> {
     let url: string;
-    if (estado === 'todos') {
-      url = `${this.URL}/estado?activo=todos`; // Cambiar a 'activo=todos'
-    } else {
-      url = `${this.URL}/estado?activo=${estado}`; // Cambiar a 'activo=${estado}'
-    }
+    
+    // Construir la URL según el estado
+    url = `${this.URL}/estado?activo=${estado}`;
+    
+    // Hacer la solicitud HTTP y devolver el observable
     return this.httpClient.get<Colaborador[]>(url);
   }
+
 } 

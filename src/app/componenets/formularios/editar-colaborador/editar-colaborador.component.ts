@@ -14,8 +14,12 @@ export class EditarColaboradorComponent implements OnInit {
   actual: Colaborador = {
     categoria: {
       convenio: undefined // Inicializa convenio como undefined
-    }
+    },
+    obraSocial: {},
+    nacimiento: new Date(),
+    fecha_ingreso: new Date()
   };
+
   
   suscripcion: Subscription = new Subscription();
 
@@ -40,8 +44,7 @@ export class EditarColaboradorComponent implements OnInit {
         this.colaboradorService.UnColaborador(id).subscribe(
           res => {
             this.actual = res;
-            // Convierte la fecha de nacimiento de string a Date
-            this.actual.nacimiento = new Date(this.actual.nacimiento + 'T00:00:00'); // Añade la hora para formar un formato ISO 8601
+          
           },
           error => {
             console.error('Error al obtener el colaborador:', error);
