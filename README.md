@@ -1,27 +1,31 @@
-# Sueldos
+# Sistema de Gestión Laboral
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
+Este es un sistema de gestión de stock diseñado para el seguimiento de novedades del personal además,
+Permite llevar un registro de los colaboradores, conevnios asociados, Obra sociales.
 
-## Development server
+## Instalación
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Clona el repositorio desde GitHub.
+2. Configura tu base de datos utilizando los comandos SQL proporcionados en la sección "Estructura de la Base de Datos".
+3. Ejecuta la aplicación y sigue las instrucciones en pantalla para empezar a utilizarla.
 
-## Code scaffolding
+## Uso
+ Gestión de recursos humanos para tu empresa, lleva a cabo un control exhaustivo del ausentismo, vacaciones, feriados y más. 
+ Es como tener un asistente virtual que organiza y optimiza la administración del personal, permitiéndote enfocarte en lo más importante.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ <h4>
+:clapper: Vista previa :clapper:</h4>
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Tecnologia Utilizada
+🔔 Java.
+🔔 SpringBoot.
+🔔 JPA.
+🔔 MySql.
+🔔 Angular.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Autor
+<h4>Torres Brenda</h4>
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+|<img src="https://github.com/Soledad1988/AppGym-JDBC-MySQL-Java/assets/99606808/7889234e-2ef2-4fba-96ad-5ed94b5e6b58" width=115>|
